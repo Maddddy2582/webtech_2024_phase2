@@ -1,6 +1,6 @@
 .login-dark {
     height:900px;
-    background:#b0ffff url(../../assets/images/background-img.jpg);
+    background:#b0ffff url("../../assets/images/background-img.jpg");
     background-size:cover   ;
     position:relative;
   }
@@ -9,7 +9,7 @@
     max-width:400px;
     max-height: 1000px;
     width:90%;
-    background-color:rgba(0,0,0,0.7);
+    background-color:rgb(0 0 0 / 70%);
     padding:40px;
     border-radius:4px;
     transform:translate(-50%, -50%);
@@ -17,7 +17,7 @@
     top:50%;
     left:50%;
     color:#fff;
-    box-shadow:3px 3px 4px rgba(0, 0, 0, 0.2);
+    box-shadow:3px 3px 4px rgb(0 0 0 / 20%);
   }
   
   .login-dark .illustration {
@@ -71,7 +71,6 @@
   }
 
   .form-group{
-    
     margin: 20px;
   }
 
