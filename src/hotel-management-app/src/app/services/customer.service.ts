@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 export class CustomerService {
   constructor(private router: Router) { }
 
-  register(customerData: any): string | void {
+  registerCustomer(customerData: any): string | void {
     const customers = JSON.parse(localStorage.getItem('customers') || '[]');
     const existingCustomer = customers.find((c: any) => c.email === customerData.email);
     if (existingCustomer) {
@@ -17,7 +17,7 @@ export class CustomerService {
     localStorage.setItem('customers', JSON.stringify(customers));
   }
 
-  authenticate(email: string, password: string): boolean {
+  authenticateCustomer(email: string, password: string): boolean {
     const customers = JSON.parse(localStorage.getItem('customers') || '[]');
     const customer = customers.find((c: any) => c.email === email && c.password === password);
     if (customer) {

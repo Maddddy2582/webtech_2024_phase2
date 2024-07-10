@@ -13,8 +13,8 @@ export class RegistrationComponent {
   errorMessage: string | null = null;
   successMessage: string | null = null;
 
-  constructor(private fb: FormBuilder, private customerService: CustomerService, private router: Router) {
-    this.registrationForm = this.fb.group({
+  constructor(private registerForm: FormBuilder, private customerService: CustomerService, private router: Router) {
+    this.registrationForm = this.registerForm.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -23,7 +23,7 @@ export class RegistrationComponent {
 
   onSubmit() {
     if (this.registrationForm.valid) {      
-      const result = this.customerService.register(this.registrationForm.value);
+      const result = this.customerService.registerCustomer(this.registrationForm.value);
       if (result === 'Email already exists') {
         this.errorMessage = result;
         this.successMessage = null;

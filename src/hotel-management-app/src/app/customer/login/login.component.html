@@ -3,17 +3,14 @@
 <div class="login-dark">
     <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
 
-        <h2 class="sr-only">Login Form</h2>
-        <div class="illustration">
-            <i class="icon ion-ios-locked-outline"></i>
-        </div>
+        <h2 class="sr-only">Login</h2>
         <div class="form-group">
             <input
                 id = "email"
                 class="form-control"
                 type="email"
                 name="email"
-                placeholder="email"
+                placeholder="Email"
                 formControlName="email">
         </div>
         <div class="form-group">
@@ -30,6 +27,7 @@
                 type="submit"
                 [disabled]="!loginForm.valid">Log In</button>
         </div>
+        <p>Don't have an account? <a href="/register">Sign Up</a></p>
         <div *ngIf="errorMessage" style="color: red">{{ errorMessage }}</div>
     </form>
 </div>

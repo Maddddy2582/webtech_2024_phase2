@@ -1,0 +1,96 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100px;
+  }
+  
+  .navbar-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .logo {
+    height: 80px;
+    margin-right: 0px;
+  }
+
+  .spacer {
+    flex-grow:50;
+  }
+  
+  .search-container {
+    flex-grow: 1;
+    margin-right: 20px;
+    padding-top: 20px;
+  }
+  
+  .cart-button {
+    margin-left: 20px;
+  }
+  
+  .restaurant-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .restaurant-card {
+    width: 300px;
+    margin: 10px;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  
+  .restaurant-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    background-color: white;
+  }
+  
+  .mat-card-header {
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .mat-card-title {
+    font-weight: bold;
+  }
+  
+  .mat-card-subtitle {
+    color: #d0f8ce;
+  }
+  
+  .mat-card-content {
+    padding: 20px;
+  }
+  
+  .mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+  
+  button.mat-button {
+    color: white;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+
+  .white-icon{
+    color: white;
+    justify-items: right;
+  }
+  
+  .img-div{
+    height: 250px;
+    width: 300px;
+    background-size: cover;
+  }
