@@ -12,6 +12,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { MenuComponent } from './menu/menu.component';
+import { NavBarComponent } from './navbar/navbar.component';
+import { CartComponent } from './cart/cart.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 
@@ -20,7 +24,11 @@ import { MatIconModule } from '@angular/material/icon';
     RegistrationComponent,
     ProfileComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    MenuComponent,
+    NavBarComponent,
+    CartComponent,
+    PaymentComponent
   ],
   imports: [
     CommonModule,

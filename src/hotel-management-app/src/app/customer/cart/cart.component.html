@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<mat-toolbar color="primary">
+    <span>My Cart</span>
+</mat-toolbar>
+
+<div class="cart-container">
+    <mat-card *ngFor="let item of cartItems" class="cart-item-card">
+        <mat-card-header>
+            <mat-card-title>{{ item.name }}</mat-card-title>
+            <mat-card-subtitle>₹{{ item.price }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{ item.description }}</p>
+            <div class="quantity-controls">
+                <button mat-button (click)="decreaseQuantity(item.id)">-</button>
+                <span>{{ item.quantity }}</span>
+                <button mat-button (click)="increaseQuantity(item.id)">+</button>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <div class="img-div" [ngStyle]="{'background-image': 'url('+item.imagePath+')'}"></div>
+            <button mat-button class = "remove-btn" color="warn" (click)="removeItem(item.id)">Remove</button>
+        </mat-card-actions>
+    </mat-card>
+    <button mat-raised-button color="primary" (click)="clearCart()" *ngIf="cartItems.length">Clear Cart</button>
+    <h1 *ngIf="!cartItems.length">Your Cart is Empty</h1>
+</div>
+
+<div class="cart-summary" *ngIf="cartItems.length">
+    <div>Total Amount: {{ totalAmount }}</div>
+    <button mat-raised-button color="primary" (click)="goToPayment()">Pay</button>
+</div>

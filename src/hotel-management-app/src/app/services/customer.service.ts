@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Customer } from '../models/customer.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
   constructor(private router: Router) { }
-
-  registerCustomer(customerData: any): string | void {
+  
+  registerCustomer(customerData: Customer): string | void {
     const customers = JSON.parse(localStorage.getItem('customers') || '[]');
-    const existingCustomer = customers.find((c: any) => c.email === customerData.email);
+    const existingCustomer = customers.find((c: Customer) => c.email === customerData.email);
     if (existingCustomer) {
       return 'Email already exists';
     }
@@ -19,7 +20,7 @@ export class CustomerService {
 
   authenticateCustomer(email: string, password: string): boolean {
     const customers = JSON.parse(localStorage.getItem('customers') || '[]');
-    const customer = customers.find((c: any) => c.email === email && c.password === password);
+    const customer = customers.find((c: Customer) => c.email === email && c.password === password);
     if (customer) {
       localStorage.setItem('currentCustomer', JSON.stringify(customer));
       return true;
@@ -27,7 +28,7 @@ export class CustomerService {
     return false;
   }
 
-  getCurrentCustomer(): any {
+  getCurrentCustomer(): Customer {
     return JSON.parse(localStorage.getItem('currentCustomer') || '{}');
   }
 

@@ -1,0 +1,30 @@
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 20px;
+  }
+  
+  .menu-item-card {
+    width: 300px;
+    margin: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+  }
+  
+  .menu-item-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgb(0 0 0 / 20%);
+  }
+  
+  .img-div{
+    height: 250px;
+    width: 300px;
+    background-size: cover;
+  }
+
+  .btn:hover{
+    background-color: var(--turquoisegreen);
+  }

@@ -27,11 +27,7 @@ $hotel-management-app-theme: mat.define-theme((
 :root {
   @include mat.all-component-themes($hotel-management-app-theme);
   --blue: #214a80;
+  --turquoisegreen: rgb(48, 247, 190);
 }
 
-// Comment out the line below if you want to use the pre-defined typography utility classes.
-// For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
-// @include mat.typography-hierarchy($hotel-management-app-theme);
 
-// Comment out the line below if you want to use the deprecated `color` inputs.
-// @include mat.color-variants-backwards-compatibility($hotel-management-app-theme);

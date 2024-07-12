@@ -17,14 +17,14 @@
     position:absolute;
     top:50%;
     left:50%;
-    color:#fff;
+    color:white;
     box-shadow:3px 3px 4px rgb(0 0 0 / 20%);
   }
 
    .register-dark form .form-control {
     background:none;
     border:none;
-    border-bottom:1px solid #434a52;
+    border-bottom:1px solid grey;
     border-radius:0;
     box-shadow:none;
     outline:none;

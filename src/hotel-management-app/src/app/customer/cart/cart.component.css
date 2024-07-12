@@ -1,0 +1,45 @@
+.cart-container {
+    padding: 16px;
+  }
+  
+  .cart-item-card {
+    margin-bottom: 16px;
+  }
+
+  .remove-btn:hover{
+    background-color: rgb(255 0 0);
+    color: white;
+  }
+
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-controls button {
+    min-width: 40px;
+    min-height: 40px;
+    font-size: 20px;
+    margin: 0 10px;
+  }
+
+  .cart-summary {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+
+  .img-div{
+    position: absolute;
+    left: 1400px;
+    bottom: 20px;
+    height: 150px;
+    width: 200px;
+    background-size: cover;
+  }
+
+  
+  

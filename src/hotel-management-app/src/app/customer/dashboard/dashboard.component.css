@@ -1,34 +1,6 @@
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    height: 100px;
-  }
-  
-  .navbar-content {
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-  
   .logo {
     height: 80px;
-    margin-right: 0px;
-  }
-
-  .spacer {
-    flex-grow:50;
-  }
-  
-  .search-container {
-    flex-grow: 1;
-    margin-right: 20px;
-    padding-top: 20px;
-  }
-  
-  .cart-button {
-    margin-left: 20px;
+    margin-right: 0;
   }
   
   .restaurant-cards {
@@ -37,7 +9,7 @@
     justify-content: center;
     gap: 16px;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: white;
   }
   
   .restaurant-card {
@@ -45,13 +17,13 @@
     margin: 10px;
     transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
     background-color: white;
   }
   
   .restaurant-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 24px rgb(0 0 0 / 20%);
     background-color: white;
   }
   
@@ -89,6 +61,10 @@
     justify-items: right;
   }
   
+  .btn:hover{
+    background-color: var(--turquoisegreen);
+  }
+
   .img-div{
     height: 250px;
     width: 300px;

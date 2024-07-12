@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<mat-toolbar color="primary">
+    <span>Payment</span>
+</mat-toolbar>
+
+<div class="payment-form">
+    <mat-form-field>
+        <mat-label>Cardholder Name</mat-label>
+        <input matInput [(ngModel)]="paymentDetails.cardholderName">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Credit Card Number</mat-label>
+        <input matInput [(ngModel)]="paymentDetails.cardNumber" type="text" maxlength="16">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>CVV</mat-label>
+        <input matInput [(ngModel)]="paymentDetails.cvv" type="text" maxlength="3">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Expiry Date</mat-label>
+        <input matInput [(ngModel)]="paymentDetails.expiryDate" type="text" placeholder="MM/YY">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="confirmPayment()">Confirm Pay</button>
+</div>
