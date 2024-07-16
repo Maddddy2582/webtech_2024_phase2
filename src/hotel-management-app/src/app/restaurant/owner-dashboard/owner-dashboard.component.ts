@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RestaurantService } from '../../services/restaurant.service';
 import { Restaurant } from '../../models/restaurant.model';
 import { CartService } from '../../services/cart.service';
+import { Location } from '@angular/common';
+import { Inject } from '@angular/core';
 
 @Component({
   selector: 'app-owner-dashboard',
@@ -13,7 +15,8 @@ export class OwnerDashboardComponent implements OnInit {
 
   constructor(
     private restaurantService: RestaurantService,
-    private cartService: CartService
+    private cartService: CartService,
+    @Inject(Location) private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -22,9 +25,12 @@ export class OwnerDashboardComponent implements OnInit {
 
   loadRestaurants(): void {
     const currentUserEmail = this.cartService.getUserEmail();
-    console.log(currentUserEmail);
     this.restaurants = this.restaurantService.getRestaurants().filter(
       restaurant => restaurant.userId === currentUserEmail
     );
+  }
+
+  goBack():void {
+    this.location.back();
   }
 }

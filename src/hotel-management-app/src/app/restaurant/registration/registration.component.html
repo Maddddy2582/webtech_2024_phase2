@@ -1,48 +1,57 @@
+<!DOCTYPE html>
 <mat-card>
-  <mat-card-title>Register Restaurant</mat-card-title>
-  <mat-card-content>
-    <form (ngSubmit)="registerRestaurant()">
-      <mat-form-field>
-        <mat-label>Restaurant Name</mat-label>
-        <input matInput [(ngModel)]="restaurant.name" name="name" required>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Cuisine type</mat-label>
-        <input matInput [(ngModel)]="restaurant.cuisine" name="name" required>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Description</mat-label>
-        <input matInput [(ngModel)]="restaurant.description" name="description" required>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Image URL</mat-label>
-        <input matInput [(ngModel)]="restaurant.image" name="imageUrl" required>
-      </mat-form-field>
+    <mat-card-title>Register Restaurant</mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="restaurantForm" (ngSubmit)="registerRestaurant()">
+            <mat-form-field>
+                <mat-label>Restaurant Name</mat-label>
+                <input matInput formControlName="name" required>
+                <mat-error *ngIf="restaurantForm.get('name')?.hasError('required')">Restaurant Name is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Cuisine type</mat-label>
+                <input matInput formControlName="cuisine" required>
+                <mat-error *ngIf="restaurantForm.get('cuisine')?.hasError('required')">Cuisine type is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Description</mat-label>
+                <input matInput formControlName="description" required>
+                <mat-error *ngIf="restaurantForm.get('description')?.hasError('required')">Description is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Image URL</mat-label>
+                <input matInput formControlName="image" required>
+                <mat-error *ngIf="restaurantForm.get('image')?.hasError('required')">Image URL is required</mat-error>
+            </mat-form-field>
 
-      <hr>
-      <mat-card-title>Menu Items</mat-card-title>
-      <div *ngFor="let item of menuItems">
-        <p>{{ item.name }} - {{ item.description }} - {{ item.price | currency }}</p>
-      </div>
-      <mat-form-field>
-        <mat-label>Item Name</mat-label>
-        <input matInput [(ngModel)]="menuItem.name" name="itemName" required>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Description</mat-label>
-        <input matInput [(ngModel)]="menuItem.description" name="itemDescription" required>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Image URL</mat-label>
-        <input matInput [(ngModel)]="menuItem.imagePath" name="itemDescription" required>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Price</mat-label>
-        <input matInput type="number" [(ngModel)]="menuItem.price" name="itemPrice" required>
-      </mat-form-field>
-      <button mat-button type="button" (click)="addMenuItem()">Add Menu Item</button>
-
-      <button mat-raised-button color="primary" type="submit">Register Restaurant</button>
-    </form>
-  </mat-card-content>
+            <hr>
+            <mat-card-title>Menu Items</mat-card-title>
+            <div *ngFor="let item of menuItems">
+                <p>{{ item.name }} - {{ item.description }} - {{ item.price | currency }}</p>
+            </div>
+            <mat-form-field>
+                <mat-label>Item Name</mat-label>
+                <input matInput formControlName="itemName" required>
+                <mat-error *ngIf="restaurantForm.get('itemName')?.hasError('required')">Item Name is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Description</mat-label>
+                <input matInput formControlName="itemDescription" required>
+                <mat-error *ngIf="restaurantForm.get('itemDescription')?.hasError('required')">Description is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Image URL</mat-label>
+                <input matInput formControlName="itemImagePath" required>
+                <mat-error *ngIf="restaurantForm.get('itemImagePath')?.hasError('required')">Image URL is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Price</mat-label>
+                <input matInput type="number" formControlName="itemPrice" required>
+                <mat-error *ngIf="restaurantForm.get('itemPrice')?.hasError('required')">Price is required</mat-error>
+            </mat-form-field>
+            <button mat-button type="button" (click)="addMenuItem()">Add Menu Item</button>
+            <button mat-raised-button color="primary" type="submit">Register Restaurant</button>
+            <button mat-button type="button" (click)="goBack()">Go Back</button>
+        </form>
+    </mat-card-content>
 </mat-card>

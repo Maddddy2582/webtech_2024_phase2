@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import { Router } from '@angular/router';
 import { CartItem } from '../../models/cart.model';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-cart',
@@ -12,7 +13,7 @@ export class CartComponent implements OnInit {
   cartItems: CartItem[] = [];
   totalAmount: number = 0;
 
-  constructor(private cartService: CartService, private router : Router) {}
+  constructor(private cartService: CartService, private router : Router, private location : Location) {}
 
   ngOnInit(): void {
     this.loadCart();
@@ -53,5 +54,9 @@ export class CartComponent implements OnInit {
 
   goToPayment(): void {
     this.router.navigate(['/payment']);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

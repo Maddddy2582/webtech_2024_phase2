@@ -10,8 +10,7 @@ import { RestaurantService } from '../services/restaurant.service';
 import { RestaurantRegistrationComponent} from './registration/registration.component';
 import { OwnerDashboardComponent } from './owner-dashboard/owner-dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
-
-// import {Matdivi}
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   providers: [RestaurantService],
   exports: [RestaurantRegistrationComponent]

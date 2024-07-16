@@ -7,14 +7,14 @@
 
 <div class="menu-items">
     <mat-card *ngFor="let item of restaurant?.menu" class="menu-item-card">
-    <div class="img-div" [ngStyle]="{'background-image': 'url('+item.imagePath+')'}"></div>
-      <mat-card-header>
-        <mat-card-title>{{ item.name }}</mat-card-title>
-        <mat-card-subtitle>{{ item.description }}</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>₹{{ item.price}}</p>
-        <button mat-raised-button color="primary" (click)="addToCart(item)">Add to Cart</button>
-      </mat-card-content>
+        <div class="img-div" [ngStyle]="{'background-image': 'url('+item.imagePath+')'}"></div>
+        <mat-card-header>
+            <mat-card-title>{{ item.name }}</mat-card-title>
+            <mat-card-subtitle>{{ item.description }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>₹{{ item.price}}</p>
+            <button mat-raised-button color="primary" (click)="addToCart(item)">Add to Cart</button>
+        </mat-card-content>
     </mat-card>
-  </div>
+</div>

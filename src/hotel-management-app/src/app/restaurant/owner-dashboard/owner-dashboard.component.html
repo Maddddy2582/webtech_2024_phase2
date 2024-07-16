@@ -1,21 +1,24 @@
+<!DOCTYPE html>
 <mat-toolbar color="primary">
     <span>My Restaurants</span>
-  </mat-toolbar>
-  
-  <div class="restaurant-cards">
+</mat-toolbar>
+
+<div class="restaurant-cards">
     <mat-card *ngFor="let restaurant of restaurants" class="restaurant-card">
-      <img mat-card-image [src]="restaurant.image" alt="{{ restaurant.name }}">
-      <mat-card-header>
-        <mat-card-title>{{ restaurant.name }}</mat-card-title>
-        <mat-card-subtitle>{{ restaurant.cuisine }}</mat-card-subtitle>
-        <mat-card-subtitle>{{ restaurant.description }}</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Menu:</p>
-        <ul>
-          <li *ngFor="let item of restaurant.menu">{{ item.name }} - {{ item.price}}</li>
-        </ul>
-      </mat-card-content>
+        <img mat-card-image [src]="restaurant.image" alt="{{ restaurant.name }}">
+        <mat-card-header>
+            <mat-card-title>{{ restaurant.name }}</mat-card-title>
+            <mat-card-subtitle>{{ restaurant.cuisine }}</mat-card-subtitle>
+            <mat-card-subtitle>{{ restaurant.description }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>Menu:</p>
+            <ul>
+                <li *ngFor="let item of restaurant.menu">{{ item.name }} - {{ item.price}}</li>
+            </ul>
+        </mat-card-content>
     </mat-card>
-  </div>
-  
+    <div>
+    </div>
+</div>
+<button mat-raised-button color="primary" (click)="goBack()">Go Back</button>
