@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CustomerService } from '../../services/customer.service';
 import { CartService } from '../../services/cart.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-payment',
@@ -9,19 +10,30 @@ import { CartService } from '../../services/cart.service';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent {
-  paymentDetails = {
-    cardholderName: '',
-    cardNumber: '',
-    cvv: '',
-    expiryDate: ''
-  };
-
-  constructor(private router: Router, private customerService: CustomerService , private cartService: CartService) {}
+  paymentForm: FormGroup;
+   constructor(
+    private router: Router, 
+    private cartService: CartService,
+    private location: Location,
+    private paymentFormBuild: FormBuilder) {
+      this.paymentForm = this.paymentFormBuild.group({
+        cardholderName: ['', Validators.required],
+        cardNumber: ['', [Validators.required, Validators.pattern(/^\d{16}$/)]],
+        cvv: ['', [Validators.required, Validators.pattern(/^\d{3}$/)]],
+        expiryDate: ['', [Validators.required, Validators.pattern(/^(0[1-9]|1[0-2])\/?([0-9]{2})$/)]]
+      });
+    }
 
   confirmPayment(): void {
-    const userCart = this.cartService.getUserCartKey()
-    localStorage.setItem(userCart, JSON.stringify([]));
-    alert("Payment Successful 🎉")
-    this.router.navigate(['/dashboard']);
+    if (this.paymentForm.valid) {
+      const userCart = this.cartService.getUserCartKey()
+      localStorage.setItem(userCart, JSON.stringify([]));
+      alert("Payment Successful 🎉")
+      this.router.navigate(['/dashboard']);
+    }
+  }
+
+  goBack(){
+    this.location.back();
   }
 }

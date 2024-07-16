@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Restaurant } from '../../models/restaurant.model';
 import { MenuItem } from '../../models/menu.model';
 import { CartService } from '../../services/cart.service';
+import { CartItem } from '../../models/cart.model';
 
 @Component({
   selector: 'app-menu',
@@ -31,7 +32,7 @@ export class MenuComponent implements OnInit {
     });
   }
 
-  addToCart(item: any): void {
+  addToCart(item: CartItem): void {
     this.cartService.addToCart(item);
   }
 
