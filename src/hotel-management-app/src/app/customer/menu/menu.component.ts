@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Restaurant } from '../../models/restaurant.model';
 import { MenuItem } from '../../models/menu.model';
 import { CartService } from '../../services/cart.service';
+import { RestaurantService } from '../../services/restaurant.service';
 
 @Component({
   selector: 'app-menu',
@@ -11,33 +12,41 @@ import { CartService } from '../../services/cart.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  restaurant!: Restaurant;
+  restaurant!: Restaurant | undefined;
   menu: MenuItem[] = [];
   cart: MenuItem[] = [];
   filteredMenu: MenuItem[] = [];
+  searchTerm: string = '';
 
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private cartService: CartService) {}
+  constructor(
+    private route: ActivatedRoute, 
+    private http: HttpClient, 
+    private cartService: CartService, 
+    private restaurantService: RestaurantService) {}
 
   ngOnInit(): void {
-    const restaurantId = +this.route.snapshot.paramMap.get('id')!;
-    const restaurants: Restaurant[] = JSON.parse(localStorage.getItem('restaurants') || '[]');
-    this.restaurant = restaurants.find(r => r.id === restaurantId)!;
+    const id = +this.route.snapshot.paramMap.get('id')!;
+    this.restaurant = this.restaurantService.getRestaurantById(id);
+    // const restaurants: Restaurant[] = JSON.parse(localStorage.getItem('restaurants') || '[]');
+    // this.restaurant = restaurants.find(r => r.id === restaurantId)!;
 
-    this.http.get<MenuItem[]>(`assets/menu.json`).subscribe((data: any) => {
-      const restaurantMenu = data.find((menu: any) => menu.restaurantId === restaurantId);
-      this.menu = restaurantMenu ? restaurantMenu.items : [];
-      this.filteredMenu = [...this.menu];
-    });
+    // this.http.get<MenuItem[]>(`assets/menu.json`).subscribe((data: any) => {
+    //   const restaurantMenu = data.find((menu: any) => menu.restaurantId === restaurantId);
+    //   this.menu = restaurantMenu ? restaurantMenu.items : [];
+    //   this.filteredMenu = [...this.menu];
+    // });
+    // this.filteredMenu = [...menuItems]
   }
 
-  addToCart(item: any): void {
+  addToCart(item: { id: number; name: string; description: string; price: number, quantity:number, imagePath:string }): void {
     this.cartService.addToCart(item);
   }
 
-  filterMenu(searchTerm: string): void {
+  filterMenu(searchTerm:String): void {
     this.filteredMenu = this.menu.filter(item =>
-      item.name.toLowerCase().includes(searchTerm.toLowerCase())
+      item.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      item.description.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
   }
 }

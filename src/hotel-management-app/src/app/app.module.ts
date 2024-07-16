@@ -24,11 +24,10 @@ import { RestaurantService } from './services/restaurant.service';
     CustomerModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    RestaurantModule
+    RestaurantModule,
 
   ],
   providers: [
-  
     provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]

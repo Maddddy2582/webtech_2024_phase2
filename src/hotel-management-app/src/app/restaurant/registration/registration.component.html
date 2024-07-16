@@ -1,45 +1,48 @@
-<mat-toolbar color="primary">
-    <span>Restaurant Registration</span>
-  </mat-toolbar>
-  
-  <div class="registration-form">
-    <mat-form-field>
-      <mat-label>Restaurant Name</mat-label>
-      <input matInput [(ngModel)]="restaurant.name" required>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Description</mat-label>
-      <input matInput [(ngModel)]="restaurant.description" required>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Cuisine</mat-label>
-      <input matInput [(ngModel)]="restaurant.cuisine" required>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Image URL</mat-label>
-      <input matInput [(ngModel)]="restaurant.image" required>
-    </mat-form-field>
-  
-    <div class="menu-items">
-      <h3>Menu Items</h3>
-      <div *ngFor="let item of restaurant.menu; let i = index">
-        <mat-form-field>
-          <mat-label>Name</mat-label>
-          <input matInput [(ngModel)]="item.name" required>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Description</mat-label>
-          <input matInput [(ngModel)]="item.description" required>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Price</mat-label>
-          <input matInput [(ngModel)]="item.price" type="number" required>
-        </mat-form-field>
-        <button mat-raised-button color="warn" (click)="removeMenuItem(i)">Remove Item</button>
+<mat-card>
+  <mat-card-title>Register Restaurant</mat-card-title>
+  <mat-card-content>
+    <form (ngSubmit)="registerRestaurant()">
+      <mat-form-field>
+        <mat-label>Restaurant Name</mat-label>
+        <input matInput [(ngModel)]="restaurant.name" name="name" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Cuisine type</mat-label>
+        <input matInput [(ngModel)]="restaurant.cuisine" name="name" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput [(ngModel)]="restaurant.description" name="description" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Image URL</mat-label>
+        <input matInput [(ngModel)]="restaurant.image" name="imageUrl" required>
+      </mat-form-field>
+
+      <hr>
+      <mat-card-title>Menu Items</mat-card-title>
+      <div *ngFor="let item of menuItems">
+        <p>{{ item.name }} - {{ item.description }} - {{ item.price | currency }}</p>
       </div>
-      <button mat-raised-button color="primary" (click)="addMenuItem()">Add Menu Item</button>
-    </div>
-  
-    <button mat-raised-button color="primary" (click)="registerRestaurant()">Register Restaurant</button>
-  </div>
-  
+      <mat-form-field>
+        <mat-label>Item Name</mat-label>
+        <input matInput [(ngModel)]="menuItem.name" name="itemName" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput [(ngModel)]="menuItem.description" name="itemDescription" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Image URL</mat-label>
+        <input matInput [(ngModel)]="menuItem.imagePath" name="itemDescription" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Price</mat-label>
+        <input matInput type="number" [(ngModel)]="menuItem.price" name="itemPrice" required>
+      </mat-form-field>
+      <button mat-button type="button" (click)="addMenuItem()">Add Menu Item</button>
+
+      <button mat-raised-button color="primary" type="submit">Register Restaurant</button>
+    </form>
+  </mat-card-content>
+</mat-card>
