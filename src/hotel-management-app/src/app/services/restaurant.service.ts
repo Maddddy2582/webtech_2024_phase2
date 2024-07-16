@@ -62,5 +62,7 @@ export class RestaurantService {
       localStorage.setItem(this.localStorageKey, JSON.stringify(restaurants));
     }
   }
+
+  
   
 }
