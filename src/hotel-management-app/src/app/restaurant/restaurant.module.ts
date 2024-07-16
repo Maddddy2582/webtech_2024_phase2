@@ -10,16 +10,13 @@ import { RestaurantService } from '../services/restaurant.service';
 import { RestaurantRegistrationComponent} from './registration/registration.component';
 import { OwnerDashboardComponent } from './owner-dashboard/owner-dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
-import { EditRestaurantComponent } from './edit-restaurant/edit-restaurant.component';
-import { EditMenuComponent } from './edit-menu/edit-menu.component';
+
 // import {Matdivi}
 
 @NgModule({
   declarations: [
     RestaurantRegistrationComponent,
-    OwnerDashboardComponent,
-    EditRestaurantComponent,
-    EditMenuComponent
+    OwnerDashboardComponent
   ],
   imports: [
     CommonModule,
