@@ -20,7 +20,8 @@ export class PaymentComponent {
 
   confirmPayment(): void {
     const userCart = this.cartService.getUserCartKey()
-    localStorage.setItem(userCart, JSON.stringify([]));
+    // localStorage.setItem(userCart, JSON.stringify([]));
+    localStorage.removeItem(userCart)
     alert("Payment Successful 🎉")
     this.router.navigate(['/dashboard']);
   }

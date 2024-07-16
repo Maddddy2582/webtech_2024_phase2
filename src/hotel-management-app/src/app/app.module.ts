@@ -6,8 +6,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomerModule } from './customer/customer.module';
+import { RestaurantModule } from './restaurant/restaurant.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RestaurantService } from './services/restaurant.service';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     CustomerModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RestaurantModule
 
   ],
   providers: [
@@ -31,15 +34,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   bootstrap: [AppComponent]
 })
 export class AppModule { 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private restaurantService: RestaurantService) {
     this.loadStaticData();
+    restaurantService.initializeLocalStorage();
   }
 
 
   loadStaticData() {
-    this.http.get('assets/restaurants.json').subscribe(data => {
-      localStorage.setItem('restaurants', JSON.stringify(data));
-    });
+    // this.http.get('assets/restaurants.json').subscribe(data => {
+    //   localStorage.setItem('restaurants', JSON.stringify(data));
+    // });
 
     this.http.get('assets/menu.json').subscribe(data => {
       localStorage.setItem('menuData', JSON.stringify(data));

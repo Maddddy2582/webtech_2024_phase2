@@ -13,10 +13,7 @@ export class CartService {
     this.loadCart();
   }
 
-  private getUserEmail(): string {
-    const user = JSON.parse(localStorage.getItem(this.userKey) || '{}');
-    return user.email || '';
-  }
+
 
   private loadCart(): void {
     const userCartKey = this.getUserCartKey();
@@ -27,6 +24,11 @@ export class CartService {
   private saveCart(): void {
     const userCartKey = this.getUserCartKey();
     localStorage.setItem(userCartKey, JSON.stringify(this.cart));
+  }
+
+  getUserEmail(): string {
+    const user = JSON.parse(localStorage.getItem(this.userKey) || '{}');
+    return user.email || '';
   }
 
   getUserCartKey(): string {
