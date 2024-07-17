@@ -1,24 +1,24 @@
+<!DOCTYPE html>
 <div class="container">
     <h2>Add Menu Item</h2>
     <form (ngSubmit)="saveMenuItem()">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" class="form-control" id="name" [(ngModel)]="menuItem.name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="price">Price:</label>
-        <input type="number" class="form-control" id="price" [(ngModel)]="menuItem.price" name="price" required>
-      </div>
-      <div class="form-group">
-        <label for="imagePath">Image URL</label>
-        <input type="text" class="form-control" id="imagePath" [(ngModel)]="menuItem.imagePath" name="imagePath" required>
-      </div>
-      <div class="form-group">
-        <label for="description">Description:</label>
-        <textarea class="form-control" id="description" [(ngModel)]="menuItem.description" name="description" rows="3"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Save</button>
-      <button class="btn btn-primary" (click)="goBack()">Back</button>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="menuItem.name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="number" class="form-control" id="price" [(ngModel)]="menuItem.price" name="price" required>
+        </div>
+        <div class="form-group">
+            <label for="image-path">Image URL</label>
+            <input type="text" class="form-control" id="image-path" [(ngModel)]="menuItem.imagePath" name="imagePath" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea class="form-control" id="description" [(ngModel)]="menuItem.description" name="description" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button class="btn btn-primary" (click)="goBack()">Back</button>
     </form>
-  </div>
-  
+</div>

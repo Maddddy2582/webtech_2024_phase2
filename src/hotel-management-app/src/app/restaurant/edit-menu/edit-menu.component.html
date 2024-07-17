@@ -1,26 +1,24 @@
+<!DOCTYPE html>
 <div *ngIf="menuItem">
     <h2>Edit Menu Item</h2>
     <form (ngSubmit)="saveMenuItem()">
-      <div>
-        <label for="name">Name:</label>
-        <input id="name" [(ngModel)]="menuItem.name" name="name" required>
-      </div>
-      <div>
-        <label for="description">Description:</label>
-        <input id="description" [(ngModel)]="menuItem.description" name="description" required>
-      </div>
-      <div>
-        <label for="price">Price:</label>
-        <input id="price" [(ngModel)]="menuItem.price" name="price" type="number" required>
-      </div>
-      <div>
-        <label for="imagePath">Image URL:</label>
-        <input id="imagePath" [(ngModel)]="menuItem.imagePath" name="imagePath" required>
-      </div>
-      <button type="submit">Save</button>
-      <button (click)="goBack()">Back</button>
+        <div>
+            <label for="name">Name:</label>
+            <input id="name" [(ngModel)]="menuItem.name" name="name" required>
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <input id="description" [(ngModel)]="menuItem.description" name="description" required>
+        </div>
+        <div>
+            <label for="price">Price:</label>
+            <input id="price" [(ngModel)]="menuItem.price" name="price" type="number" required>
+        </div>
+        <div>
+            <label for="image-path">Image URL:</label>
+            <input id="image-path" [(ngModel)]="menuItem.imagePath" name="imagePath" required>
+        </div>
+        <button type="submit">Save</button>
+        <button (click)="goBack()">Back</button>
     </form>
-  </div>
-
-  
-  
+</div>

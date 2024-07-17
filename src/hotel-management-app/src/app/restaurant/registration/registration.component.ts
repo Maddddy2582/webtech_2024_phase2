@@ -69,7 +69,6 @@ export class RestaurantRegistrationComponent implements OnInit {
         image: this.restaurantForm.get('image')?.value,
         menu: this.menuItems
       };
-
       this.restaurantService.addRestaurant(restaurant);
       alert('Restaurant registered successfully!');
       this.router.navigate(['/owner-dashboard']);

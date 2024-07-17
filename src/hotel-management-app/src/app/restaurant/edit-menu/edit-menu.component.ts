@@ -5,8 +5,7 @@ import { MenuItem } from '../../models/menu.model';
 
 @Component({
   selector: 'app-edit-menu-item',
-  templateUrl: './edit-menu.component.html',
-  styleUrls: ['./edit-menu.component.css']
+  templateUrl: './edit-menu.component.html'
 })
 export class EditMenuComponent implements OnInit {
   menuItem: MenuItem | undefined;

@@ -12,9 +12,7 @@ export class CartService {
   constructor() {
     this.loadCart();
   }
-
-
-
+  
   private loadCart(): void {
     const userCartKey = this.getUserCartKey();
     const savedCart = localStorage.getItem(userCartKey);

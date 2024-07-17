@@ -5,8 +5,7 @@ import { Restaurant } from '../../models/restaurant.model';
 
 @Component({
   selector: 'app-edit-restaurant',
-  templateUrl: './edit-restaurant.component.html',
-  styleUrls: ['./edit-restaurant.component.css']
+  templateUrl: './edit-restaurant.component.html'
 })
 export class EditRestaurantComponent implements OnInit {
   restaurant: Restaurant | undefined;
@@ -32,6 +31,4 @@ export class EditRestaurantComponent implements OnInit {
   goBack(){
     this.router.navigate(['/owner-dashboard'])
   }
-
-  
 }

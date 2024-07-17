@@ -7,7 +7,6 @@ import { RestaurantService } from '../../services/restaurant.service';
 @Component({
   selector: 'app-add-menu-item',
   templateUrl: './add-menu-item.component.html',
-  styleUrls: ['./add-menu-item.component.css']
 })
 export class AddMenuItemComponent implements OnInit {
   restaurantId!: number;

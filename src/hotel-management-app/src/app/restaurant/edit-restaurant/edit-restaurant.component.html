@@ -1,20 +1,20 @@
+<!DOCTYPE html>
 <div *ngIf="restaurant">
     <h2>Edit {{ restaurant.name }}</h2>
     <form (ngSubmit)="saveRestaurant()">
-      <div>
-        <label for="name">Name:</label>
-        <input id="name" [(ngModel)]="restaurant.name" name="name" required>
-      </div>
-      <div>
-        <label for="cuisine">Cuisine:</label>
-        <input id="cuisine" [(ngModel)]="restaurant.cuisine" name="cuisine" required>
-      </div>
-      <div>
-        <label for="description">Description:</label>
-        <input id="description" [(ngModel)]="restaurant.description" name="description" required>
-      </div>
-      <button type="submit">Save</button>
-      <button (click)="goBack()">Back</button>
+        <div>
+            <label for="name">Name:</label>
+            <input id="name" [(ngModel)]="restaurant.name" name="name" required>
+        </div>
+        <div>
+            <label for="cuisine">Cuisine:</label>
+            <input id="cuisine" [(ngModel)]="restaurant.cuisine" name="cuisine" required>
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <input id="description" [(ngModel)]="restaurant.description" name="description" required>
+        </div>
+        <button type="submit">Save</button>
+        <button (click)="goBack()">Back</button>
     </form>
-  </div>
-  
+</div>
