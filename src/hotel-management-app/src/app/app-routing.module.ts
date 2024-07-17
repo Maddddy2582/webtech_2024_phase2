@@ -9,6 +9,9 @@ import { CartComponent } from './customer/cart/cart.component';
 import { PaymentComponent } from './customer/payment/payment.component';
 import { RestaurantRegistrationComponent } from './restaurant/registration/registration.component';
 import { OwnerDashboardComponent } from './restaurant/owner-dashboard/owner-dashboard.component';
+import { EditMenuComponent } from './restaurant/edit-menu/edit-menu.component';
+import { EditRestaurantComponent } from './restaurant/edit-restaurant/edit-restaurant.component';
+import { AddMenuItemComponent } from './restaurant/add-menu-item/add-menu-item.component';
 
 
 
@@ -22,6 +25,9 @@ const routes: Routes = [
   {path: 'payment', component: PaymentComponent},
   {path: 'register-restaurant', component: RestaurantRegistrationComponent},
   {path: 'owner-dashboard', component: OwnerDashboardComponent},
+  { path: 'edit-restaurant/:id', component: EditRestaurantComponent },
+  { path: 'edit-menu-item/:restaurantId/:itemId', component: EditMenuComponent },
+  { path: 'add-menu-item/:restaurantId', component: AddMenuItemComponent },
   {path: '',component: LoginComponent}
 ]
 

@@ -4,6 +4,7 @@ import { Restaurant } from '../../models/restaurant.model';
 import { CartService } from '../../services/cart.service';
 import { Location } from '@angular/common';
 import { Inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-owner-dashboard',
@@ -16,7 +17,8 @@ export class OwnerDashboardComponent implements OnInit {
   constructor(
     private restaurantService: RestaurantService,
     private cartService: CartService,
-    @Inject(Location) private location: Location
+    @Inject(Location) private location: Location,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -30,7 +32,27 @@ export class OwnerDashboardComponent implements OnInit {
     );
   }
 
+  editRestaurant(restaurant: Restaurant): void {
+    this.router.navigate(['/edit-restaurant', restaurant.id]);
+  }
+
+  editMenuItem(restaurantId: number, itemId: number): void {
+    this.router.navigate(['/edit-menu-item', restaurantId, itemId]);
+  }
+
+  deleteMenuItem(restaurantId:number , itemId: number){
+    this.restaurantService.deleteMenu(restaurantId,itemId);
+  }
+
+  addMenuItem(restaurantId: number): void {
+    this.router.navigate(['/add-menu-item', restaurantId]);
+  }
+
   goBack():void {
     this.location.back();
+  }
+
+  deleteRestaurant(restaurant: Restaurant ): void{
+    this.restaurantService.deleteRestaurant(restaurant);
   }
 }

@@ -11,11 +11,17 @@ import { RestaurantRegistrationComponent} from './registration/registration.comp
 import { OwnerDashboardComponent } from './owner-dashboard/owner-dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditRestaurantComponent } from './edit-restaurant/edit-restaurant.component';
+import { EditMenuComponent } from './edit-menu/edit-menu.component';
+import { AddMenuItemComponent } from './add-menu-item/add-menu-item.component';
 
 @NgModule({
   declarations: [
     RestaurantRegistrationComponent,
-    OwnerDashboardComponent
+    OwnerDashboardComponent,
+    EditRestaurantComponent,
+    EditMenuComponent,
+    AddMenuItemComponent
   ],
   imports: [
     CommonModule,

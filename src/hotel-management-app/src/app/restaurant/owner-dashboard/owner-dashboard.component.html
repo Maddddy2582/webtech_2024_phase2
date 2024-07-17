@@ -4,6 +4,8 @@
 </mat-toolbar>
 
 <div class="restaurant-cards">
+
+    <h1 *ngIf="!restaurants.length">No restaurants to display!</h1>
     <mat-card *ngFor="let restaurant of restaurants" class="restaurant-card">
         <img mat-card-image [src]="restaurant.image" alt="{{ restaurant.name }}">
         <mat-card-header>
@@ -14,10 +16,24 @@
         <mat-card-content>
             <p>Menu:</p>
             <ul>
-                <li *ngFor="let item of restaurant.menu">{{ item.name }} - {{ item.price}}</li>
+                <li *ngFor="let item of restaurant.menu">
+                    {{ item.name }} - {{ item.price}}
+                    <button mat-button color="accent" (click)="editMenuItem(restaurant.id, item.id)">Edit</button>
+                    <button mat-button color="accent" (click)="deleteMenuItem(restaurant.id, item.id)">Delete</button>
+                    
+                </li>
+                
             </ul>
+            <button mat-button color="accent" (click)="addMenuItem(restaurant.id)">Add Menu Item</button>
         </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="editRestaurant(restaurant)">Edit Restaurant</button>
+        </mat-card-actions>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="deleteRestaurant(restaurant)">Delete Restaurant</button>
+        </mat-card-actions>
     </mat-card>
+    
     <div>
     </div>
 </div>

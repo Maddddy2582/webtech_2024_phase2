@@ -14,18 +14,11 @@ export class DashboardComponent implements OnInit {
 
   constructor( private router : Router, private restaurantService: RestaurantService){}
   ngOnInit(): void {
-    // this.restaurants = JSON.parse(localStorage.getItem('restaurants') || '[]')
-    // .map((restaurant:  Restaurant) => {
-    //   return {
-    //     ...restaurant,
-    //   };
-    // });
     this.loadRestaurants();
     this.filteredRestaurants = [...this.restaurants];
   }
 
   loadRestaurants(): void{
-    
     this.restaurants = this.restaurantService.getRestaurants();
   }
 

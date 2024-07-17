@@ -23,7 +23,6 @@
                 <input matInput formControlName="image" required>
                 <mat-error *ngIf="restaurantForm.get('image')?.hasError('required')">Image URL is required</mat-error>
             </mat-form-field>
-
             <hr>
             <mat-card-title>Menu Items</mat-card-title>
             <div *ngFor="let item of menuItems">
@@ -51,7 +50,10 @@
             </mat-form-field>
             <button mat-button type="button" (click)="addMenuItem()">Add Menu Item</button>
             <button mat-raised-button color="primary" type="submit">Register Restaurant</button>
-            <button mat-button type="button" (click)="goBack()">Go Back</button>
+            <mat-card-actions>
+
+                <button mat-button type="button" (click)="goBack()">Go Back</button>
+            </mat-card-actions>
         </form>
     </mat-card-content>
 </mat-card>
