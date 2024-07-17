@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomerService } from '../../services/customer.service';
+import { loginFormType } from '../../models/loginForm.model';
 
 @Component({
   selector: 'app-customer-login',
@@ -10,19 +11,19 @@ import { CustomerService } from '../../services/customer.service';
 })
 
 export class LoginComponent {
-  loginForm: FormGroup;
+  loginForm: FormGroup
   errorMessage: string | null = null;
 
-  constructor(private loginFormBuild: FormBuilder, private customerService: CustomerService, private router: Router) {
-    this.loginForm = this.loginFormBuild.group({
+  constructor(private loginFormBuilder: FormBuilder, private customerService: CustomerService, private router: Router) {
+    this.loginForm = this.loginFormBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
-    });
+    }) as FormGroup & {value: loginFormType};
   }
 
   onLogin() {
     if (this.loginForm.valid) {
-      const { email, password } = this.loginForm.value;
+      const { email, password } = this.loginForm.value as loginFormType;
       const authenticated = this.customerService.authenticateCustomer(email, password);
       if (authenticated) {
         this.router.navigate(['/dashboard']);

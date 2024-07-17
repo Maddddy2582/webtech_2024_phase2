@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
+import { PaymentFormType } from '../../models/paymentForm.model';
 
 @Component({
   selector: 'app-payment',
@@ -21,7 +22,7 @@ export class PaymentComponent {
         cardNumber: ['', [Validators.required, Validators.pattern(/^\d{16}$/)]],
         cvv: ['', [Validators.required, Validators.pattern(/^\d{3}$/)]],
         expiryDate: ['', [Validators.required, Validators.pattern(/^(0[1-9]|1[0-2])\/?([0-9]{2})$/)]]
-      });
+      }) as FormGroup & {Value : PaymentFormType };
     }
 
   confirmPayment(): void {
