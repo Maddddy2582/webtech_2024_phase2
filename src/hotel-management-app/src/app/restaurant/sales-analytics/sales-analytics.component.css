@@ -1,3 +1,8 @@
 .sale-card{
     margin: 10px;
 }
+
+#donutChart{
+    width: 400px;
+    height: 400px;
+}

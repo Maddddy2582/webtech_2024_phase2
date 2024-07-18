@@ -15,6 +15,10 @@ import { EditRestaurantComponent } from './edit-restaurant/edit-restaurant.compo
 import { EditMenuComponent } from './edit-menu/edit-menu.component';
 import { AddMenuItemComponent } from './add-menu-item/add-menu-item.component';
 import { SalesAnalyticsComponent } from './sales-analytics/sales-analytics.component';
+import {Chart , registerables} from 'chart.js'
+Chart.register(...registerables)
+
+
 
 
 

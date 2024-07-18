@@ -10,6 +10,9 @@ import { RestaurantModule } from './restaurant/restaurant.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RestaurantService } from './services/restaurant.service';
+import { BaseChartDirective } from 'ng2-charts';
+// import { NgChartsModule } from 'ng2-charts';
+// import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -25,6 +28,7 @@ import { RestaurantService } from './services/restaurant.service';
     HttpClientModule,
     BrowserAnimationsModule,
     RestaurantModule,
+    BaseChartDirective
 
   ],
   providers: [
