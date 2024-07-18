@@ -6,6 +6,7 @@ interface SaleItem {
   itemId: number;
   quantity: number;
   date: Date;
+  customerEmail: string;
 }
 
 @Injectable({

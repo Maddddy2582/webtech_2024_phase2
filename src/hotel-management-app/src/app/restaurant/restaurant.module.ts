@@ -9,12 +9,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { RestaurantService } from '../services/restaurant.service';
 import { RestaurantRegistrationComponent} from './registration/registration.component';
 import { OwnerDashboardComponent } from './owner-dashboard/owner-dashboard.component';
-import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditRestaurantComponent } from './edit-restaurant/edit-restaurant.component';
 import { EditMenuComponent } from './edit-menu/edit-menu.component';
 import { AddMenuItemComponent } from './add-menu-item/add-menu-item.component';
 import { SalesAnalyticsComponent } from './sales-analytics/sales-analytics.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {Chart , registerables} from 'chart.js'
 Chart.register(...registerables)
 
@@ -40,6 +40,7 @@ Chart.register(...registerables)
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
+    MatSlideToggleModule
   ],
   providers: [RestaurantService],
   exports: [RestaurantRegistrationComponent]
