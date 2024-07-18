@@ -41,12 +41,13 @@ export class RestaurantRegistrationComponent implements OnInit {
 
   addMenuItem(): void {
     const menuItem: MenuItem = {
+      restaurantId: 0,
       id: 0,
       name: this.restaurantForm.get('itemName')?.value,
       description: this.restaurantForm.get('itemDescription')?.value,
       price: this.restaurantForm.get('itemPrice')?.value,
       quantity: 0,
-      imagePath: this.restaurantForm.get('itemImagePath')?.value
+      imagePath: this.restaurantForm.get('itemImagePath')?.value,
     };
     this.menuItems.push(menuItem);
 

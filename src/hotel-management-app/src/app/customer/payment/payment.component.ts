@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CustomerService } from '../../services/customer.service';
 import { CartService } from '../../services/cart.service';
 import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-payment',
@@ -17,9 +18,19 @@ export class PaymentComponent {
     expiryDate: ''
   };
 
-  constructor(private router: Router, private customerService: CustomerService , private cartService: CartService,private location : Location) {}
+
+
+  constructor(private router: Router, 
+    private customerService: CustomerService , 
+    private cartService: CartService,
+    private location : Location,
+    private route: ActivatedRoute
+  ) {}
+
+  // id = +this.route.snapshot.paramMap.get('id')!;
 
   confirmPayment(): void {
+    this.cartService.processPayment()
     const userCart = this.cartService.getUserCartKey()
     localStorage.removeItem(userCart)
     alert("Payment Successful 🎉")

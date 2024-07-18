@@ -39,8 +39,11 @@ export class MenuComponent implements OnInit {
     // this.filteredMenu = [...menuItems]
   }
 
-  addToCart(item: { id: number; name: string; description: string; price: number, quantity:number, imagePath:string }): void {
-    this.cartService.addToCart(item);
+  addToCart(item: MenuItem): void {
+    const id = +this.route.snapshot.paramMap.get('id')!;
+    console.log(id);
+    console.log(item);
+    this.cartService.addToCart(item,id);
   }
 
   filterMenu(searchTerm:String): void {

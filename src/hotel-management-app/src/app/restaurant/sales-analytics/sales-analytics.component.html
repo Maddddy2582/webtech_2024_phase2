@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+    <span>Sales and Analytics</span>
+  </mat-toolbar>
+  
+  <div class="sales-analytics">
+    <mat-card *ngFor="let sale of sales" class="sale-card">
+      <mat-card-header>
+        <mat-card-title>Item Name: {{sale.itemName }}</mat-card-title>
+        <mat-card-subtitle>Date: {{ sale.date | date:'shortDate' }}</mat-card-subtitle>
+        <mat-card-subtitle>Time: {{ sale.date | date:'shortTime' }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Item ID: {{ sale.itemId }}</p>
+        <p>Bought By: {{sale.customerEmail}}</p>
+        <p>Quantity Sold: {{ sale.quantity }}</p>
+      </mat-card-content>
+    </mat-card>
+    <button mat-raised-button color="primary" (click)="goBack()">Go Back</button>
+  </div>
+  
+
+  

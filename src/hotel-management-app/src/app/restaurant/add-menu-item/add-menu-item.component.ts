@@ -11,12 +11,13 @@ import { RestaurantService } from '../../services/restaurant.service';
 export class AddMenuItemComponent implements OnInit {
   restaurantId!: number;
   menuItem: MenuItem = {
+    restaurantId: 0,
     name: '',
     price: 0,
     description: '',
     imagePath: '',
     quantity: 0,
-    id: 0 
+    id: 0
   };
 
   constructor(

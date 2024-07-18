@@ -55,4 +55,8 @@ export class OwnerDashboardComponent implements OnInit {
   deleteRestaurant(restaurant: Restaurant ): void{
     this.restaurantService.deleteRestaurant(restaurant);
   }
+
+  viewSales(restaurantId: number): void {
+    this.router.navigate(['/sales-analytics', restaurantId]);
+  }
 }

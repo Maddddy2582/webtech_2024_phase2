@@ -1,4 +1,5 @@
 export interface MenuItem {
+    restaurantId: number;
     id: number;
     name: string;
     description: string;

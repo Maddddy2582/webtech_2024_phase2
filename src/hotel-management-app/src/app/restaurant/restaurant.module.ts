@@ -14,6 +14,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EditRestaurantComponent } from './edit-restaurant/edit-restaurant.component';
 import { EditMenuComponent } from './edit-menu/edit-menu.component';
 import { AddMenuItemComponent } from './add-menu-item/add-menu-item.component';
+import { SalesAnalyticsComponent } from './sales-analytics/sales-analytics.component';
+
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { AddMenuItemComponent } from './add-menu-item/add-menu-item.component';
     OwnerDashboardComponent,
     EditRestaurantComponent,
     EditMenuComponent,
-    AddMenuItemComponent
+    AddMenuItemComponent,
+    SalesAnalyticsComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +35,7 @@ import { AddMenuItemComponent } from './add-menu-item/add-menu-item.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [RestaurantService],
   exports: [RestaurantRegistrationComponent]

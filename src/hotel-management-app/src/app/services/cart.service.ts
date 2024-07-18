@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CartItem } from '../models/cart.model';
+import { SalesService } from './sales.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class CartService {
   private userKey = 'currentCustomer';
   private cart: CartItem[] = [];
 
-  constructor() {
+  constructor(private salesService: SalesService) {
     this.loadCart();
   }
   
@@ -39,12 +40,13 @@ export class CartService {
     return [...this.cart];
   }
 
-  addToCart(item: CartItem): void {
+  addToCart(item: CartItem, id:number): void {
     const existingItem = this.cart.find(cartItem => cartItem.id === item.id);
     if (existingItem) {
       existingItem.quantity += 1;
     } else {
-      this.cart.push({ ...item, quantity: 1 });
+      console.log(item);
+      this.cart.push({ ...item, quantity: 1, restaurantId: id });
     }
     this.saveCart();
   }
@@ -75,6 +77,23 @@ export class CartService {
     } else if (item && item.quantity === 1) {
       this.removeFromCart(itemId);
     }
+  }
+
+  processPayment(): void {
+    const currentUserEmail = this.getUserEmail();
+    console.log(this.cart);
+    console.log(currentUserEmail);
+    const saleItems = this.cart.map(item => ({
+      restaurantId: item.restaurantId,
+      itemName: item.name,
+      itemId: item.id,
+      quantity: item.quantity,
+      customerEmail: currentUserEmail,
+      date: new Date()
+    }));
+    
+    this.salesService.logSale(currentUserEmail, saleItems);
+    this.clearCart();
   }
 
 }

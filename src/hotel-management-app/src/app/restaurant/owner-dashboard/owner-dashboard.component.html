@@ -30,6 +30,9 @@
         <mat-card-actions>
             <button mat-raised-button color="primary" (click)="deleteRestaurant(restaurant)">Delete Restaurant</button>
         </mat-card-actions>
+        <mat-card-actions>
+            <button mat-button (click)="viewSales(restaurant.id)">View Sales</button>
+        </mat-card-actions>
     </mat-card>
 </div>
 <button mat-raised-button color="primary" (click)="goBack()">Go Back</button>
