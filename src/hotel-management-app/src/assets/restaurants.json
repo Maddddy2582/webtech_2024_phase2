@@ -1,0 +1,88 @@
+[
+  {
+    "id": 1,
+    "name": "Pizza Palace",
+    "cuisine": "Italian",
+    "image": "https://img1.wsimg.com/isteam/ip/538bcd6d-a924-461e-a467-d49ed06293ca/SRO_1507-7e12095.jpg", 
+    "description": "A wonderful place to enjoy delicious pizzas." 
+  },
+  {
+    "id": 2,
+    "name": "Sushi World",
+    "cuisine": "Japanese",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvlMNvX9ct_OpdqGKp0FSnoR-AhDv8G_mufA&s", 
+    "description": "Experience the best sushi in town." 
+  },
+  {
+    "id": 3,
+    "name": "Sizzle & Spice",
+    "cuisine": "Indian",
+    "image": "https://th.bing.com/th/id/R.0bab238bcc532b9d408b2afcf8738c3a?rik=qmFlRzw8gQ74aQ&riu=http%3a%2f%2fspice-restaurant.hk%2fwp-content%2fuploads%2f2019%2f01%2fIMG_9491.jpg&ehk=NlBe8ld49mfJrTDrAYce%2funaMEmExYbefp1eb8%2b9lg8%3d&risl=&pid=ImgRaw&r=0",
+    "description": "Experience a fusion of flavors with our globally inspired dishes"
+  },
+  {
+    "id": 4,
+    "name": "Ocean's Catch",
+    "cuisine": "Thai",
+    "description": "Indulge in the freshest seafood delicacies by the shore",
+    "image": "https://cdn.boatinternational.com/convert/bi_prd/bi/library_images/487YIzvZTLG7sQVldDhA_Best-underwater-hotels-Ithaa-FB.jpg/r[width]=1920/487YIzvZTLG7sQVldDhA_Best-underwater-hotels-Ithaa-FB.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Mama Mia's Pizzeria",
+    "cuisine": "American",
+    "description": "Authentic Italian pizzas crafted with love and tradition",
+    "image": "https://theoxfordmagazine.com/wp-content/uploads/mamma-mia-pizzeria-summertown-oxford-01-1600x900-1.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Spice Route Bistro",
+    "cuisine": "British",
+    "description": "Embark on a culinary journey through the vibrant spices of the world",
+    "image": "https://th.bing.com/th/id/OIP.7-ZqknXmHRN20k0gITQ01QHaEO?rs=1&pid=ImgDetMain"
+  },
+  {
+    "id": 7,
+    "name": "The Green Leaf Cafe",
+    "cuisine": "Korean",
+    "description": "Fresh, organic ingredients come together in our wholesome vegetarian dishes",
+    "image": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/0f06ca59917549.5a33e9a4de78c.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Smoke & Fire BBQ",
+    "cuisine": "American",
+    "description": "Savor the rich smoky flavors of our slow-cooked barbecue specialties",
+    "image": "https://i.pinimg.com/originals/3e/71/34/3e7134e9e43577e92ab21cb72f7f73ef.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Zen Garden Teahouse",
+    "cuisine": "Chineese",
+    "description": "Find tranquility in every sip of our meticulously brewed teas",
+    "image": "https://www.eatout.co.za/wp-content/uploads/2015/02/The_Brew_Monkey-561.jpg"
+
+  },
+  {
+    "id": 10,
+    "name": "Rooftop Lounge Vista",
+    "cuisine": "French",
+    "description": "Elevate your dining experience with skyline views and exquisite cocktails",
+    "image": "https://lipstiq.com/wp-content/uploads/2021/05/envi_skydining_rooftop_restaurant_07-1024x1024.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Taste of Tokyo Ramen",
+    "cuisine": "Japanese",
+    "description": "Authentic ramen bowls that transport you to the bustling streets of Tokyo",
+    "image": "https://images.squarespace-cdn.com/content/v1/560dbc25e4b0969564758eb5/1517276939279-DVH2AKJAR6XS9C9W4ZFT/Tokyo+Ramen+Street+%2B+www.thetravelpockets.com"
+
+  },
+  {
+    "id": 12,
+    "name": "Fiesta Mexicana Cantina",
+    "cuisine": "Mexican",
+    "description": "Fiery flavors and festive vibes await you in every bite at our Mexican cantina",
+    "image": "https://bestrated.co.nz/wp-content/uploads/2021/06/Mexicanos.jpg"
+  }
+]

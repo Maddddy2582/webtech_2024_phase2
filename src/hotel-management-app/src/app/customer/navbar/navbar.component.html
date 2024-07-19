@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<mat-toolbar color="primary" class="navbar navbar-dark bg-dark">
+    <div class="navbar-content">
+        <img src="../../../assets/logo.PNG" alt="Logo" class="logo" (click) = "navToHome()">
+        <div class="spacer"></div>
+        <div class="search-container">
+            <mat-form-field appearance="fill">
+                <mat-label>Search</mat-label>
+                <input matInput type="text" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Enter search term">
+            </mat-form-field>
+        </div>
+        <button mat-icon-button class="cart-button white-icon" (click)="openCart()">
+            <mat-icon>shopping_cart</mat-icon>
+        </button>
+        <button mat-icon-button class="white-icon" (click)="openProfile()">
+            <mat-icon>manage_accounts</mat-icon>
+        </button>
+        <button mat-icon-button class="white-icon" (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>
