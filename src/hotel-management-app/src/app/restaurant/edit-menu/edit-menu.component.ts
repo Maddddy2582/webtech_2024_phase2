@@ -25,8 +25,6 @@ export class EditMenuComponent implements OnInit {
 
   saveMenuItem(): void {
     if (this.menuItem && this.restaurantId) {
-      console.log(this.menuItem);
-      console.log(this.restaurantId);
       this.restaurantService.updateMenuItem(this.restaurantId, this.menuItem);
       this.router.navigate(['/owner-dashboard']);
     }

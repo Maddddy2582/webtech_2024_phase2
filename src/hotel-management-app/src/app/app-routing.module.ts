@@ -13,6 +13,7 @@ import { EditMenuComponent } from './restaurant/edit-menu/edit-menu.component';
 import { EditRestaurantComponent } from './restaurant/edit-restaurant/edit-restaurant.component';
 import { AddMenuItemComponent } from './restaurant/add-menu-item/add-menu-item.component';
 import { SalesAnalyticsComponent } from './restaurant/sales-analytics/sales-analytics.component';
+import { TrackingComponent } from './restaurant/tracking/tracking.component';
 
 
 
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'edit-menu-item/:restaurantId/:itemId', component: EditMenuComponent },
   { path: 'add-menu-item/:restaurantId', component: AddMenuItemComponent },
   { path: 'sales-analytics/:restaurantId', component: SalesAnalyticsComponent },
+  { path: 'tracking' , component:TrackingComponent },
   {path: '',component: LoginComponent}
 ]
 

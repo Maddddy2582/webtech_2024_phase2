@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SalesService } from '../../services/sales.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { Sale } from '../../models/salesInfo.model';
+import { ChartData , ChartOptions } from '../../models/charts.model';
 import {Chart , registerables} from 'chart.js'
 Chart.register(...registerables)
 
@@ -13,10 +15,10 @@ Chart.register(...registerables)
   styleUrls: ['./sales-analytics.component.css']
 })
 export class SalesAnalyticsComponent implements OnInit {
-  sales: any[] = [];
+  sales: Sale[] = [];
   restaurantId!: number;
-  pieChart: any;
-  barChart: any;
+  pieChart!: Chart<'doughnut', number[], string>;
+  barChart!: Chart<'bar', number[], string>;
   showLog:boolean = true;
 
   constructor(
@@ -28,7 +30,6 @@ export class SalesAnalyticsComponent implements OnInit {
   ngOnInit(): void {
     this.restaurantId = +this.route.snapshot.paramMap.get('restaurantId')!;
     this.sales = this.salesService.getSalesByRestaurant(this.restaurantId);
-    console.log(this.sales);
     this.createDoughnutChart();
     this.createBarChart();
   }
@@ -44,13 +45,12 @@ export class SalesAnalyticsComponent implements OnInit {
       }
       acc[sale.itemName] += sale.quantity;
       return acc;
-    }, {} as Record<number,number>);
+    }, {} as Record<string,number>);
     
-    console.log(itemSales);
     const labels = Object.keys(itemSales).map(itemId => itemId);
     const data = Object.values(itemSales);
 
-    this.pieChart = new Chart('donutChart', {
+    this.pieChart = new Chart('donut-chart', {
       type: 'doughnut',
       data: {
         labels,
@@ -76,12 +76,12 @@ export class SalesAnalyticsComponent implements OnInit {
       }
       acc[day] += 1;
       return acc;
-    }, {});
+    }, {} as Record<string,number>);
 
     const labels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const data = labels.map(day => dailySales[day] || 0);
 
-    this.barChart = new Chart('barChart', {
+    this.barChart = new Chart('bar-chart', {
       type: 'bar',
       data: {
         labels,
