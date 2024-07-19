@@ -15,7 +15,8 @@ import { EditMenuComponent } from './edit-menu/edit-menu.component';
 import { AddMenuItemComponent } from './add-menu-item/add-menu-item.component';
 import { SalesAnalyticsComponent } from './sales-analytics/sales-analytics.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {Chart , registerables} from 'chart.js'
+import {Chart , registerables} from 'chart.js';
+import { OrderManagementComponent } from './order-management/order-management.component'
 Chart.register(...registerables)
 
 
@@ -29,7 +30,8 @@ Chart.register(...registerables)
     EditRestaurantComponent,
     EditMenuComponent,
     AddMenuItemComponent,
-    SalesAnalyticsComponent
+    SalesAnalyticsComponent,
+    OrderManagementComponent
   ],
   imports: [
     CommonModule,

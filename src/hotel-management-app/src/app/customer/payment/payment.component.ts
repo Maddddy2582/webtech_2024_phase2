@@ -27,10 +27,10 @@ export class PaymentComponent {
     private route: ActivatedRoute
   ) {}
 
-  // id = +this.route.snapshot.paramMap.get('id')!;
-
   confirmPayment(): void {
+    console.log(this.route.snapshot.paramMap);
     this.cartService.processPayment()
+    this.cartService.placeOrder(14)
     const userCart = this.cartService.getUserCartKey()
     localStorage.removeItem(userCart)
     alert("Payment Successful 🎉")

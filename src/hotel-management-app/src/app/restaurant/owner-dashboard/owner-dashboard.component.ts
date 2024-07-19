@@ -59,4 +59,8 @@ export class OwnerDashboardComponent implements OnInit {
   viewSales(restaurantId: number): void {
     this.router.navigate(['/sales-analytics', restaurantId]);
   }
+
+  navigateToOrderManagement(restaurantId: number): void {
+    this.router.navigate(['/order-management', restaurantId]);
+  }
 }

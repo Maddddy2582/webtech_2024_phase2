@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CartItem } from '../models/cart.model';
 import { SalesService } from './sales.service';
+import { Order, OrderItem } from '../models/orders.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ export class CartService {
   private cartKey = 'cart';
   private userKey = 'currentCustomer';
   private cart: CartItem[] = [];
+  private ordersKey = 'orders';
 
   constructor(private salesService: SalesService) {
     this.loadCart();
@@ -45,7 +47,6 @@ export class CartService {
     if (existingItem) {
       existingItem.quantity += 1;
     } else {
-      console.log(item);
       this.cart.push({ ...item, quantity: 1, restaurantId: id });
     }
     this.saveCart();
@@ -81,8 +82,6 @@ export class CartService {
 
   processPayment(): void {
     const currentUserEmail = this.getUserEmail();
-    console.log(this.cart);
-    console.log(currentUserEmail);
     const saleItems = this.cart.map(item => ({
       restaurantId: item.restaurantId,
       itemName: item.name,
@@ -94,6 +93,40 @@ export class CartService {
     
     this.salesService.logSale(currentUserEmail, saleItems);
     this.clearCart();
+  }
+
+  placeOrder(restaurantId: number): void {
+    const userId = this.getUserEmail();
+    const orderId = new Date().getTime(); // simple unique order ID based on timestamp
+    const orderItems: OrderItem[] = this.cart.map(item => ({
+      id: item.id,
+      name: item.name,
+      quantity: item.quantity,
+      price: item.price
+    }));
+    const totalAmount = orderItems.reduce((acc, item) => acc + (item.quantity * item.price), 0);
+    const newOrder: Order = {
+      orderId,
+      restaurantId,
+      userId,
+      items: orderItems,
+      totalAmount,
+      date: new Date().toISOString(),
+      status: 'Pending'
+    };
+
+    // Save order to local storage
+    const savedOrders = JSON.parse(localStorage.getItem(this.ordersKey) || '[]');
+    savedOrders.push(newOrder);
+    localStorage.setItem(this.ordersKey, JSON.stringify(savedOrders));
+
+    // Clear the cart
+    this.clearCart();
+  }
+
+  getOrdersByRestaurant(restaurantId: number): Order[] {
+    const savedOrders = JSON.parse(localStorage.getItem(this.ordersKey) || '[]');
+    return savedOrders.filter((order: Order) => order.restaurantId === restaurantId);
   }
 
 }

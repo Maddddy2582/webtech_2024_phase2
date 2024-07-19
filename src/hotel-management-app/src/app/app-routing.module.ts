@@ -14,6 +14,7 @@ import { EditRestaurantComponent } from './restaurant/edit-restaurant/edit-resta
 import { AddMenuItemComponent } from './restaurant/add-menu-item/add-menu-item.component';
 import { SalesAnalyticsComponent } from './restaurant/sales-analytics/sales-analytics.component';
 import { TrackingComponent } from './restaurant/tracking/tracking.component';
+import { OrderManagementComponent } from './restaurant/order-management/order-management.component';
 
 
 
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'add-menu-item/:restaurantId', component: AddMenuItemComponent },
   { path: 'sales-analytics/:restaurantId', component: SalesAnalyticsComponent },
   { path: 'tracking' , component:TrackingComponent },
+  { path: 'order-management/:restaurantId', component: OrderManagementComponent },
   {path: '',component: LoginComponent}
 ]
 
