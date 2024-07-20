@@ -1,6 +1,14 @@
-@import "../../../../node_modules/leaflet/dist/leaflet.css";
+@import "../../../../node_modules/ol/ol.css";
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
 
 #map {
-  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
   width: 100%;
 }

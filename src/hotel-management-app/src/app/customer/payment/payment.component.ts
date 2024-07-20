@@ -5,6 +5,7 @@ import { CartService } from '../../services/cart.service';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
