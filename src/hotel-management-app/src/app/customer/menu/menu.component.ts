@@ -43,7 +43,7 @@ export class MenuComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id')!;
     console.log(id);
     console.log(item);
-    this.cartService.addToCart(item,id);
+    this.cartService.checkRestaurant(item,id);
   }
 
   filterMenu(searchTerm:String): void {

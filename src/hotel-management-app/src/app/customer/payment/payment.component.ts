@@ -28,9 +28,8 @@ export class PaymentComponent {
   ) {}
 
   confirmPayment(): void {
-    console.log(this.route.snapshot.paramMap);
     this.cartService.processPayment()
-    this.cartService.placeOrder(14)
+    this.cartService.placeOrder()
     const userCart = this.cartService.getUserCartKey()
     localStorage.removeItem(userCart)
     alert("Payment Successful 🎉")

@@ -12,10 +12,10 @@
       <mat-card-content>
         <ul>
           <li *ngFor="let item of order.items">
-            {{ item.quantity }} x {{ item.name }} - {{ item.price | currency }}
+            {{ item.quantity }} x {{ item.name }} - {{ item.price }}
           </li>
         </ul>
-        <p>Total: {{ order.totalAmount | currency }}</p>
+        <p>Total: {{ order.totalAmount }}</p>
         <p>Status: {{ order.status }}</p>
       </mat-card-content>
       <mat-card-actions>

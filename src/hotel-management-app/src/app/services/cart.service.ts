@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CartItem } from '../models/cart.model';
 import { SalesService } from './sales.service';
 import { Order, OrderItem } from '../models/orders.model';
+import { setInterval } from 'timers/promises';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,21 @@ export class CartService {
   getCart(): CartItem[] {
     this.loadCart();
     return [...this.cart];
+  }
+
+
+  checkRestaurant(item: CartItem, id:number){
+    if (this.cart.length == 0 ){
+      this.addToCart(item,id)
+    }
+    else{
+      if (this.cart[0].restaurantId == id){
+        this.addToCart(item,id)
+      }
+      else{
+        alert("Cannot add items from multiple restaurants :(")
+      }
+    }
   }
 
   addToCart(item: CartItem, id:number): void {
@@ -92,12 +108,12 @@ export class CartService {
     }));
     
     this.salesService.logSale(currentUserEmail, saleItems);
-    this.clearCart();
   }
 
-  placeOrder(restaurantId: number): void {
+  placeOrder(): void {
+    const restaurantId = (this.cart[0].restaurantId);
     const userId = this.getUserEmail();
-    const orderId = new Date().getTime(); // simple unique order ID based on timestamp
+    const orderId = new Date().getTime();
     const orderItems: OrderItem[] = this.cart.map(item => ({
       id: item.id,
       name: item.name,
@@ -115,12 +131,10 @@ export class CartService {
       status: 'Pending'
     };
 
-    // Save order to local storage
     const savedOrders = JSON.parse(localStorage.getItem(this.ordersKey) || '[]');
     savedOrders.push(newOrder);
     localStorage.setItem(this.ordersKey, JSON.stringify(savedOrders));
 
-    // Clear the cart
     this.clearCart();
   }
 
