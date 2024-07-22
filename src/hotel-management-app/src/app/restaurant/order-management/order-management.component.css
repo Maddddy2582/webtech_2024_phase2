@@ -1,0 +1,27 @@
+.order-card{
+    margin: 20px;
+}
+
+.button{
+    justify-content: center;
+}
+
+.Completed{
+    background-color: rgb(80, 255, 49);
+}
+
+.Rejected{
+    background-color: rgb(255, 83, 83);
+}
+
+.Accepted{
+    background-color: rgb(255, 255, 48);
+}
+
+.Pending{
+    background-color: white;
+}
+
+.btn-color{
+    color: white;
+}

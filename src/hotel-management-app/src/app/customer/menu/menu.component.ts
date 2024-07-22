@@ -6,6 +6,7 @@ import { MenuItem } from '../../models/menu.model';
 import { CartService } from '../../services/cart.service';
 import { RestaurantService } from '../../services/restaurant.service';
 import { CartItem } from '../../models/cart.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -24,7 +25,9 @@ export class MenuComponent implements OnInit {
     private route: ActivatedRoute, 
     private http: HttpClient, 
     private cartService: CartService, 
-    private restaurantService: RestaurantService) {}
+    private restaurantService: RestaurantService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id')!;
@@ -52,5 +55,9 @@ export class MenuComponent implements OnInit {
       item.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
       item.description.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
+  }
+
+  navTodashboard(){
+    this.router.navigate(['/dashboard'])
   }
 }

@@ -12,9 +12,9 @@
         <mat-card-content>
             <p>{{ item.description }}</p>
             <div class="quantity-controls">
-                <button mat-button (click)="decreaseQuantity(item.id)">-</button>
+                <button mat-button (click)="decreaseQuantity(item.id)" class="dec">-</button>
                 <span>{{ item.quantity }}</span>
-                <button mat-button (click)="increaseQuantity(item.id)">+</button>
+                <button mat-button (click)="increaseQuantity(item.id)" class="inc">+</button>
             </div>
         </mat-card-content>
         <mat-card-actions>

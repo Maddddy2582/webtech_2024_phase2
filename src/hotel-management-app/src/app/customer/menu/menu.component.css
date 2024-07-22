@@ -28,3 +28,8 @@
   .btn:hover{
     background-color: var(--turquoisegreen);
   }
+
+
+  .button{
+    justify-content: center;
+  }

@@ -41,5 +41,15 @@
     background-size: cover;
   }
 
+  .inc:hover{
+    background-color: green;
+    color: white;
+  }
+
+  .dec:hover{
+    background-color: red;    
+    color: white;
+  }
+
   
   

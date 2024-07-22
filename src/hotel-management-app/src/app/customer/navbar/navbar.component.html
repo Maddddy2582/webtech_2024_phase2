@@ -18,7 +18,6 @@
         <button mat-icon-button class="white-icon" (click)="logout()">
             <mat-icon>exit_to_app</mat-icon>
         </button>
-        <a mat-button href="register-restaurant" style="color: white;">Register Restaurant</a>
-        <a mat-button href= "owner-dashboard" style="color: white;"> My Restaurants</a>
+        <a mat-button href= "owner-dashboard" style="color: white;" *ngIf="restaurants.length"> My Restaurants</a>
     </div>
 </mat-toolbar>

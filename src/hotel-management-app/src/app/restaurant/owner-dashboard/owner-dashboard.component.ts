@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { RestaurantService } from '../../services/restaurant.service';
 import { Restaurant } from '../../models/restaurant.model';
 import { CartService } from '../../services/cart.service';
-import { Location } from '@angular/common';
 import { Inject } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -17,7 +16,6 @@ export class OwnerDashboardComponent implements OnInit {
   constructor(
     private restaurantService: RestaurantService,
     private cartService: CartService,
-    @Inject(Location) private location: Location,
     private router: Router
   ) {}
 
@@ -49,7 +47,7 @@ export class OwnerDashboardComponent implements OnInit {
   }
 
   goBack():void {
-    this.location.back();
+    this.router.navigate(['/dashboard']);
   }
 
   deleteRestaurant(restaurant: Restaurant ): void{
