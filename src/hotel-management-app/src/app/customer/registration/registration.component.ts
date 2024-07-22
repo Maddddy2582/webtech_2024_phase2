@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomerService } from '../../services/customer.service';
 import { Router } from '@angular/router';
+import { registerFormType } from '../../models/registerForm.model';
 
 @Component({
   selector: 'app-customer-registration',
@@ -18,7 +19,7 @@ export class RegistrationComponent {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
-    });
+    }) as FormGroup & {value: registerFormType} ;
   }
 
   onSubmit() {

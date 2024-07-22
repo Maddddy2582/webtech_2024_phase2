@@ -5,6 +5,7 @@ import { Restaurant } from '../../models/restaurant.model';
 import { MenuItem } from '../../models/menu.model';
 import { CartService } from '../../services/cart.service';
 import { RestaurantService } from '../../services/restaurant.service';
+import { CartItem } from '../../models/cart.model';
 
 @Component({
   selector: 'app-menu',

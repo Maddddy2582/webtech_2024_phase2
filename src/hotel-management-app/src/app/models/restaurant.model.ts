@@ -8,4 +8,7 @@ export interface Restaurant {
     menu: MenuItem[];
     userId: string;
   }
+
+
+
   

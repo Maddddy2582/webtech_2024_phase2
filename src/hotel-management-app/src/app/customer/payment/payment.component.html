@@ -3,24 +3,31 @@
     <span>Payment</span>
 </mat-toolbar>
 
-<div class="payment-form">
+<form [formGroup]="paymentForm" class="payment-form" (ngSubmit)="confirmPayment()">
     <mat-form-field>
         <mat-label>Cardholder Name</mat-label>
-        <input matInput [(ngModel)]="paymentDetails.cardholderName">
+        <input matInput formControlName="cardholderName">
+        <mat-error *ngIf="paymentForm.get('cardholderName')?.hasError('required')">Cardholder Name is required</mat-error>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Credit Card Number</mat-label>
-        <input matInput [(ngModel)]="paymentDetails.cardNumber" type="text" maxlength="16">
+        <input matInput formControlName="cardNumber" type="text" maxlength="16">
+        <mat-error *ngIf="paymentForm.get('cardNumber')?.hasError('required')">Card Number is required</mat-error>
+        <mat-error *ngIf="paymentForm.get('cardNumber')?.hasError('pattern')">Invalid Card Number</mat-error>
     </mat-form-field>
     <mat-form-field>
         <mat-label>CVV</mat-label>
-        <input matInput [(ngModel)]="paymentDetails.cvv" type="text" maxlength="3">
+        <input matInput formControlName="cvv" type="text" maxlength="3">
+        <mat-error *ngIf="paymentForm.get('cvv')?.hasError('required')">CVV is required</mat-error>
+        <mat-error *ngIf="paymentForm.get('cvv')?.hasError('pattern')">Invalid CVV</mat-error>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Expiry Date</mat-label>
-        <input matInput [(ngModel)]="paymentDetails.expiryDate" type="text" placeholder="MM/YY">
+        <input matInput formControlName="expiryDate" type="text" placeholder="MM/YY">
+        <mat-error *ngIf="paymentForm.get('expiryDate')?.hasError('required')">Expiry Date is required</mat-error>
+        <mat-error *ngIf="paymentForm.get('expiryDate')?.hasError('pattern')">Invalid Expiry Date</mat-error>
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="confirmPayment()">Confirm Pay</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="paymentForm.invalid">Confirm Pay</button>
     <br>
     <button mat-raised-button color="primary" (click)="goBack()">Go Back</button>
-</div>
+</form>

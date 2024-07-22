@@ -8,8 +8,8 @@ import { setInterval } from 'timers/promises';
   providedIn: 'root'
 })
 export class CartService {
-  private cartKey = 'cart';
-  private userKey = 'currentCustomer';
+  private cartKey:string = 'cart';
+  private userKey:string = 'currentCustomer';
   private cart: CartItem[] = [];
   private ordersKey = 'orders';
 

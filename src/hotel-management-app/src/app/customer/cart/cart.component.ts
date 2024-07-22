@@ -13,7 +13,10 @@ export class CartComponent implements OnInit {
   cartItems: CartItem[] = [];
   totalAmount: number = 0;
 
-  constructor(private cartService: CartService, private router : Router, private location : Location) {}
+  constructor(
+    private cartService: CartService,
+    private router : Router,
+    private location: Location) {}
 
   ngOnInit(): void {
     this.loadCart();
@@ -56,7 +59,7 @@ export class CartComponent implements OnInit {
     this.router.navigate(['/payment']);
   }
 
-  goBack(): void {
+  goback(): void {
     this.location.back();
   }
 }

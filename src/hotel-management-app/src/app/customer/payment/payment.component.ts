@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CustomerService } from '../../services/customer.service';
 import { CartService } from '../../services/cart.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-
+import { PaymentFormType } from '../../models/paymentForm.model';
 
 @Component({
   selector: 'app-payment',
@@ -12,32 +11,31 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent {
-  paymentDetails = {
-    cardholderName: '',
-    cardNumber: '',
-    cvv: '',
-    expiryDate: ''
-  };
-
-
-
-  constructor(private router: Router, 
-    private customerService: CustomerService , 
+  paymentForm: FormGroup;
+   constructor(
+    private router: Router, 
     private cartService: CartService,
-    private location : Location,
-    private route: ActivatedRoute
-  ) {}
+    private location: Location,
+    private paymentFormBuild: FormBuilder) {
+      this.paymentForm = this.paymentFormBuild.group({
+        cardholderName: ['', Validators.required],
+        cardNumber: ['', [Validators.required, Validators.pattern(/^\d{16}$/)]],
+        cvv: ['', [Validators.required, Validators.pattern(/^\d{3}$/)]],
+        expiryDate: ['', [Validators.required, Validators.pattern(/^(0[1-9]|1[0-2])\/?([0-9]{2})$/)]]
+      }) as FormGroup & {Value : PaymentFormType };
+    }
 
   confirmPayment(): void {
-    this.cartService.processPayment()
-    this.cartService.placeOrder()
-    const userCart = this.cartService.getUserCartKey()
-    localStorage.removeItem(userCart)
-    alert("Payment Successful 🎉")
-    this.router.navigate(['/dashboard']);
+    if (this.paymentForm.valid) {
+      const userCart = this.cartService.getUserCartKey()
+      localStorage.setItem(userCart, JSON.stringify([]));
+      alert("Payment Successful 🎉")
+      this.router.navigate(['/dashboard']);
+    }
   }
 
-  goBack(): void{
+  goBack(){
     this.location.back();
   }
+
 }
