@@ -6,5 +6,4 @@ export interface MenuItem {
     price: number;
     quantity: number;
     imagePath: string;
-    quantity: number;
   }
