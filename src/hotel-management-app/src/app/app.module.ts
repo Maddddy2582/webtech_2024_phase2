@@ -48,9 +48,9 @@ export class AppModule {
     //   localStorage.setItem('restaurants', JSON.stringify(data));
     // });
 
-    this.http.get('assets/menu.json').subscribe(data => {
-      localStorage.setItem('menuData', JSON.stringify(data));
-    });
+    // this.http.get('assets/menu.json').subscribe(data => {
+    //   localStorage.setItem('menuData', JSON.stringify(data));
+    // });
   }
 
 }

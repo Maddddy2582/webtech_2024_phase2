@@ -12,6 +12,7 @@
   .sale-card {
     width: 100%;
     margin: 10px;
+    border: 2px solid var(--orange);
   }
   
   .charts-container {
@@ -37,4 +38,8 @@
   .button{
     justify-content: center;
   }
-  
+
+  button[mat-raised-button].back-btn{
+    background-color: blue;
+    color: white;
+  }

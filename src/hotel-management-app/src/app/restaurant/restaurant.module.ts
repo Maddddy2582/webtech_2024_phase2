@@ -23,6 +23,7 @@ Chart.register(...registerables)
 
 
 
+
 @NgModule({
   declarations: [
     RestaurantRegistrationComponent,

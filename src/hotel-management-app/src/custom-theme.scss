@@ -28,6 +28,8 @@ $hotel-management-app-theme: mat.define-theme((
   @include mat.all-component-themes($hotel-management-app-theme);
   --blue: #214a80;
   --turquoisegreen: rgb(48, 247, 190);
+  --orange: #FAA300;
+  --skyblue: #BBE9FF;
 }
 
 

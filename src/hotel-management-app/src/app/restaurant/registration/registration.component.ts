@@ -32,24 +32,10 @@ export class RestaurantRegistrationComponent implements OnInit {
       cuisine: ['', Validators.required],
       description: ['', Validators.required],
       image: ['', [Validators.required, Validators.pattern('(https?://.*.(?:png|jpg))')]],
-      // itemName: ['', Validators.required],
-      // itemDescription: ['', Validators.required],
-      // itemImagePath: ['',[Validators.required,Validators.pattern('(https?://.*.(?:png|jpg))')]],
-      // itemPrice: ['', [Validators.required, Validators.min(0)]],
     });
   }
 
   addMenuItem(): void {
-    // const menuItem: MenuItem = {
-    //   restaurantId: 0,
-    //   id: 0,
-    //   name: this.restaurantForm.get('itemName')?.value,
-    //   description: this.restaurantForm.get('itemDescription')?.value,
-    //   price: this.restaurantForm.get('itemPrice')?.value,
-    //   quantity: 0,
-    //   imagePath: this.restaurantForm.get('itemImagePath')?.value,
-    // };
-    // this.menuItems.push(menuItem);
 
     this.restaurantForm.patchValue({
       itemName: '',

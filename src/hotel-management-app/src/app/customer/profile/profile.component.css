@@ -85,15 +85,19 @@
 
        }
 
-       .btn-style{
-        color: black;
+       button[mat-raised-button].back-btn{
+        color: white;
+        background-color: blue;
+       }
 
-        border-radius: 15px;
-        padding-left: 20px;
-        padding-right: 20px;
-        height: 35px;
-        background-color: #6FDCE3;
-        border-color:#7469B6 ;
+       button[mat-raised-button].logout-btn{
+        color: white;
+        background-color: red;
+       }
+
+       button[mat-raised-button].regres-btn{
+        color: white;
+        background-color: green;
        }
 
        .text-center{

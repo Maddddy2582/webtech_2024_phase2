@@ -6,44 +6,52 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <mat-card class="form-container">
-    <mat-card-title>Register Restaurant</mat-card-title>
-    <mat-card-content>
-      <form [formGroup]="restaurantForm" (ngSubmit)="registerRestaurant()">
-        <div class="form-field">
+  <div class="edit-container">
+    <mat-card class="edit-card">
+      <mat-card-header>
+        <mat-card-title>Register Restaurant</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="restaurantForm" (ngSubmit)="registerRestaurant()" class="edit-form">
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Restaurant Name</mat-label>
             <input matInput formControlName="name" required>
-            <mat-error *ngIf="restaurantForm.get('name')?.hasError('required')">Restaurant Name is required</mat-error>
+            <mat-error *ngIf="restaurantForm.get('name')?.hasError('required')">
+              Restaurant Name is required
+            </mat-error>
           </mat-form-field>
-        </div>
-        <div class="form-field">
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Cuisine type</mat-label>
             <input matInput formControlName="cuisine" required>
-            <mat-error *ngIf="restaurantForm.get('cuisine')?.hasError('required')">Cuisine type is required</mat-error>
+            <mat-error *ngIf="restaurantForm.get('cuisine')?.hasError('required')">
+              Cuisine type is required
+            </mat-error>
           </mat-form-field>
-        </div>
-        <div class="form-field">
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Description</mat-label>
             <input matInput formControlName="description" required>
-            <mat-error *ngIf="restaurantForm.get('description')?.hasError('required')">Description is required</mat-error>
+            <mat-error *ngIf="restaurantForm.get('description')?.hasError('required')">
+              Description is required
+            </mat-error>
           </mat-form-field>
-        </div>
-        <div class="form-field">
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Image URL</mat-label>
             <input matInput formControlName="image" required>
-            <mat-error *ngIf="restaurantForm.get('image')?.hasError('required')">Image URL is required</mat-error>
+            <mat-error *ngIf="restaurantForm.get('image')?.hasError('required')">
+              Image URL is required
+            </mat-error>
           </mat-form-field>
-        </div>
-        <div class="button-container">
-          <button mat-raised-button color="primary" type="submit">Register Restaurant</button>
-          <button mat-button type="button" (click)="goBack()">Back</button>
-        </div>
-      </form>
-    </mat-card-content>
-  </mat-card>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit" class="save-btn" [disabled]="restaurantForm.invalid">
+              Register Restaurant
+            </button>
+            <button mat-raised-button color="warn" type="button" (click)="goBack()" class="back-btn">
+              Back
+            </button>
+          </mat-card-actions>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </body>
 </html>

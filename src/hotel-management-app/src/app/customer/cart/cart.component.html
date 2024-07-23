@@ -22,12 +22,14 @@
             <button mat-button class = "remove-btn" color="warn" (click)="removeItem(item.id)">Remove</button>
         </mat-card-actions>
     </mat-card>
-    <button mat-raised-button color="primary" (click)="clearCart()" *ngIf="cartItems.length">Clear Cart</button>
+    <button mat-raised-button color="primary" (click)="clearCart()" *ngIf="cartItems.length" class="clearcart-btn">Clear Cart</button>
     <h1 *ngIf="!cartItems.length">Your Cart is Empty</h1>
 </div>
 
 <div class="cart-summary" *ngIf="cartItems.length">
     <div>Total Amount: {{ totalAmount }}</div>
-    <button mat-raised-button color="primary" (click)="goToPayment()">Pay</button>
+    <button mat-raised-button color="primary" (click)="goToPayment()" class="pay-btn">Pay</button>
 </div>
-<button mat-raised-button color="primary" (click)="goBack()">Go Back</button>
+<mat-card-actions class="back-btn-alignment">
+    <button mat-raised-button color="primary" (click)="goBack()" class="back-btn">Back</button>
+</mat-card-actions>

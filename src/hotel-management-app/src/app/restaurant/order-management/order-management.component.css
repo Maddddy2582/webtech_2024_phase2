@@ -25,3 +25,8 @@
 .btn-color{
     color: white;
 }
+
+button[mat-raised-button].back-btn{
+    background-color: blue;
+    color: white;
+}

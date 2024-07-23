@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class OwnerDashboardComponent implements OnInit {
   restaurants: Restaurant[] = [];
+  showOptions: boolean = true;
 
   constructor(
     private restaurantService: RestaurantService,
@@ -60,5 +61,9 @@ export class OwnerDashboardComponent implements OnInit {
 
   navigateToOrderManagement(restaurantId: number): void {
     this.router.navigate(['/order-management', restaurantId]);
+  }
+
+  toggle(){
+    this.showOptions = !this.showOptions
   }
 }

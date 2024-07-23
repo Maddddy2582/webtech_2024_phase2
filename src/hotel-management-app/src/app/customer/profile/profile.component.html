@@ -1,17 +1,4 @@
-<!-- <div class="profile-container" *ngIf="customer">
-    <mat-card>
-      <div class="profile-header">
-        <h2>Welcome, {{ customer.name }}</h2>
-      </div>
-      <div class="profile-details">
-        <mat-icon>email</mat-icon>
-        <p>{{ customer.email }}</p>
-        <div class="profile-actions">
-          <button mat-raised-button color="primary" (click)="onLogout()">Logout</button>
-        </div>
-      </div>
-    </mat-card>
-  </div> -->
+
   <div class="page">
   <div class="container d-flex justify-content-center align-items-center " *ngIf="customer">
              
@@ -39,12 +26,14 @@
        <h1 class="mb-0">{{ customer.name }}</h1>
        <span class="text-muted d-block mb-2">Email: {{ customer.email }}</span>
 
-       <button class="btn btn-primary btn-sm btn-style" (click)="onLogout()">Log Out</button><br><br>
+       
+
+       <button mat-raised-button class="btn btn-primary btn-sm logout-btn" (click)="onLogout()">Log Out</button><br><br>
 
        <h4>Want to Host a Restaurant?</h4>
-       <button class="btn btn-primary btn-sm btn-style" (click)="navToResRegister()">Register Restaurant</button><br><br><br>
+       <button mat-raised-button class="btn btn-primary btn-sm regres-btn" (click)="navToResRegister()">Register Restaurant</button><br><br><br>
 
-       <button class="btn btn-primary btn-sm btn-style" (click)="goBack()">Back</button>
+       <button mat-raised-button class="btn btn-primary btn-sm back-btn" (click)="goBack()">Back</button>
 
        
 

@@ -3,14 +3,15 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
+
   }
   
   .restaurant-card {
-    width: 300px;
-    margin: 10px;
+    width: 350px;
     border: 1px solid #ccc;
     border-radius: 10px;
     overflow: hidden;
+    border: 2px solid var(--orange);
   }
   
   mat-card {
@@ -30,3 +31,41 @@
   .button{
     justify-content: center;
   }
+
+  button[mat-raised-button].back-btn{
+    color: white;
+    background-color: blue;
+   }
+
+   button[mat-button].editmenu-btn{
+    background-color: green;
+    color: white;
+    margin: 5px;
+   }
+
+   button[mat-button].deletemenu-btn{
+    background-color: red;
+    color: white;
+   }
+
+   button[mat-raised-button].editres-btn{
+    background-color: green;
+    color: white;
+    margin: 5px;
+   }
+
+   button[mat-raised-button].deleteres-btn{
+    background-color: red;
+    color: white;
+   }
+
+   button[mat-raised-button].addmenu-btn{
+    background-color: rgb(225, 255, 0);
+    color: white
+   }
+
+   button[mat-raised-button].stats-btn{
+    background-color: rgb(225, 0, 255);
+    color: white
+   }
+

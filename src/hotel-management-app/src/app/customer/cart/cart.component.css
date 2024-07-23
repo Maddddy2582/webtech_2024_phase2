@@ -4,6 +4,8 @@
   
   .cart-item-card {
     margin-bottom: 16px;
+    border: 2px solid #FAA300;
+
   }
 
   .remove-btn:hover{
@@ -27,7 +29,7 @@
     width: 80%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
     margin-top: 20px;
     font-size: 20px;
   }
@@ -51,5 +53,24 @@
     color: white;
   }
 
+  button[mat-raised-button].clearcart-btn{
+    background-color: red;
+    color: white;
+  }
+
+  button[mat-raised-button].pay-btn{
+    background-color: green;
+    color: white;
+  }
+
+  button[mat-raised-button].back-btn{
+    background-color: blue;
+    color: white;
+    justify-content: center;
+  }
+
+  .back-btn-alignment{
+    justify-content: center;
+  }
   
   
