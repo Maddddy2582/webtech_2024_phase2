@@ -1,40 +1,16 @@
-/* .profile-container {
-    max-width: 600px;
-    margin: 50px auto;
-    text-align: center;
-  }
-  .profile-header {
-    background: #3f51b5;
-    color: white;
-    padding: 20px;
-    border-radius: 8px 8px 0 0;
-  }
-  .profile-details {
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-top: none;
-    border-radius: 0 0 8px 8px;
-  }
-  .profile-actions {
-    margin-top: 20px;
-  } */
-
-  /* @import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap"); */
-
-
        body{
         font-family: "Poppins", sans-serif;
         font-weight: 300;
        }
 
        .page{
-        background-color: #BBE9FF;
+        background-color: var(--skyblue);
 
        }
 
        .container{
         height: 100vh;
-        background-color: #BBE9FF;
+        background-color: var(--skyblue);
        }
 
        .card{
@@ -43,7 +19,7 @@
         border: none;
         border-radius: 15px;
         padding: 8px;
-        background-color: #FAA300;
+        background-color: var(--orange);
         position: relative;
         height: 500px;
        }
@@ -79,7 +55,7 @@
         left: 38%;
         height: 90px;
         width: 90px;
-        border:3px solid #BBE9FF;
+        border:3px solid var(--skyblue);
 
         border-radius: 50%;
 

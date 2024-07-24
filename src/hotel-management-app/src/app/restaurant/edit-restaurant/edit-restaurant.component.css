@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    background: var(--skyblue);
   }
   
   .edit-card {
@@ -12,7 +12,7 @@
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #ffa81c, #ffb701);
+    background: var(--orange);
     color: white;
   }
   
@@ -59,20 +59,20 @@
   }
   
   button[mat-raised-button] {
-    background-color: #2196f3;
+    background-color: var(--saveBtnBlue);
     color: white;
-  } 
-  
-   button[mat-raised-button]:hover {
-    background-color: #1976d2;
   }
-
+  
+  button[mat-raised-button]:hover {
+    background-color: var(--saveBtnBlueDull);
+  }
+  
   button[mat-raised-button].back-btn {
-    background-color: #f44336;
+    background-color: var(--tomatored);
   }
   
   button[mat-raised-button].back-btn:hover {
-    background-color: #d32f2f;
+    background-color: var(--dullred);
   }
 /* 
   .save-btn{

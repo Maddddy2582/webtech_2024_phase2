@@ -4,12 +4,12 @@
   
   .cart-item-card {
     margin-bottom: 16px;
-    border: 2px solid #FAA300;
+    border: 2px solid var(--orange);
 
   }
 
   .remove-btn:hover{
-    background-color: rgb(255 0 0);
+    background-color: red;
     color: white;
   }
 
