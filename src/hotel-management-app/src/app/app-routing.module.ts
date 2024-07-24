@@ -14,6 +14,7 @@ import { EditRestaurantComponent } from './restaurant/edit-restaurant/edit-resta
 import { AddMenuItemComponent } from './restaurant/add-menu-item/add-menu-item.component';
 import { SalesAnalyticsComponent } from './restaurant/sales-analytics/sales-analytics.component';
 import { OrderManagementComponent } from './restaurant/order-management/order-management.component';
+import { OrderTrackingComponent } from './customer/order-tracking/order-tracking.component';
 
 
 
@@ -27,11 +28,12 @@ const routes: Routes = [
   {path: 'payment', component: PaymentComponent},
   {path: 'register-restaurant', component: RestaurantRegistrationComponent},
   {path: 'owner-dashboard', component: OwnerDashboardComponent},
-  { path: 'edit-restaurant/:id', component: EditRestaurantComponent },
-  { path: 'edit-menu-item/:restaurantId/:itemId', component: EditMenuComponent },
-  { path: 'add-menu-item/:restaurantId', component: AddMenuItemComponent },
-  { path: 'sales-analytics/:restaurantId', component: SalesAnalyticsComponent },
-  { path: 'order-management/:restaurantId', component: OrderManagementComponent },
+  {path: 'edit-restaurant/:id', component: EditRestaurantComponent},
+  {path: 'edit-menu-item/:restaurantId/:itemId', component: EditMenuComponent},
+  {path: 'add-menu-item/:restaurantId', component: AddMenuItemComponent},
+  {path: 'sales-analytics/:restaurantId', component: SalesAnalyticsComponent},
+  {path: 'order-management/:restaurantId', component: OrderManagementComponent},
+  {path: 'order-tracking' , component: OrderTrackingComponent},
   {path: '',component: LoginComponent}
 ]
 

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { CartItem } from '../models/cart.model';
 import { SalesService } from './sales.service';
 import { Order, OrderItem } from '../models/orders.model';
-import { setInterval } from 'timers/promises';
 
 @Injectable({
   providedIn: 'root'
@@ -141,6 +140,11 @@ export class CartService {
   getOrdersByRestaurant(restaurantId: number): Order[] {
     const savedOrders = JSON.parse(localStorage.getItem(this.ordersKey) || '[]');
     return savedOrders.filter((order: Order) => order.restaurantId === restaurantId);
+  }
+
+  getOrdersByUser(userId: string): Order[] {
+    const savedOrders = JSON.parse(localStorage.getItem(this.ordersKey) || '[]');
+    return savedOrders.filter((order: Order) => order.userId === userId);
   }
 
 }

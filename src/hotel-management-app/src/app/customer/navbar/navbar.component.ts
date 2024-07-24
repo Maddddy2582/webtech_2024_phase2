@@ -49,4 +49,8 @@ export class NavBarComponent implements OnInit {
   logout(){
     this.customerService.logout();
   }
+
+  openTracking(){
+    this.router.navigate(['/order-tracking'])
+  }
 }

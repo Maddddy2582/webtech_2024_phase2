@@ -16,6 +16,7 @@ import { MenuComponent } from './menu/menu.component';
 import { NavBarComponent } from './navbar/navbar.component';
 import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
+import { OrderTrackingComponent } from './order-tracking/order-tracking.component';
 
 
 
@@ -28,7 +29,8 @@ import { PaymentComponent } from './payment/payment.component';
     MenuComponent,
     NavBarComponent,
     CartComponent,
-    PaymentComponent
+    PaymentComponent,
+    OrderTrackingComponent
   ],
   imports: [
     CommonModule,
