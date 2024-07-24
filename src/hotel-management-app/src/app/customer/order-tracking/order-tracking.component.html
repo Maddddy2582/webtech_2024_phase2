@@ -16,7 +16,10 @@
           </li>
         </ul>
         <p>Total: ₹{{ order.totalAmount}}</p>
-        <p>Status: {{ order.status }}</p>
+        <p *ngIf="order.status==='Rejected'">Status: Your order was rejected by the restaurant</p>
+        <p *ngIf="order.status==='Accepted'">Status: Restaurant is preparing your food</p>
+        <p *ngIf="order.status==='Completed'">Status: Your food is prepared</p>
+        <p *ngIf="order.status==='Pending'">Status: Pending</p>
       </mat-card-content>
     </mat-card>
   </div>

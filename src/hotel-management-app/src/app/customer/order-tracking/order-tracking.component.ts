@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class OrderTrackingComponent implements OnInit {
   userId: string;
   orders: Order[] = [];
+  status!: string 
 
   constructor(private cartService: CartService, private router:Router) {
     this.userId = this.cartService.getUserEmail();

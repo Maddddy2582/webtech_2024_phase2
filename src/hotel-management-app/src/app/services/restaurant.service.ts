@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MenuItem } from '../models/menu.model';
 import { Location } from '@angular/common';
+import { Customer } from '../models/customer.model';
 
 @Injectable({
   providedIn: 'root'
@@ -32,8 +33,22 @@ export class RestaurantService {
     return storedRestaurants ? JSON.parse(storedRestaurants) : [];
   }
 
+  getCustomers(): Customer[] {
+    const storedCustomers = localStorage.getItem('customers')
+    return storedCustomers ? JSON.parse(storedCustomers) : []
+  }
+
   getRestaurantById(id: number): Restaurant | undefined{
     return this.getRestaurants().find(restaurant => restaurant.id === id);
+  }
+
+  getRestaurantNameById(id:number): Restaurant | undefined{
+    const searchedRes = this.getRestaurants().find(restaurant => restaurant.id === id)
+    return searchedRes
+  }
+
+  getCustomerName(userId: string){
+    return this.getCustomers().find(customer => customer.email === userId);
   }
 
   addRestaurant(restaurant: Restaurant): void {

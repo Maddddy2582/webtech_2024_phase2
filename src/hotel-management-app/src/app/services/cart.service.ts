@@ -147,4 +147,8 @@ export class CartService {
     return savedOrders.filter((order: Order) => order.userId === userId);
   }
 
+  markOrderAsCompleted(orderId:number){
+
+  }
+
 }

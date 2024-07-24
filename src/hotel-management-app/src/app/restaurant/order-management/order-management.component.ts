@@ -32,10 +32,19 @@ export class OrderManagementComponent implements OnInit {
   updateOrderStatus(orderId: number, status: 'Pending' | 'Accepted' | 'Rejected' | 'Completed'): void {
     const savedOrders = JSON.parse(localStorage.getItem('orders') || '[]');
     const orderIndex = savedOrders.findIndex((order: Order) => order.orderId === orderId);
+    if(status === "Completed"){
+      this.markAsCompleted(orderId)
+
+    }
     if (orderIndex !== -1) {
       savedOrders[orderIndex].status = status;
       localStorage.setItem('orders', JSON.stringify(savedOrders));
       this.orders = savedOrders.filter((order: Order) => order.restaurantId === this.restaurantId);
     }
+  }
+
+  markAsCompleted(orderId:number){
+    this.cartService.markOrderAsCompleted(orderId);
+
   }
 }

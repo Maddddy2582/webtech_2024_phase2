@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <div class="login-dark">
-    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
 
         <h2 >Login</h2>
         <div class="form-group">
@@ -29,11 +29,10 @@
                 [disabled]="!loginForm.valid">Log In</button>
         </div>
         <p>
-            Don't have an account? <a href="/register">Sign Up</a>
-        </p>
-        <p>
-            For delivery agents Log In, click <a href="/delivery-agent/login">here</a>
+            Don't have an account? <a href="/delivery-agent/register">Sign Up</a>
         </p>
         <div *ngIf="errorMessage" style="color: red">{{ errorMessage }}</div>
     </form>
 </div>
+
+  

@@ -15,6 +15,7 @@ import { AddMenuItemComponent } from './restaurant/add-menu-item/add-menu-item.c
 import { SalesAnalyticsComponent } from './restaurant/sales-analytics/sales-analytics.component';
 import { OrderManagementComponent } from './restaurant/order-management/order-management.component';
 import { OrderTrackingComponent } from './customer/order-tracking/order-tracking.component';
+import { DeliveryAgentModule } from './delivery-agent/delivery-agent.module';
 
 
 
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: 'sales-analytics/:restaurantId', component: SalesAnalyticsComponent},
   {path: 'order-management/:restaurantId', component: OrderManagementComponent},
   {path: 'order-tracking' , component: OrderTrackingComponent},
+  { path: 'delivery-agent', loadChildren: () => import('./delivery-agent/delivery-agent.module').then(m => m.DeliveryAgentModule) },
   {path: '',component: LoginComponent}
 ]
 
