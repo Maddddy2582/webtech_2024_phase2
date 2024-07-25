@@ -1,4 +1,3 @@
-// src/app/delivery-agent/services/delivery-agent.service.ts
 import { Injectable } from '@angular/core';
 import { DeliveryAgent } from '../models/delivery-agent.model';
 
@@ -25,11 +24,11 @@ export class DeliveryAgentService {
 
   registerAgent(agent: DeliveryAgent): boolean {
     if (this.agents.some(a => a.email === agent.email)) {
-      return false; // Email already exists
+      return false; 
     }
     this.agents.push(agent);
     this.saveAgents();
-    return true; // Registration successful
+    return true; 
   }
 
   getAgents(): DeliveryAgent[] {
@@ -52,7 +51,8 @@ export class DeliveryAgentService {
   }
 
   updateAgent(updatedAgent: DeliveryAgent): void {
-    const index = this.agents.findIndex(a => a.email === updatedAgent.email);
+    const currentAgent = this.getCurrentAgent()?.email
+    const index = this.agents.findIndex(a => a.email === currentAgent);
     if (index !== -1) {
       this.agents[index] = updatedAgent;
       this.saveAgents();

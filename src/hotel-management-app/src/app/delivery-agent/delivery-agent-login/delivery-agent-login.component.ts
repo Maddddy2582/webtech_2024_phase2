@@ -29,7 +29,7 @@ export class DeliveryAgentLoginComponent {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
       if (this.deliveryAgentService.login(email, password)) {
-        this.router.navigate(['/delivery-agent/profile']);
+        this.router.navigate(['/delivery-agent/dashboard']);
       } else {
         this.loginFailed = true;
         this.errorMessage = 'Invalid email or password';

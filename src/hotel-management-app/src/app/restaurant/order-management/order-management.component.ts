@@ -29,10 +29,10 @@ export class OrderManagementComponent implements OnInit {
     this.location.back();
   }
 
-  updateOrderStatus(orderId: number, status: 'Pending' | 'Accepted' | 'Rejected' | 'Completed'): void {
+  updateOrderStatus(orderId: number, status: 'Pending' | 'Accepted' | 'Rejected' | 'Completed' | 'Delivered' | 'Picked'): void {
     const savedOrders = JSON.parse(localStorage.getItem('orders') || '[]');
     const orderIndex = savedOrders.findIndex((order: Order) => order.orderId === orderId);
-    if(status === "Completed"){
+    if(status === "Completed" || "Picked"){
       this.markAsCompleted(orderId)
 
     }

@@ -1,4 +1,3 @@
-// src/app/delivery-agent/delivery-agent-profile/delivery-agent-profile.component.ts
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DeliveryAgentService } from '../../services/delivery-agent.service';
@@ -17,7 +16,6 @@ export class DeliveryAgentProfileComponent implements OnInit {
   ) {
     this.profileForm = this.fb.group({
       name: ['', Validators.required],
-      email: [{ value: '', disabled: true }, [Validators.required, Validators.email]],
       phone: ['', Validators.required]
     });
   }
@@ -35,8 +33,7 @@ export class DeliveryAgentProfileComponent implements OnInit {
 
   updateProfile(): void {
     if (this.profileForm.valid) {
-      // Handle profile update logic
-      console.log('Profile Updated', this.profileForm.value);
+      this.deliveryAgentService.updateAgent(this.profileForm.value)
     }
   }
 }

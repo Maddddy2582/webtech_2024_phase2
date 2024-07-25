@@ -1,46 +1,8 @@
-// src/app/delivery-agent/delivery-agent-registration/delivery-agent-registration.component.ts
-// import { Component } from '@angular/core';
-// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { DeliveryAgentService } from '../../services/delivery-agent.service';
-
-// @Component({
-//   selector: 'app-delivery-agent-registration',
-//   templateUrl: './delivery-agent-registration.component.html',
-//   styleUrls: ['./delivery-agent-registration.component.css']
-// })
-// export class DeliveryAgentRegistrationComponent {
-  // registrationForm: FormGroup;
-
-  // constructor(
-  //   private fb: FormBuilder,
-  //   private deliveryAgentService: DeliveryAgentService
-  // ) {
-  //   this.registrationForm = this.fb.group({
-  //     name: ['', Validators.required],
-  //     email: ['', [Validators.required, Validators.email]],
-  //     password: ['', Validators.required],
-  //     confirmPassword: ['', Validators.required],
-  //     phone: ['', Validators.required]
-  //   });
-  // }
-
-  // register(): void {
-  //   if (this.registrationForm.valid) {
-  //     const { confirmPassword, ...agentData } = this.registrationForm.value;
-  //     this.deliveryAgentService.saveAgent(agentData);
-  //     // Clear the form after registration
-  //     this.registrationForm.reset();
-  //   }
-  // }
-// }
-
-
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DeliveryAgentService } from '../../services/delivery-agent.service';
 import { DeliveryAgent } from '../../models/delivery-agent.model';
 import { Router } from '@angular/router';
-// import { registerFormType } from '../../models/registerForm.model';
 
 @Component({
   selector: 'app-delivery-agent-registration',
@@ -72,6 +34,7 @@ export class DeliveryAgentRegistrationComponent {
       const newAgent: DeliveryAgent = { name, email, password, phone };
 
       if (this.deliveryAgentService.registerAgent(newAgent)) {
+        console.log("YES");
         this.errorMessage = null;
         this.successMessage = "Registration Successful";
         this.router.navigate(['/delivery-agent/login']);

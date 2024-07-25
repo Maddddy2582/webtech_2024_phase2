@@ -13,6 +13,6 @@ export interface OrderItem {
     items: OrderItem[];
     totalAmount: number;
     date: string;
-    status: 'Pending' | 'Accepted' | 'Rejected' | 'Completed' | 'Delivered';
+    status: 'Pending' | 'Accepted' | 'Rejected' | 'Completed' | 'Delivered'| 'Picked';
   }
   

@@ -30,3 +30,23 @@ button[mat-raised-button].back-btn{
     background-color: blue;
     color: white;
 }
+
+button[mat-button].accept-btn:hover{
+    background-color: green;
+    color: white;
+}
+
+button[mat-button].accept-btn:hover{
+    background-color: rgb(255, 255, 48);
+    color: white;
+}
+
+button[mat-button].reject-btn:hover{
+    background-color: red;
+    color: white;
+}
+
+button[mat-button].complete-btn:hover{
+    background-color: green;
+    color: white;
+}

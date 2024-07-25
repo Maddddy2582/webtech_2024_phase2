@@ -7,7 +7,7 @@ import { Order, OrderItem } from '../models/orders.model';
   providedIn: 'root'
 })
 export class CartService {
-  private cartKey:string = 'cart';
+  private cartKey:string = 'cart'; 
   private userKey:string = 'currentCustomer';
   private cart: CartItem[] = [];
   private ordersKey = 'orders';

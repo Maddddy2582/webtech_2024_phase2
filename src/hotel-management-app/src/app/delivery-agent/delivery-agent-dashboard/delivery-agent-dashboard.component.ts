@@ -20,7 +20,6 @@ export class DeliveryAgentDashboardComponent implements OnInit {
 
   acceptOrder(orderId: number): void {
     this.orderService.acceptOrder(orderId);
-    this.orders = this.orderService.getCompletedOrders();
   }
 
   rejectOrder(orderId: number): void {
@@ -30,11 +29,10 @@ export class DeliveryAgentDashboardComponent implements OnInit {
 
   markAsDelivered(orderId: number): void {
     this.orderService.markOrderAsDelivered(orderId);
-    this.orders = this.orderService.getCompletedOrders();
   }
 
   getRestaurantName(id:number) : string | undefined{
-    const restaurant=  this.restaurantService.getRestaurantNameById(13);
+    const restaurant=  this.restaurantService.getRestaurantNameById(id);
     return restaurant?.name
   }
 

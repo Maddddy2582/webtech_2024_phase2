@@ -1,10 +1,9 @@
-<!-- src/app/components/order-tracking/order-tracking.component.html -->
 <mat-toolbar color="primary">
     <span>Order Tracking</span>
   </mat-toolbar>
   
-  <div class="order-list">
-    <mat-card *ngFor="let order of orders" class="order-card">
+  <div class="order-list" *ngFor="let order of orders">
+    <mat-card class="order-card" *ngIf="order.status !== 'Delivered'">
       <mat-card-header>
         <mat-card-title>Order #{{ order.orderId }}</mat-card-title>
         <mat-card-subtitle>{{ order.date | date: 'short' }}</mat-card-subtitle>
@@ -18,7 +17,8 @@
         <p>Total: ₹{{ order.totalAmount}}</p>
         <p *ngIf="order.status==='Rejected'">Status: Your order was rejected by the restaurant</p>
         <p *ngIf="order.status==='Accepted'">Status: Restaurant is preparing your food</p>
-        <p *ngIf="order.status==='Completed'">Status: Your food is prepared</p>
+        <p *ngIf="order.status==='Completed'">Status: Your food is prepared, Waiting for delivery agent</p>
+        <p *ngIf="order.status==='Picked'">Status: HURRAY🎉🎉🎉 Your food is on the way !!!</p>
         <p *ngIf="order.status==='Pending'">Status: Pending</p>
       </mat-card-content>
     </mat-card>

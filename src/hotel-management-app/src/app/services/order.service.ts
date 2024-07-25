@@ -1,6 +1,6 @@
-// src/app/services/order.service.ts
 import { Injectable } from '@angular/core';
 import { deliveryOrder } from '../models/deliveryorder.model';
+import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +8,9 @@ import { deliveryOrder } from '../models/deliveryorder.model';
 export class OrderService {
   private ordersKey = 'orders';
   private orders: deliveryOrder[] = [];
+  
 
-  constructor() {
+  constructor(private location : Location) {
     this.loadOrders();
   }
 
@@ -27,7 +28,7 @@ export class OrderService {
   }
 
   getCompletedOrders(): deliveryOrder[] {
-    return this.orders.filter(order => order.status === 'Completed');
+    return this.orders.filter(order => order.status === 'Completed' || order.status === 'Picked');
   }
 
   markOrderAsCompleted(orderId: number): void {
@@ -39,9 +40,9 @@ export class OrderService {
   }
 
   acceptOrder(orderId: number): void {
-    const order = this.orders.find(order => order.id === orderId);
+    const order = this.orders.find(order => order.orderId === orderId);
     if (order) {
-      order.status = 'Accepted';
+      order.status = 'Picked';
       this.saveOrders();
     }
   }
@@ -55,10 +56,10 @@ export class OrderService {
   }
 
   markOrderAsDelivered(orderId: number): void {
-    const order = this.orders.find(order => order.id === orderId);
-    if (order) {
-      order.status = 'Delivered';
-      this.saveOrders();
-    }
+    const index = this.getOrders()?.findIndex(item => item.orderId === orderId);
+    this.getOrders().splice(index,1)
+    this.saveOrders()
+    this.location.go(this.location.path());
+    window.location.reload();
   }
 }

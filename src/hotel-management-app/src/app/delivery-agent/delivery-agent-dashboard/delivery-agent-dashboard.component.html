@@ -1,3 +1,6 @@
+<app-navbar></app-navbar>
+<h2 class="para-align" *ngIf="!orders.length">No Undelivered Orders</h2>
+
 <div *ngFor="let order of orders" class="order-container">
     <mat-card class="order-card">
     <mat-card-header>
@@ -13,9 +16,9 @@
         </ul>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color="primary" (click)="acceptOrder(order.id)">Accept</button>
-        <button mat-raised-button color="warn" (click)="rejectOrder(order.id)">Reject</button>
-        <button mat-raised-button color="accent" *ngIf="order.status === 'Completed'" (click)="markAsDelivered(order.id)">
+        <button mat-raised-button color="primary" (click)="acceptOrder(order.orderId)" *ngIf="order.status!== 'Picked'">Accept</button>
+        <button mat-raised-button color="warn" (click)="rejectOrder(order.id)" *ngIf="order.status !== 'Picked'">Reject</button>
+        <button mat-raised-button color="accent" *ngIf="order.status === 'Picked'" (click)="markAsDelivered(order.orderId)">
           Mark as Delivered
         </button>
       </mat-card-actions>

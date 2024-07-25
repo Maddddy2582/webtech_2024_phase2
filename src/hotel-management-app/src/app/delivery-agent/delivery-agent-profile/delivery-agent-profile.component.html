@@ -12,19 +12,7 @@
           <mat-error *ngIf="profileForm.get('name')?.hasError('required')">
             Name is required
           </mat-error>
-        </mat-form-field>
-        
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>Email</mat-label>
-          <input matInput formControlName="email" placeholder="Enter your email"/>
-          <mat-error *ngIf="profileForm.get('email')?.hasError('required')">
-            Email is required
-          </mat-error>
-          <mat-error *ngIf="profileForm.get('email')?.hasError('email')">
-            Enter a valid email
-          </mat-error>
-        </mat-form-field>
-        
+        </mat-form-field>        
         <mat-form-field appearance="fill" class="full-width">
           <mat-label>Phone</mat-label>
           <input matInput formControlName="phone" placeholder="Enter your phone number" />

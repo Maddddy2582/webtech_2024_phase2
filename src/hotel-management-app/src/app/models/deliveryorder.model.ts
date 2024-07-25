@@ -7,6 +7,6 @@ export interface deliveryOrder {
     userId: string;
     totalAmount: number;
     items: { name: string, quantity: number }[];
-    status: 'Pending' | 'Completed' | 'Accepted' | 'Rejected' | 'Delivered';
+    status: 'Pending' | 'Completed' | 'Accepted' | 'Rejected' | 'Delivered' | 'Picked';
   }
   
