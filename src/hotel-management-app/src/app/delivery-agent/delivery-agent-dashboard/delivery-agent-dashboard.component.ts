@@ -1,4 +1,4 @@
-// src/app/delivery-agent/delivery-agent-dashboard/delivery-agent-dashboard.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../../services/order.service';
 import { deliveryOrder } from '../../models/deliveryorder.model';
@@ -15,7 +15,9 @@ export class DeliveryAgentDashboardComponent implements OnInit {
   constructor(private orderService: OrderService, private restaurantService : RestaurantService) {}
 
   ngOnInit(): void {
-    this.orders = this.orderService.getCompletedOrders();
+    this.orderService.getCompletedOrders().subscribe((orders: deliveryOrder[]) => {
+      this.orders = orders;
+    });
   }
 
   acceptOrder(orderId: number): void {
@@ -24,7 +26,9 @@ export class DeliveryAgentDashboardComponent implements OnInit {
 
   rejectOrder(orderId: number): void {
     this.orderService.rejectOrder(orderId);
-    this.orders = this.orderService.getCompletedOrders();
+    this.orderService.getCompletedOrders().subscribe((orders: deliveryOrder[]) => {
+      this.orders = orders;
+    });
   }
 
   markAsDelivered(orderId: number): void {

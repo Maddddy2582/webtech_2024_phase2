@@ -1,6 +1,6 @@
 .order-card{
     margin: 10px;
-    border: 2px solid var(--orange);
+    border: 2px solid var(--cardHover);
 }
 
 .btn-align{

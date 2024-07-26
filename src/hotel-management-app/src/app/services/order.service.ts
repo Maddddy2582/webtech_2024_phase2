@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { deliveryOrder } from '../models/deliveryorder.model';
 import { Location } from '@angular/common';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -27,8 +28,9 @@ export class OrderService {
     return this.orders;
   }
 
-  getCompletedOrders(): deliveryOrder[] {
-    return this.orders.filter(order => order.status === 'Completed' || order.status === 'Picked');
+  getCompletedOrders(): Observable<deliveryOrder[]> {
+    const orders: deliveryOrder[] = this.orders.filter(order => order.status === 'Completed' || order.status === 'Picked'); // Replace with actual data
+    return of(orders); // Return an observable
   }
 
   markOrderAsCompleted(orderId: number): void {

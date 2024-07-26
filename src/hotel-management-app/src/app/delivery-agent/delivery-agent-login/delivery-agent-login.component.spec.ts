@@ -81,9 +81,4 @@ describe('DeliveryAgentLoginComponent', () => {
     fixture.detectChanges();
     fixture.destroy();
   });
-  
-  
-  
-
-
 });

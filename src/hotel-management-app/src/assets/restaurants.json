@@ -74,43 +74,6 @@
   },
   {
     "id": 3,
-    "name": "Sizzle & Spice",
-    "cuisine": "Indian",
-    "image": "https://th.bing.com/th/id/R.0bab238bcc532b9d408b2afcf8738c3a?rik=qmFlRzw8gQ74aQ&riu=http%3a%2f%2fspice-restaurant.hk%2fwp-content%2fuploads%2f2019%2f01%2fIMG_9491.jpg&ehk=NlBe8ld49mfJrTDrAYce%2funaMEmExYbefp1eb8%2b9lg8%3d&risl=&pid=ImgRaw&r=0",
-    "description": "Experience a fusion of flavors with our globally inspired dishes",
-    "meun":[
-      {
-        "id": 1,
-        "name": "Thai Red Curry Chicken",
-        "description": "Chicken cooked in spicy Thai red curry sauce with coconut milk, lemongrass, and Thai basil",
-        "price":450,
-        "imagePath": "https://www.jocooks.com/wp-content/uploads/2016/06/thai-red-chicken-curry-1-7.jpg"
-      },
-      {
-        "id": 2,
-        "name": "Moroccan Lamb Tagine",
-        "description": "Slow-cooked lamb stew with Moroccan spices, apricots, and almonds, served with couscous",
-        "price":550,
-        "imagePath": "https://i0.wp.com/www.gastrosenses.com/wp-content/uploads/2017/11/Moroccan-Lamb-Tagine-1.jpg?resize=1400%2C2097&quality=100&strip=all&ssl=1"
-      },
-      {
-        "id": 3,
-        "name": "Korean BBQ Beef Tacos",
-        "description": "Grilled beef marinated in BBQ sauce, served in soft corn tortillas with kimchi and sesame seeds",
-        "price":400,
-        "imagePath": "https://i.pinimg.com/originals/db/08/1b/db081b1f5271f9105fe24af0174fae89.jpg"
-      },
-      {
-        "id": 4,
-        "name": "Indian Butter Chicken",
-        "description": "Chicken simmered in creamy tomato-based sauce with butter, cream, and aromatic spices",
-        "price":480,
-        "imagePath": "https://i0.wp.com/mykitchenlittle.com/wp-content/uploads/2021/02/Quick-and-Easy-Indian-Butter-Chicken-2-scaled.jpeg?resize=1360%2C2040&ssl=1"
-      }
-    ]
-  },
-  {
-    "id": 4,
     "name": "Ocean's Catch",
     "cuisine": "Thai",
     "description": "Indulge in the freshest seafood delicacies by the shore",
@@ -148,7 +111,7 @@
     ]
   },
   {
-    "id": 5,
+    "id": 4,
     "name": "Mama Mia's Pizzeria",
     "cuisine": "American",
     "description": "Authentic Italian pizzas crafted with love and tradition",
@@ -186,7 +149,7 @@
     ]
   },
   {
-    "id": 6,
+    "id": 5,
     "name": "Spice Route Bistro",
     "cuisine": "British",
     "description": "Embark on a culinary journey through the vibrant spices of the world",
@@ -224,7 +187,7 @@
     ]
   },
   {
-    "id": 7,
+    "id": 6,
     "name": "The Green Leaf Cafe",
     "cuisine": "Korean",
     "description": "Fresh, organic ingredients come together in our wholesome vegetarian dishes",
@@ -261,7 +224,7 @@
     ]
   },
   {
-    "id": 8,
+    "id": 77,
     "name": "Smoke & Fire BBQ",
     "cuisine": "American",
     "description": "Savor the rich smoky flavors of our slow-cooked barbecue specialties",
@@ -299,7 +262,7 @@
     ]
   },
   {
-    "id": 9,
+    "id": 8,
     "name": "Zen Garden Teahouse",
     "cuisine": "Chineese",
     "description": "Find tranquility in every sip of our meticulously brewed teas",
@@ -337,7 +300,7 @@
 
   },
   {
-    "id": 10,
+    "id": 9,
     "name": "Rooftop Lounge Vista",
     "cuisine": "French",
     "description": "Elevate your dining experience with skyline views and exquisite cocktails",
@@ -375,7 +338,7 @@
     ]
   },
   {
-    "id": 11,
+    "id": 10,
     "name": "Taste of Tokyo Ramen",
     "cuisine": "Japanese",
     "description": "Authentic ramen bowls that transport you to the bustling streets of Tokyo",
@@ -414,7 +377,7 @@
 
   },
   {
-    "id": 12,
+    "id": 11,
     "name": "Fiesta Mexicana Cantina",
     "cuisine": "Mexican",
     "description": "Fiery flavors and festive vibes await you in every bite at our Mexican cantina",

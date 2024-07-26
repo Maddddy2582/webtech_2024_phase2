@@ -2,6 +2,7 @@
 export interface deliveryOrder {
     id: number;
     orderId: number;
+    restaurantId: number;
     customerName: string;
     restaurantName: string;
     userId: string;

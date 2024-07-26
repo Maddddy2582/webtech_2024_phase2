@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: var(--skyblue);
+    background: #FBF9F1;
   }
   
   .edit-card {
@@ -12,7 +12,7 @@
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    background: var(--orange);
+    background: #AAD7D9;
     color: white;
   }
   
@@ -78,3 +78,6 @@
     color: white;
   }
   
+  mat-hint{
+    color: black;
+  }

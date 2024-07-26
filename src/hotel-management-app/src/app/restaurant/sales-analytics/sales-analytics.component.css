@@ -12,7 +12,7 @@
   .sale-card {
     width: 100%;
     margin: 10px;
-    border: 2px solid var(--orange);
+    border: 2px solid var(--cardHover);
   }
   
   .charts-container {

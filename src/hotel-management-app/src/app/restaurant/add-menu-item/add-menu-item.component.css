@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: var(--skyblue);
+    background: var(--bgColor);
   }
   
   .add-card {
@@ -12,7 +12,7 @@
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    background: var(--orange);
+    background: white;
     color: white;
   }
   
@@ -30,6 +30,7 @@
     font-size: 24px;
     font-weight: bold;
     margin: 10px;
+    color: black;
   }
   
   mat-form-field {

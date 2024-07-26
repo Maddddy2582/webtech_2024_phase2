@@ -11,7 +11,7 @@
     border: 1px solid #ccc;
     border-radius: 10px;
     overflow: hidden;
-    border: 2px solid var(--orange);
+    border: 2px solid var(--cardHover);
   }
   
   mat-card {
@@ -48,19 +48,18 @@
     color: white;
    }
 
-   button[mat-raised-button].editres-btn{
+   button[mat-raised-button].editres-btn:hover{
     background-color: green;
     color: white;
-    margin: 5px;
    }
 
-   button[mat-raised-button].deleteres-btn{
+   button[mat-raised-button].deleteres-btn:hover{
     background-color: red;
     color: white;
    }
 
-   button[mat-raised-button].addmenu-btn{
-    background-color: rgb(225, 255, 0);
+   button[mat-raised-button].addmenu-btn:hover{
+    background-color: rgb(111, 125, 0);
     color: white
    }
 
@@ -68,4 +67,6 @@
     background-color: rgb(225, 0, 255);
     color: white
    }
+
+
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DeliveryAgentService } from '../../services/delivery-agent.service';
+import { DeliveryAgent } from '../../models/delivery-agent.model';
 
 @Component({
   selector: 'app-delivery-agent-profile',
@@ -11,13 +12,14 @@ export class DeliveryAgentProfileComponent implements OnInit {
   profileForm: FormGroup;
 
   constructor(
-    private fb: FormBuilder,
+    private daProfileForm: FormBuilder,
     private deliveryAgentService: DeliveryAgentService
   ) {
-    this.profileForm = this.fb.group({
+    this.profileForm = this.daProfileForm.group({
       name: ['', Validators.required],
+      email: [{ value: '' }, [Validators.required, Validators.email]],
       phone: ['', Validators.required]
-    });
+    }) as FormGroup & { Value: DeliveryAgent };
   }
 
   ngOnInit(): void {

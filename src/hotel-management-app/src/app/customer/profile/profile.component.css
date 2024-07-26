@@ -4,13 +4,13 @@
        }
 
        .page{
-        background-color: var(--skyblue);
+        background-color: rgb(169, 169, 238);
 
        }
 
        .container{
         height: 100vh;
-        background-color: var(--skyblue);
+        background-color: rgb(169, 169, 238);
        }
 
        .card{
@@ -19,7 +19,7 @@
         border: none;
         border-radius: 15px;
         padding: 8px;
-        background-color: var(--orange);
+        background-color: white;
         position: relative;
         height: 500px;
        }
@@ -55,25 +55,39 @@
         left: 38%;
         height: 90px;
         width: 90px;
-        border:3px solid var(--skyblue);
-
         border-radius: 50%;
 
        }
 
        button[mat-raised-button].back-btn{
-        color: white;
-        background-color: blue;
+        color: black;
+        background-color: rgb(113, 113, 255);
+       }
+
+       button[mat-raised-button].back-btn:hover{
+              color: white;
+              background-color: blue
+              
        }
 
        button[mat-raised-button].logout-btn{
-        color: white;
-        background-color: red;
+        color: black;
+        background-color: var(--tomatored);
+       }
+
+       button[mat-raised-button].logout-btn:hover{
+              color: white;
+              background-color: red;
        }
 
        button[mat-raised-button].regres-btn{
-        color: white;
-        background-color: green;
+        color: black;
+        background-color: rgb(79, 255, 79);
+       }
+
+       button[mat-raised-button].regres-btn:hover{
+              color: white;
+              background-color: green;
        }
 
        .text-center{

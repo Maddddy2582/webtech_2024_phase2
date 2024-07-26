@@ -7,8 +7,8 @@
         <mat-card-title>Order ID: #{{ order.orderId }}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <p><Strong>Restaurant: </Strong>{{ getRestaurantName(order.id) }}</p>
-        <p><strong>Customer Name:</strong> {{ getCustomerName(order.userId) }}</p>
+        <p><strong>Restaurant: </strong>{{ getRestaurantName(order.restaurantId) }}</p>
+        <h6><strong>Customer Name: </strong> {{ getCustomerName(order.userId) }}</h6>
         <p><strong>Total Amount:</strong> ₹{{ order.totalAmount }} (paid)</p>
         <p><strong>Items:</strong></p>
         <ul>

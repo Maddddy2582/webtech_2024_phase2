@@ -23,6 +23,7 @@ export class DeliveryAgentService {
   }
 
   registerAgent(agent: DeliveryAgent): boolean {
+    console.log(agent);
     if (this.agents.some(a => a.email === agent.email)) {
       return false; 
     }
@@ -47,12 +48,12 @@ export class DeliveryAgentService {
 
   getCurrentAgent(): DeliveryAgent | null {
     const agent = localStorage.getItem(this.currentAgentKey);
+    console.log(agent);
     return agent ? JSON.parse(agent) : null;
   }
 
   updateAgent(updatedAgent: DeliveryAgent): void {
-    const currentAgent = this.getCurrentAgent()?.email
-    const index = this.agents.findIndex(a => a.email === currentAgent);
+    const index = this.agents.findIndex(a => a.email === updatedAgent.email);
     if (index !== -1) {
       this.agents[index] = updatedAgent;
       this.saveAgents();

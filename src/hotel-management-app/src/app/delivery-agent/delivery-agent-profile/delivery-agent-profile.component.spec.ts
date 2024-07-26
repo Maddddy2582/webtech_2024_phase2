@@ -42,7 +42,7 @@ describe('DeliveryAgentProfileComponent', () => {
   });
 
   it('should update agent profile when form is valid', () => {
-    const updatedProfile = { name: 'Updated Name', phone: '9876543210'};
+    const updatedProfile = { name: 'Updated Name', phone: '9876543210', email: 'johndoe@gmail.com'};
     component.profileForm.setValue(updatedProfile);
   
     component.updateProfile();

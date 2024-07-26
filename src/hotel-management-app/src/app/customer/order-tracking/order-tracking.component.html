@@ -3,6 +3,7 @@
   </mat-toolbar>
   
   <div class="order-list" *ngFor="let order of orders">
+    <p *ngIf="!orders.length"> No Orders Found </p>
     <mat-card class="order-card" *ngIf="order.status !== 'Delivered'">
       <mat-card-header>
         <mat-card-title>Order #{{ order.orderId }}</mat-card-title>

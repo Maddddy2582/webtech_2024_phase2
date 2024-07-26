@@ -16,25 +16,23 @@ export class DeliveryAgentRegistrationComponent {
   successMessage: string | null = null;
 
   constructor(
-    private fb: FormBuilder,
+    private daRegisterForm: FormBuilder,
     private deliveryAgentService: DeliveryAgentService,
     private router : Router
   ) {
-    this.registrationForm = this.fb.group({
+    this.registrationForm = this.daRegisterForm.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       phone: ['', Validators.required]
-    });
+    })as FormGroup & {Value: DeliveryAgent};
   }
 
   register(): void {
     if (this.registrationForm.valid) {
       const { name, email, password, phone } = this.registrationForm.value;
       const newAgent: DeliveryAgent = { name, email, password, phone };
-
       if (this.deliveryAgentService.registerAgent(newAgent)) {
-        console.log("YES");
         this.errorMessage = null;
         this.successMessage = "Registration Successful";
         this.router.navigate(['/delivery-agent/login']);

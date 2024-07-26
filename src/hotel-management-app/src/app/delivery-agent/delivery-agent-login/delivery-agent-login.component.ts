@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DeliveryAgentService } from '../../services/delivery-agent.service';
+import { DeliveryAgent } from '../../models/delivery-agent.model';
 
 @Component({
   selector: 'app-delivery-agent-login',
@@ -15,14 +16,14 @@ export class DeliveryAgentLoginComponent {
   errorMessage: string | null = null;
 
   constructor(
-    private fb: FormBuilder,
+    private daLoginForm: FormBuilder,
     private deliveryAgentService: DeliveryAgentService,
     private router: Router
   ) {
-    this.loginForm = this.fb.group({
+    this.loginForm = this.daLoginForm.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
-    });
+    }) as FormGroup & {Value: DeliveryAgent};
   }
 
   login(): void {
@@ -33,7 +34,6 @@ export class DeliveryAgentLoginComponent {
       } else {
         this.loginFailed = true;
         this.errorMessage = 'Invalid email or password';
-
       }
     }
   }
