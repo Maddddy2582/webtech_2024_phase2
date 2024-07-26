@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<mat-toolbar color="primary">
+    <span>My Restaurants</span>
+</mat-toolbar>
+
+<div class="restaurant-cards">
+
+    <h1 *ngIf="!restaurants.length">No restaurants to display!</h1>
+    <mat-card *ngFor="let restaurant of restaurants" class="restaurant-card">
+        <img mat-card-image [src]="restaurant.image" alt="{{ restaurant.name }}">
+        <mat-card-header>
+            <mat-card-title>{{ restaurant.name }}</mat-card-title>
+            <mat-card-subtitle>{{ restaurant.cuisine }}</mat-card-subtitle>
+            <mat-card-subtitle>{{ restaurant.description }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>Menu:</p>
+            <ul>
+                <li *ngFor="let item of restaurant.menu">
+                    {{ item.name }} - {{ item.price}}
+                    <button mat-button color="accent" (click)="editMenuItem(restaurant.id, item.id)" class="editmenu-btn">Edit</button>
+                    <button mat-button color="accent" (click)="deleteMenuItem(restaurant.id, item.id)" class="deletemenu-btn">Delete</button>
+                </li>
+            </ul>
+            <mat-slide-toggle (click)="toggle()">Show more options</mat-slide-toggle><br>
+        </mat-card-content>
+        <div *ngIf="!showOptions">
+        <mat-card-actions>
+            <button mat-raised-button color="accent" (click)="addMenuItem(restaurant.id)" class="addmenu-btn">Add Menu Item</button>
+        </mat-card-actions>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="editRestaurant(restaurant)" class="editres-btn">Edit Restaurant</button>
+        </mat-card-actions>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="deleteRestaurant(restaurant)" class="deleteres-btn">Delete Restaurant</button>
+        </mat-card-actions>
+        <mat-card-actions>
+            <button mat-raised-button (click)="viewSales(restaurant.id)" class="stats-btn">View Sales</button>
+        </mat-card-actions>
+          <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="navigateToOrderManagement(restaurant.id)" class="stats-btn">Manage Orders</button>
+          </mat-card-actions>
+        </div>
+    </mat-card>
+</div>
+
+<mat-card-actions class="button">
+
+    <button mat-raised-button color="primary" (click)="goBack()" class="back-btn">Back</button>
+</mat-card-actions>

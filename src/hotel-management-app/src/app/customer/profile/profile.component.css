@@ -1,3 +1,95 @@
-h1{
-    color: white;
-}
+       body{
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+       }
+
+       .page{
+        background-color: rgb(169, 169, 238);
+
+       }
+
+       .container{
+        height: 100vh;
+        background-color: rgb(169, 169, 238);
+       }
+
+       .card{
+
+        width: 500px;
+        border: none;
+        border-radius: 15px;
+        padding: 8px;
+        background-color: white;
+        position: relative;
+        height: 500px;
+       }
+
+       .upper{
+        height: 100px;
+       }
+
+       .upper img{
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+       }
+
+       .user{
+        position: relative;
+       }
+
+       .profile img{
+
+        
+        height: 80px;
+        width: 80px;
+        margin-top:2px;
+
+       
+       }
+
+       .profile{
+
+        position: absolute;
+        top:-50px;
+        left: 38%;
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+
+       }
+
+       button[mat-raised-button].back-btn{
+        color: black;
+        background-color: rgb(113, 113, 255);
+       }
+
+       button[mat-raised-button].back-btn:hover{
+              color: white;
+              background-color: blue
+              
+       }
+
+       button[mat-raised-button].logout-btn{
+        color: black;
+        background-color: var(--tomatored);
+       }
+
+       button[mat-raised-button].logout-btn:hover{
+              color: white;
+              background-color: red;
+       }
+
+       button[mat-raised-button].regres-btn{
+        color: black;
+        background-color: rgb(79, 255, 79);
+       }
+
+       button[mat-raised-button].regres-btn:hover{
+              color: white;
+              background-color: green;
+       }
+
+       .text-center{
+        font-size: 20px;
+       }

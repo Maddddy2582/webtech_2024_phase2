@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+    <span>Order Management</span>
+  </mat-toolbar>
+  
+  <div class="order-list" *ngFor="let order of orders">
+    <mat-card  class="order-card" [ngClass]="order.status" *ngIf="order.status !== 'Picked'">
+      <mat-card-header>
+        <mat-card-title>Order #{{ order.orderId }}</mat-card-title>
+        <mat-card-subtitle>{{ order.date | date: 'short' }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <ul>
+          <li *ngFor="let item of order.items">
+            {{ item.quantity }} x {{ item.name }} - {{ item.price }}
+          </li>
+        </ul>
+        <p>Total: {{ order.totalAmount }}</p>
+        <p>Status: {{ order.status }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary" (click)="updateOrderStatus(order.orderId, 'Accepted')" class="accept-btn" [disabled]="order.status=== 'Rejected' || order.status=== 'Completed'">Accept</button>
+        <button mat-button color="warn" (click)="updateOrderStatus(order.orderId, 'Rejected')" class="reject-btn" [disabled]="order.status=== 'Accepted' || order.status=== 'Completed'">Reject</button>
+        <button mat-button color="accent" (click)="updateOrderStatus(order.orderId, 'Completed')" class="complete-btn" [disabled]="order.status=== 'Rejected'">Complete</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <mat-card-actions class="button">
+    <button mat-raised-button color="primary" (click)="goBack()" class="back-btn">Back</button>
+
+  </mat-card-actions>
+  
+  

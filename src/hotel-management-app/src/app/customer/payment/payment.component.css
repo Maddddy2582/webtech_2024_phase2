@@ -10,4 +10,9 @@
     width: 100%;
     margin-bottom: 20px;
   }
+
+  button[mat-raised-button].back-btn{
+    background-color: blue;
+    color: white;
+  }
   

@@ -1,4 +1,5 @@
 export interface CartItem {
+    restaurantId : number;
     id: number;
     name: string;
     description: string;

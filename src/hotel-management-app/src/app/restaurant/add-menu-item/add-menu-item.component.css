@@ -1,0 +1,78 @@
+.add-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--bgColor);
+  }
+  
+  .add-card {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background: white;
+    color: white;
+  }
+  
+  .add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  mat-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px;
+    color: black;
+  }
+  
+  mat-form-field {
+    color: white;
+  }
+  
+  ::ng-deep .mat-form-field-underline {
+    background-color: white;
+  }
+  
+  ::ng-deep .mat-input-element {
+    color: white;
+  }
+  
+  ::ng-deep .mat-form-field-label {
+    color: white !important;
+  }
+  
+  ::ng-deep .mat-focused .mat-form-field-label {
+    color: white !important;
+  }
+  
+  mat-card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  button[mat-raised-button] {
+    background-color: var(--saveBtnBlue);
+    color: white;
+  }
+  
+  button[mat-raised-button]:hover {
+    background-color: var(--saveBtnBlueDull);
+  }
+  
+  button[mat-raised-button].back-btn {
+    background-color: var(--tomatored);
+  }
+  
+  button[mat-raised-button].back-btn:hover {
+    background-color: var(--dullred);
+  }
+  

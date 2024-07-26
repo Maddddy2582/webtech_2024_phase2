@@ -17,6 +17,7 @@
   .menu-item-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 24px rgb(0 0 0 / 20%);
+    background-color: var(--cardHover);
   }
   
   .img-div{
@@ -27,4 +28,18 @@
 
   .btn:hover{
     background-color: var(--turquoisegreen);
+  }
+
+
+  .button{
+    justify-content: center;
+  }
+
+  button[mat-raised-button].back-btn{
+    background-color: blue;
+    color: white;
+  }
+
+  button[mat-button]:hover{
+    background-color: white;
   }

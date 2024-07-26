@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Restaurant } from '../../models/restaurant.model';
 import { Router } from '@angular/router';
+import { RestaurantService } from '../../services/restaurant.service';
 
 @Component({
   selector: 'app-customer-dashboard',
@@ -11,16 +12,14 @@ export class DashboardComponent implements OnInit {
   restaurants:  Restaurant[] = [];
   filteredRestaurants:  Restaurant[] = [];
 
-  constructor( private router : Router){}
+  constructor( private router : Router, private restaurantService: RestaurantService){}
   ngOnInit(): void {
-    this.restaurants = JSON.parse(localStorage.getItem('restaurants') || '[]')
-    .map((restaurant:  Restaurant) => {
-      return {
-        ...restaurant,
-      };
-    });
-
+    this.loadRestaurants();
     this.filteredRestaurants = [...this.restaurants];
+  }
+
+  loadRestaurants(): void{
+    this.restaurants = this.restaurantService.getRestaurants();
   }
 
   filterRestaurants(searchTerm:String): void {

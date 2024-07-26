@@ -1,0 +1,14 @@
+.order-card{
+    margin: 10px;
+    border: 2px solid var(--cardHover);
+}
+
+.btn-align{
+    justify-content: center;
+}
+
+button[mat-raised-button].back-btn{
+    background: blue;
+    color: white;
+}
+
