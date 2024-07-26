@@ -9,8 +9,7 @@ import { Order } from '../../models/orders.model';
 
 @Component({
   selector: 'app-order-management',
-  templateUrl: './order-management.component.html',
-  styleUrls: ['./order-management.component.css']
+  templateUrl: './order-management.component.html'
 })
 export class OrderManagementComponent implements OnInit {
   restaurantId!: number;
