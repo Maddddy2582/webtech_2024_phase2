@@ -13,10 +13,11 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MenuComponent } from './menu/menu.component';
-import { NavBarComponent } from './navbar/navbar.component';
+// import { NavBarComponent } from './navbar/navbar.component';
 import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
 import { OrderTrackingComponent } from './order-tracking/order-tracking.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -27,10 +28,9 @@ import { OrderTrackingComponent } from './order-tracking/order-tracking.componen
     LoginComponent,
     DashboardComponent,
     MenuComponent,
-    NavBarComponent,
     CartComponent,
     PaymentComponent,
-    OrderTrackingComponent
+    OrderTrackingComponent,
   ],
   imports: [
     CommonModule,
@@ -42,7 +42,8 @@ import { OrderTrackingComponent } from './order-tracking/order-tracking.componen
     MatFormFieldModule,
     MatInputModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    SharedModule
 
   ],
   exports: [

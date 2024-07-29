@@ -4,6 +4,7 @@ import { CustomerService } from '../../services/customer.service';
 import { Restaurant } from '../../models/restaurant.model';
 import { RestaurantService } from '../../services/restaurant.service';
 import { CartService } from '../../services/cart.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
@@ -27,6 +28,7 @@ export class NavBarComponent implements OnInit {
     this.restaurants = this.restaurantService.getRestaurants().filter(
       restaurant => restaurant.userId === currentUserEmail
     );
+    console.log(this.restaurants);
 
   }
 

@@ -22,7 +22,7 @@ export class MenuComponent implements OnInit {
 
 
   constructor(
-    private route: ActivatedRoute, 
+    public route: ActivatedRoute, 
     private http: HttpClient, 
     private cartService: CartService, 
     private restaurantService: RestaurantService,
@@ -32,21 +32,10 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id')!;
     this.restaurant = this.restaurantService.getRestaurantById(id);
-    // const restaurants: Restaurant[] = JSON.parse(localStorage.getItem('restaurants') || '[]');
-    // this.restaurant = restaurants.find(r => r.id === restaurantId)!;
-
-    // this.http.get<MenuItem[]>(`assets/menu.json`).subscribe((data: any) => {
-    //   const restaurantMenu = data.find((menu: any) => menu.restaurantId === restaurantId);
-    //   this.menu = restaurantMenu ? restaurantMenu.items : [];
-    //   this.filteredMenu = [...this.menu];
-    // });
-    // this.filteredMenu = [...menuItems]
   }
 
   addToCart(item: MenuItem): void {
     const id = +this.route.snapshot.paramMap.get('id')!;
-    console.log(id);
-    console.log(item);
     this.cartService.checkRestaurant(item,id);
   }
 

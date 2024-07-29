@@ -6,11 +6,14 @@ import { MatFormFieldModule, MatLabel, MatError } from '@angular/material/form-f
 import { MatIcon } from '@angular/material/icon';
 import { MatInput } from '@angular/material/input';
 import { MatToolbar } from '@angular/material/toolbar';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavBarComponent } from '../customer/navbar/navbar.component';
+import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [NavBarComponent],
   imports: [
     CommonModule,
     MatToolbar,
@@ -26,7 +29,9 @@ import { MatToolbar } from '@angular/material/toolbar';
     MatButton,
     MatCardSubtitle,
     MatIcon,
-    MatIconButton
+    MatIconButton,
+    BrowserAnimationsModule,
+    FormsModule
   ],
   exports: [
     MatToolbar,
@@ -42,7 +47,10 @@ import { MatToolbar } from '@angular/material/toolbar';
     MatButton,
     MatCardSubtitle,
     MatIcon,
-    MatIconButton
+    MatIconButton,
+    BrowserAnimationsModule,
+    NavBarComponent,
+    FormsModule
   ]
 })
 export class SharedModule { }
