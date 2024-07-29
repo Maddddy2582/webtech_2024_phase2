@@ -11,6 +11,7 @@ export class DeliveryAgentService {
 
   constructor() {
     this.loadAgents();
+    this.getAgents();
   }
 
   private loadAgents(): void {
@@ -34,7 +35,9 @@ export class DeliveryAgentService {
 
   getAgents(): DeliveryAgent[] {
     const savedAgents = localStorage.getItem(this.agentsKey);
-    return savedAgents ? JSON.parse(savedAgents) : [];
+    const agents =  savedAgents ? JSON.parse(savedAgents) : [];
+    console.log(agents.length);
+    return savedAgents ? JSON.parse(savedAgents) : []
   }
 
   login(email: string, password: string): boolean {
