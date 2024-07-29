@@ -9,7 +9,9 @@ import { MatToolbar } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from '../customer/navbar/navbar.component';
 import { HttpClient } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSlideToggle } from '@angular/material/slide-toggle';
+
 
 
 @NgModule({
@@ -30,8 +32,10 @@ import { FormsModule } from '@angular/forms';
     MatCardSubtitle,
     MatIcon,
     MatIconButton,
+    MatSlideToggle,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     MatToolbar,
@@ -50,7 +54,9 @@ import { FormsModule } from '@angular/forms';
     MatIconButton,
     BrowserAnimationsModule,
     NavBarComponent,
-    FormsModule
+    FormsModule,
+    MatSlideToggle,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

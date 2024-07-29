@@ -10,7 +10,10 @@ import { Customer } from '../models/customer.model';
   providedIn: 'root'
 })
 export class RestaurantService {
-  private localStorageKey: string = 'restaurants' 
+  private localStorageKey: string = 'restaurants'
+  private storedRestaurants = localStorage.getItem(this.localStorageKey);
+  private restaurants : Restaurant[] = this.storedRestaurants ? JSON.parse(this.storedRestaurants) : [];
+
 
   constructor(private http: HttpClient, private location : Location) {
     this.initializeLocalStorage();
@@ -29,8 +32,9 @@ export class RestaurantService {
   }
 
   getRestaurants(): Restaurant[] {
-    const storedRestaurants = localStorage.getItem(this.localStorageKey);
-    return storedRestaurants ? JSON.parse(storedRestaurants) : [];
+    // const storedRestaurants = localStorage.getItem(this.localStorageKey);
+    // return storedRestaurants ? JSON.parse(storedRestaurants) : [];
+    return this.restaurants
   }
 
   getCustomers(): Customer[] {

@@ -4,6 +4,7 @@ import { MenuItem } from '../../models/menu.model';
 import { Router } from '@angular/router';
 import { RestaurantService } from '../../services/restaurant.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MainMenu } from '../../models/mainMenu.model';
 
 @Component({
   selector: 'app-add-menu-item',
@@ -13,13 +14,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddMenuItemComponent implements OnInit {
   restaurantId!: number;
   menuForm!: FormGroup;
-  menuItem: MenuItem = {
+  menuItem: MainMenu = {
     restaurantId: 0,
     name: '',
     price: 0,
     description: '',
     imagePath: '',
-    quantity: 0,
     id: 0
   };
 

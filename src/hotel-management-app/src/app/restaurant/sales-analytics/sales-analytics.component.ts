@@ -38,7 +38,7 @@ export class SalesAnalyticsComponent implements OnInit {
     this.location.back();
   }
 
-  private createDoughnutChart(): void {
+  public createDoughnutChart(): void {
     const itemSales = this.sales.reduce((acc, sale) => {
       if (!acc[sale.itemName]) {
         acc[sale.itemName] = 0;
@@ -67,7 +67,7 @@ export class SalesAnalyticsComponent implements OnInit {
     });
   }
 
-  private createBarChart(): void {
+  public createBarChart(): void {
     const dailySales = this.sales.reduce((acc, sale) => {
       const saleDate = new Date(sale.date);
       const day = saleDate.toLocaleDateString('en-US', { weekday: 'short' });
@@ -103,7 +103,7 @@ export class SalesAnalyticsComponent implements OnInit {
     });
   }
 
-  private getRandomColor(): string {
+  public getRandomColor(): string {
     const letters = '0123456789ABCDEF';
     let color = '#';
     for (let i = 0; i < 6; i++) {
