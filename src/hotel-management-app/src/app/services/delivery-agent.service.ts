@@ -24,7 +24,6 @@ export class DeliveryAgentService {
   }
 
   registerAgent(agent: DeliveryAgent): boolean {
-    console.log(agent);
     if (this.agents.some(a => a.email === agent.email)) {
       return false; 
     }

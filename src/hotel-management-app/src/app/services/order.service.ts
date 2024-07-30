@@ -61,8 +61,8 @@ export class OrderService {
     const index = this.getOrders()?.findIndex(item => item.orderId === orderId);
     this.getOrders().splice(index,1)
     this.saveOrders()
-    const path = this.location.path
-    this.location.go(path());
-    window.location.reload();
+    // const path = this.location.path
+    // this.location.go(path());
+    // window.location.reload();
   }
 }

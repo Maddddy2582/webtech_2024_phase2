@@ -122,18 +122,18 @@ describe('OrderService', () => {
   it('should accept an order', () => {
     const orders: deliveryOrder[] = order
     service['orders'] = orders;
-    service.acceptOrder(101);
+    service.acceptOrder(101); 
     expect(service.getOrders()[0].status).toBe('Picked');
   });
 
   it('should reject an order', () => {
     const orders: deliveryOrder[] = order
     service['orders'] = orders;
-    service.rejectOrder(1);
+    service.rejectOrder(101);    
     expect(service.getOrders()[0].status).toBe('Rejected');
   });
 
-  fit('should mark an order as delivered', () => {
+  it('should mark an order as delivered', () => {
     const orders: deliveryOrder[] = order
     service['orders'] = orders;
     service.markOrderAsDelivered(1);
