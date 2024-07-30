@@ -30,7 +30,7 @@ export class MenuComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id')!;
+    const id :number= +this.route.snapshot.paramMap.get('id')!;
     this.restaurant = this.restaurantService.getRestaurantById(id);
     // const restaurants: Restaurant[] = JSON.parse(localStorage.getItem('restaurants') || '[]');
     // this.restaurant = restaurants.find(r => r.id === restaurantId)!;
@@ -44,7 +44,7 @@ export class MenuComponent implements OnInit {
   }
 
   addToCart(item: MenuItem): void {
-    const id = +this.route.snapshot.paramMap.get('id')!;
+    const id:number = +this.route.snapshot.paramMap.get('id')!;
     console.log(id);
     console.log(item);
     this.cartService.checkRestaurant(item,id);

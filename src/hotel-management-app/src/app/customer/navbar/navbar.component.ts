@@ -23,7 +23,7 @@ export class NavBarComponent implements OnInit {
   searchTerm: string = '';
 
   ngOnInit():void{
-    const currentUserEmail = this.cartService.getUserEmail();
+    const currentUserEmail: string = this.cartService.getUserEmail();
     this.restaurants = this.restaurantService.getRestaurants().filter(
       restaurant => restaurant.userId === currentUserEmail
     );

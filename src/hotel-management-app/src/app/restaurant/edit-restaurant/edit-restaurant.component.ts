@@ -29,7 +29,7 @@ export class EditRestaurantComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id')!;
+    const id: number = +this.route.snapshot.paramMap.get('id')!;
     this.restaurant = this.restaurantService.getRestaurantById(id);
     if (this.restaurant) {
       this.restaurantForm.patchValue({

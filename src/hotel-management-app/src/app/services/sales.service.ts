@@ -21,7 +21,7 @@ export class SalesService {
   }
 
   private loadSales(): void {
-    const savedSales = localStorage.getItem(this.salesKey);
+    const savedSales : string | null= localStorage.getItem(this.salesKey);
     this.sales = savedSales ? JSON.parse(savedSales) : {};
   }
 
@@ -38,7 +38,7 @@ export class SalesService {
   }
 
   getSalesByRestaurant(restaurantId: number): SaleItem[] {
-    const allSales = Object.values(this.sales).flat();
+    const allSales: SaleItem[] = Object.values(this.sales).flat();
     return allSales.filter(sale => sale.restaurantId === restaurantId);
   }
 }

@@ -30,8 +30,8 @@ export class OrderManagementComponent implements OnInit {
   }
 
   updateOrderStatus(orderId: number, status: 'Pending' | 'Accepted' | 'Rejected' | 'Completed'): void {
-    const savedOrders = JSON.parse(localStorage.getItem('orders') || '[]');
-    const orderIndex = savedOrders.findIndex((order: Order) => order.orderId === orderId);
+    const savedOrders: Order[] = JSON.parse(localStorage.getItem('orders') || '[]');
+    const orderIndex: number = savedOrders.findIndex((order: Order) => order.orderId === orderId);
     if (orderIndex !== -1) {
       savedOrders[orderIndex].status = status;
       localStorage.setItem('orders', JSON.stringify(savedOrders));

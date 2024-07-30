@@ -39,7 +39,7 @@ export class SalesAnalyticsComponent implements OnInit {
   }
 
   private createDoughnutChart(): void {
-    const itemSales = this.sales.reduce((acc, sale) => {
+    const itemSales: Record<string,number>  = this.sales.reduce((acc, sale) => {
       if (!acc[sale.itemName]) {
         acc[sale.itemName] = 0;
       }
@@ -47,8 +47,8 @@ export class SalesAnalyticsComponent implements OnInit {
       return acc;
     }, {} as Record<string,number>);
     
-    const labels = Object.keys(itemSales).map(itemId => itemId);
-    const data = Object.values(itemSales);
+    const labels: string[] = Object.keys(itemSales).map(itemId => itemId);
+    const data: number[] = Object.values(itemSales);
 
     this.pieChart = new Chart('donut-chart', {
       type: 'doughnut',
@@ -68,9 +68,9 @@ export class SalesAnalyticsComponent implements OnInit {
   }
 
   private createBarChart(): void {
-    const dailySales = this.sales.reduce((acc, sale) => {
-      const saleDate = new Date(sale.date);
-      const day = saleDate.toLocaleDateString('en-US', { weekday: 'short' });
+    const dailySales: Record<string,number>  = this.sales.reduce((acc, sale) => {
+      const saleDate: Date = new Date(sale.date);
+      const day: string = saleDate.toLocaleDateString('en-US', { weekday: 'short' });
       if (!acc[day]) {
         acc[day] = 0;
       }
@@ -78,8 +78,8 @@ export class SalesAnalyticsComponent implements OnInit {
       return acc;
     }, {} as Record<string,number>);
 
-    const labels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    const data = labels.map(day => dailySales[day] || 0);
+    const labels: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const data: number[] = labels.map(day => dailySales[day] || 0);
 
     this.barChart = new Chart('bar-chart', {
       type: 'bar',
@@ -104,7 +104,7 @@ export class SalesAnalyticsComponent implements OnInit {
   }
 
   private getRandomColor(): string {
-    const letters = '0123456789ABCDEF';
+    const letters: string = '0123456789ABCDEF';
     let color = '#';
     for (let i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];

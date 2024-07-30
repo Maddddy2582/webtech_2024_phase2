@@ -23,7 +23,7 @@ export class EditMenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.restaurantId = +this.route.snapshot.paramMap.get('restaurantId')!;
-    const itemId = +this.route.snapshot.paramMap.get('itemId')!;
+    const itemId:number = +this.route.snapshot.paramMap.get('itemId')!;
     this.menuItem = this.restaurantService.getMenuItem(this.restaurantId, itemId);
     this.menuForm = this.formBuilder.group({
       name: [this.menuItem?.name, Validators.required],

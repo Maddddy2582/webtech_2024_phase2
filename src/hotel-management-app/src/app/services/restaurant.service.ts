@@ -28,7 +28,7 @@ export class RestaurantService {
   }
 
   getRestaurants(): Restaurant[] {
-    const storedRestaurants = localStorage.getItem(this.localStorageKey);
+    const storedRestaurants: string | null = localStorage.getItem(this.localStorageKey);
     return storedRestaurants ? JSON.parse(storedRestaurants) : [];
   }
 
@@ -37,15 +37,15 @@ export class RestaurantService {
   }
 
   addRestaurant(restaurant: Restaurant): void {
-    const restaurants = this.getRestaurants();
+    const restaurants: Restaurant[] = this.getRestaurants();
     restaurant.id = restaurants.length + 1;
     restaurants.push(restaurant);
     localStorage.setItem(this.localStorageKey, JSON.stringify(restaurants));
   }
 
   addMenuItem(restaurantId: number, menuItem: MenuItem): void {
-    const restaurants = this.getRestaurants();
-    const restaurant = restaurants.find(r => r.id === restaurantId);
+    const restaurants: Restaurant[]  = this.getRestaurants();
+    const restaurant :Restaurant | undefined = restaurants.find(r => r.id === restaurantId);
     if (restaurant) {
       menuItem.id = restaurant.menu.length ? Math.max(...restaurant.menu.map(m => m.id)) + 1 : 1;
       restaurant.menu.push(menuItem);
@@ -54,7 +54,7 @@ export class RestaurantService {
   }
 
   getMenuItems(restaurantId: number): MenuItem[] {
-    const restaurant = this.getRestaurants().find(r => r.id === restaurantId);
+    const restaurant : Restaurant | undefined = this.getRestaurants().find(r => r.id === restaurantId);
     return restaurant?.menu || [];
   }
 
@@ -63,17 +63,17 @@ export class RestaurantService {
   }
 
   updateRestaurant(updatedRestaurant: Restaurant): void {
-    const index = this.getRestaurants().findIndex(r => r.id === updatedRestaurant.id);
+    const index: number = this.getRestaurants().findIndex(r => r.id === updatedRestaurant.id);
     if (index !== -1) {
-      const allRestaurant = this.getRestaurants();
+      const allRestaurant : Restaurant[]  = this.getRestaurants();
       allRestaurant[index] = updatedRestaurant;
       localStorage.setItem(this.localStorageKey, JSON.stringify(allRestaurant));
     }
   }
 
   updateMenuItem(restaurantId: number, updatedMenuItem: MenuItem): void {
-    const restaurants = this.getRestaurants();
-    const index = this.getMenuItems(restaurantId)?.findIndex(item => item.id === updatedMenuItem.id);
+    const restaurants : Restaurant[] = this.getRestaurants();
+    const index : number= this.getMenuItems(restaurantId)?.findIndex(item => item.id === updatedMenuItem.id);
     if (index !== -1) {
       restaurants[restaurantId-1].menu[index] = updatedMenuItem;
       localStorage.setItem(this.localStorageKey, JSON.stringify(restaurants));
@@ -85,8 +85,8 @@ export class RestaurantService {
   }
 
   deleteMenu(restaurantId:number ,deleteitemId: number): void{
-    const restaurants = this.getRestaurants();
-    const index = this.getMenuItems(restaurantId)?.findIndex(item => item.id === deleteitemId);
+    const restaurants: Restaurant[]  = this.getRestaurants();
+    const index: number = this.getMenuItems(restaurantId)?.findIndex(item => item.id === deleteitemId);
     restaurants[restaurantId-1].menu.splice(index,1)
     localStorage.setItem(this.localStorageKey, JSON.stringify(restaurants));
     this.location.go(this.location.path());
@@ -94,8 +94,8 @@ export class RestaurantService {
   }
 
   deleteRestaurant(restaurant:Restaurant):void{
-    const index = this.getRestaurants().findIndex(r => r.id === restaurant.id);
-    const restaurants = this.getRestaurants();
+    const index: number = this.getRestaurants().findIndex(r => r.id === restaurant.id);
+    const restaurants: Restaurant[]  = this.getRestaurants();
     restaurants.splice(index,1)
     localStorage.setItem(this.localStorageKey, JSON.stringify(restaurants));
     this.location.go(this.location.path());

@@ -29,7 +29,7 @@ export class PaymentComponent {
     if (this.paymentForm.valid) {
       this.cartService.processPayment();
       this.cartService.placeOrder();
-      const userCart = this.cartService.getUserCartKey()
+      const userCart:string = this.cartService.getUserCartKey()
       localStorage.setItem(userCart, JSON.stringify([]));
       alert("Payment Successful 🎉")
       this.router.navigate(['/dashboard']);

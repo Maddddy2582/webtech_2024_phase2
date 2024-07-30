@@ -3,6 +3,7 @@ import { CartItem } from '../models/cart.model';
 import { SalesService } from './sales.service';
 import { Order, OrderItem } from '../models/orders.model';
 import { setInterval } from 'timers/promises';
+import { Sale } from '../models/salesInfo.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,13 +19,13 @@ export class CartService {
   }
   
   private loadCart(): void {
-    const userCartKey = this.getUserCartKey();
-    const savedCart = localStorage.getItem(userCartKey);
+    const userCartKey: string = this.getUserCartKey();
+    const savedCart: string | null = localStorage.getItem(userCartKey);
     this.cart = savedCart ? JSON.parse(savedCart) : [];
   }
 
   private saveCart(): void {
-    const userCartKey = this.getUserCartKey();
+    const userCartKey: string = this.getUserCartKey();
     localStorage.setItem(userCartKey, JSON.stringify(this.cart));
   }
 
@@ -34,7 +35,7 @@ export class CartService {
   }
 
   getUserCartKey(): string {
-    const userEmail = this.getUserEmail();
+    const userEmail: string = this.getUserEmail();
     return `${this.cartKey}_${userEmail}`;
   }
 
@@ -59,7 +60,7 @@ export class CartService {
   }
 
   addToCart(item: CartItem, id:number): void {
-    const existingItem = this.cart.find(cartItem => cartItem.id === item.id);
+    const existingItem: CartItem | undefined = this.cart.find(cartItem => cartItem.id === item.id);
     if (existingItem) {
       existingItem.quantity += 1;
     } else {
@@ -79,7 +80,7 @@ export class CartService {
   }
 
   increaseQuantity(itemId: number): void {
-    const item = this.cart.find(cartItem => cartItem.id === itemId);
+    const item: CartItem | undefined = this.cart.find(cartItem => cartItem.id === itemId);
     if (item) {
       item.quantity += 1;
       this.saveCart();
@@ -87,7 +88,7 @@ export class CartService {
   }
 
   decreaseQuantity(itemId: number): void {
-    const item = this.cart.find(cartItem => cartItem.id === itemId);
+    const item: CartItem | undefined = this.cart.find(cartItem => cartItem.id === itemId);
     if (item && item.quantity > 1) {
       item.quantity -= 1;
       this.saveCart(); 
@@ -97,8 +98,8 @@ export class CartService {
   }
 
   processPayment(): void {
-    const currentUserEmail = this.getUserEmail();
-    const saleItems = this.cart.map(item => ({
+    const currentUserEmail: string = this.getUserEmail();
+    const saleItems: Sale[] = this.cart.map(item => ({
       restaurantId: item.restaurantId,
       itemName: item.name,
       itemId: item.id,
@@ -111,16 +112,16 @@ export class CartService {
   }
 
   placeOrder(): void {
-    const restaurantId = (this.cart[0].restaurantId);
-    const userId = this.getUserEmail();
-    const orderId = new Date().getTime();
+    const restaurantId: number = (this.cart[0].restaurantId);
+    const userId:string = this.getUserEmail();
+    const orderId: number = new Date().getTime();
     const orderItems: OrderItem[] = this.cart.map(item => ({
       id: item.id,
       name: item.name,
       quantity: item.quantity,
       price: item.price
     }));
-    const totalAmount = orderItems.reduce((acc, item) => acc + (item.quantity * item.price), 0);
+    const totalAmount: number = orderItems.reduce((acc, item) => acc + (item.quantity * item.price), 0);
     const newOrder: Order = {
       orderId,
       restaurantId,
@@ -131,7 +132,7 @@ export class CartService {
       status: 'Pending'
     };
 
-    const savedOrders = JSON.parse(localStorage.getItem(this.ordersKey) || '[]');
+    const savedOrders: Order[] = JSON.parse(localStorage.getItem(this.ordersKey) || '[]');
     savedOrders.push(newOrder);
     localStorage.setItem(this.ordersKey, JSON.stringify(savedOrders));
 
@@ -139,7 +140,7 @@ export class CartService {
   }
 
   getOrdersByRestaurant(restaurantId: number): Order[] {
-    const savedOrders = JSON.parse(localStorage.getItem(this.ordersKey) || '[]');
+    const savedOrders : Order[] = JSON.parse(localStorage.getItem(this.ordersKey) || '[]');
     return savedOrders.filter((order: Order) => order.restaurantId === restaurantId);
   }
 

@@ -5,6 +5,7 @@
   .cart-item-card {
     margin-bottom: 16px;
     border: 2px solid var(--orange);
+    width: 1300px;
 
   }
 
@@ -36,7 +37,7 @@
 
   .img-div{
     position: absolute;
-    left: 1400px;
+    left: 1050px;
     bottom: 20px;
     height: 150px;
     width: 200px;
