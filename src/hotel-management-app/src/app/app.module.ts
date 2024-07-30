@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule} from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +29,8 @@ import { BaseChartDirective } from 'ng2-charts';
     DeliveryAgentModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    BaseChartDirective
+    BaseChartDirective,
+    SharedModule
 
   ],
   providers: [
@@ -38,19 +40,6 @@ import { BaseChartDirective } from 'ng2-charts';
 })
 export class AppModule { 
   constructor(private http: HttpClient, private restaurantService: RestaurantService) {
-    this.loadStaticData();
     restaurantService.initializeLocalStorage();
   }
-
-
-  loadStaticData() {
-    // this.http.get('assets/restaurants.json').subscribe(data => {
-    //   localStorage.setItem('restaurants', JSON.stringify(data));
-    // });
-
-    // this.http.get('assets/menu.json').subscribe(data => {
-    //   localStorage.setItem('menuData', JSON.stringify(data));
-    // });
-  }
-
 }

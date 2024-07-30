@@ -28,11 +28,11 @@ const routes: Routes = [
     DeliveryAgentNavBarComponent
   ],
   imports: [
-    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
-    SharedModule
+    SharedModule,
+    CommonModule
   ]
 })
 export class DeliveryAgentModule { }

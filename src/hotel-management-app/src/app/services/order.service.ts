@@ -30,7 +30,7 @@ export class OrderService {
 
   getCompletedOrders(): Observable<deliveryOrder[]> {
     const orders: deliveryOrder[] = this.orders.filter(order => order.status === 'Completed' || order.status === 'Picked'); // Replace with actual data
-    return of(orders); // Return an observable
+    return of(orders);
   }
 
   markOrderAsCompleted(orderId: number): void {
@@ -61,7 +61,8 @@ export class OrderService {
     const index = this.getOrders()?.findIndex(item => item.orderId === orderId);
     this.getOrders().splice(index,1)
     this.saveOrders()
-    this.location.go(this.location.path());
+    const path = this.location.path
+    this.location.go(path());
     window.location.reload();
   }
 }
