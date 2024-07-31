@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { DeliveryAgentService } from '../../services/delivery-agent.service';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'app-deliveryagent-navbar',
   templateUrl: './delivery-agent-navbar.component.html',
   styleUrls: ['./delivery-agent-navbar.component.css']
 })

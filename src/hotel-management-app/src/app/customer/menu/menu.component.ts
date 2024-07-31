@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { Restaurant } from '../../models/restaurant.model';
 import { MenuItem } from '../../models/menu.model';
 import { CartService } from '../../services/cart.service';
@@ -23,7 +22,6 @@ export class MenuComponent implements OnInit {
 
   constructor(
     public route: ActivatedRoute, 
-    private http: HttpClient, 
     private cartService: CartService, 
     private restaurantService: RestaurantService,
     private router: Router

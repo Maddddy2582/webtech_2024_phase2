@@ -6,9 +6,7 @@ import { MatFormFieldModule, MatLabel, MatError } from '@angular/material/form-f
 import { MatIcon } from '@angular/material/icon';
 import { MatInput } from '@angular/material/input';
 import { MatToolbar } from '@angular/material/toolbar';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from '../customer/navbar/navbar.component';
-import { HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 
@@ -33,7 +31,6 @@ import { MatSlideToggle } from '@angular/material/slide-toggle';
     MatIcon,
     MatIconButton,
     MatSlideToggle,
-    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule
   ],
@@ -52,7 +49,6 @@ import { MatSlideToggle } from '@angular/material/slide-toggle';
     MatCardSubtitle,
     MatIcon,
     MatIconButton,
-    BrowserAnimationsModule,
     NavBarComponent,
     FormsModule,
     MatSlideToggle,
