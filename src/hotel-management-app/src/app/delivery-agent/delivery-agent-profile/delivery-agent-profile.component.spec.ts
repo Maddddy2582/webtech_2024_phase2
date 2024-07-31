@@ -3,6 +3,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DeliveryAgentProfileComponent } from './delivery-agent-profile.component';
 import { DeliveryAgentService } from '../../services/delivery-agent.service';
 import { SharedModule } from '../../shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 describe('DeliveryAgentProfileComponent', () => {
@@ -15,7 +17,7 @@ describe('DeliveryAgentProfileComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [ DeliveryAgentProfileComponent ],
-      imports: [ ReactiveFormsModule, SharedModule],
+      imports: [ ReactiveFormsModule, SharedModule, BrowserAnimationsModule],
       providers: [
         { provide: DeliveryAgentService, useValue: deliveryAgentServiceSpy }
       ]

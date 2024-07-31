@@ -6,6 +6,7 @@ import { CustomerService } from '../../services/customer.service';
 import { RestaurantService } from '../../services/restaurant.service';
 import { CartService } from '../../services/cart.service';
 import { SharedModule } from '../../shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { of } from 'rxjs';
 // import { Image } from 'ol';
 
@@ -59,7 +60,7 @@ describe('NavBarComponent', () => {
     mockCartService = new MockCartService();
 
     await TestBed.configureTestingModule({
-      imports: [ FormsModule, SharedModule],
+      imports: [ FormsModule, SharedModule, BrowserAnimationsModule],
       declarations: [ NavBarComponent ],
       providers: [
         { provide: Router, useValue: mockRouter },

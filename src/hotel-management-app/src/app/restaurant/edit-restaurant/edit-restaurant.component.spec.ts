@@ -7,6 +7,7 @@ import { EditRestaurantComponent } from './edit-restaurant.component';
 import { RestaurantService } from '../../services/restaurant.service';
 import { Restaurant } from '../../models/restaurant.model';
 import { SharedModule } from '../../shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Mock RestaurantService
 class MockRestaurantService {
@@ -57,7 +58,7 @@ describe('EditRestaurantComponent', () => {
     mockActivatedRoute = new MockActivatedRoute();
 
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, SharedModule],
+      imports: [ReactiveFormsModule, SharedModule, BrowserAnimationsModule],
       declarations: [EditRestaurantComponent],
       providers: [
         { provide: RestaurantService, useValue: mockRestaurantService },

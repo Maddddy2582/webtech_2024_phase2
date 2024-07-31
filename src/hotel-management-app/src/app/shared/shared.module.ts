@@ -10,8 +10,6 @@ import { NavBarComponent } from '../customer/navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 
-
-
 @NgModule({
   declarations: [NavBarComponent],
   imports: [

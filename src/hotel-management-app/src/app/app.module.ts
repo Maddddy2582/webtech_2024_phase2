@@ -3,7 +3,6 @@ import { BrowserModule} from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomerModule } from './customer/customer.module';
@@ -13,7 +12,6 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RestaurantService } from './services/restaurant.service';
 import { BaseChartDirective } from 'ng2-charts';
-
 
 @NgModule({
   declarations: [

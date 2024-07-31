@@ -7,6 +7,7 @@ import { CartService } from '../../services/cart.service';
 import { Location } from '@angular/common';
 import { of } from 'rxjs';
 import { SharedModule } from '../../shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 class MockRestaurantService {
   addRestaurant(restaurant: any) {}
@@ -41,7 +42,7 @@ describe('RestaurantRegistrationComponent', () => {
     mockLocation = jasmine.createSpyObj('Location', ['back']);
 
     await TestBed.configureTestingModule({
-      imports: [SharedModule],
+      imports: [SharedModule, BrowserAnimationsModule],
       declarations: [RestaurantRegistrationComponent],
       providers: [
         FormBuilder,

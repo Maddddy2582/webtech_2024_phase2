@@ -11,6 +11,7 @@ import { MenuItem } from '../../models/menu.model';
 import { SharedModule } from '../../shared/shared.module';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('MenuComponent', () => {
   let component: MenuComponent;
@@ -21,7 +22,7 @@ describe('MenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, SharedModule , FormsModule],
+      imports: [HttpClientTestingModule, SharedModule , FormsModule, BrowserAnimationsModule],
       declarations: [ MenuComponent ],
       providers: [
         { provide: CartService, useClass: CartServiceMock },

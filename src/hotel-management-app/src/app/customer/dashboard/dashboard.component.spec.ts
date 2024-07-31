@@ -7,6 +7,7 @@ import { Restaurant } from '../../models/restaurant.model';
 import { NavBarComponent } from '../navbar/navbar.component';
 import { SharedModule } from '../../shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -29,7 +30,7 @@ describe('DashboardComponent', () => {
     mockRestaurantService.getRestaurants.and.returnValue(mockRestaurants);
 
     await TestBed.configureTestingModule({
-      imports: [SharedModule, FormsModule],
+      imports: [SharedModule, FormsModule, BrowserAnimationsModule],
       declarations: [DashboardComponent, NavBarComponent],
       providers: [
         { provide: RestaurantService, useValue: mockRestaurantService },

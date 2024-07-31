@@ -6,6 +6,7 @@ import { PaymentComponent } from './payment.component';
 import { CartService } from '../../services/cart.service';
 import { of } from 'rxjs';
 import { SharedModule } from '../../shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 class MockCartService {
@@ -39,7 +40,7 @@ describe('PaymentComponent', () => {
     mockLocation = new MockLocation();
 
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, FormsModule, SharedModule],
+      imports: [ReactiveFormsModule, FormsModule, SharedModule, BrowserAnimationsModule],
       declarations: [ PaymentComponent ],
       providers: [
         { provide: CartService, useValue: mockCartService },
