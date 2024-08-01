@@ -8,7 +8,7 @@ import { Customer } from '../models/customer.model';
 export class CustomerService {
   constructor(private router: Router) { }
   
-  registerCustomer(customerData: Customer): string | void {
+  registerCustomer(customerData: Customer): string {
     const customers: Customer[] = JSON.parse(localStorage.getItem('customers') || '[]');
     const existingCustomer: Customer | undefined = customers.find((c: Customer) => c.email === customerData.email);
     if (existingCustomer) {
@@ -16,6 +16,7 @@ export class CustomerService {
     }
     customers.push(customerData);
     localStorage.setItem('customers', JSON.stringify(customers));
+    return 'New customer created'
   }
 
   authenticateCustomer(email: string, password: string): boolean {

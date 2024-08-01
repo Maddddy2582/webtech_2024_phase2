@@ -24,7 +24,7 @@ export class RegistrationComponent {
 
   onSubmit() {
     if (this.registrationForm.valid) {      
-      const result: string | void = this.customerService.registerCustomer(this.registrationForm.value);
+      const result: string = this.customerService.registerCustomer(this.registrationForm.value);
       if (result === 'Email already exists') {
         this.errorMessage = result;
         this.successMessage = null;
