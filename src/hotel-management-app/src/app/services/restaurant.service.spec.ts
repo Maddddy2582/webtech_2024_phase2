@@ -6,7 +6,6 @@ import { MenuItem } from '../models/menu.model';
 import { Location } from '@angular/common';
 import { Customer } from '../models/customer.model';
 
-// Mock Location
 class MockLocation {
   go(path: string): void {}
 }
@@ -80,7 +79,6 @@ describe('RestaurantService', () => {
   it('should get a restaurant by ID', () => {
     localStorage.setItem('restaurants', JSON.stringify(mockRestaurants));
     const restaurant = service.getRestaurantById(1);
-    // console.log(service.getRestaurantNameById(1));
     expect(restaurant).toBeDefined();
     expect(restaurant?.name).toBe('Restaurant 1');
   });

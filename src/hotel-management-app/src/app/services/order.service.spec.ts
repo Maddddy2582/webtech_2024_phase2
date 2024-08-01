@@ -4,7 +4,6 @@ import { OrderService } from './order.service';
 import { deliveryOrder } from '../models/deliveryorder.model';
 import { of } from 'rxjs';
 
-// Mock Location
 class MockLocation {
   go(path: string): void {}
 }
@@ -36,7 +35,6 @@ describe('OrderService', () => {
     });
     service = TestBed.inject(OrderService);
 
-    // Clear localStorage before each test
     localStorage.clear();
   });
 

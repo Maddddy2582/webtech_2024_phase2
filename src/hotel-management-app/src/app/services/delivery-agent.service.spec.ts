@@ -10,7 +10,6 @@ describe('DeliveryAgentService', () => {
       providers: [DeliveryAgentService]
     });
     service = TestBed.inject(DeliveryAgentService);
-    // Clear localStorage before each test
     localStorage.clear();
   });
 

@@ -61,7 +61,6 @@ describe('SalesService', () => {
     service['sales'] = mockSales;
     const salesByRestaurant1 = service.getSalesByRestaurant(1);
     expect(salesByRestaurant1.length).toBe(2);
-
     const salesByRestaurant2 = service.getSalesByRestaurant(2);
     expect(salesByRestaurant2.length).toBe(1);
     expect(salesByRestaurant2[0].itemName).toBe('Item 2');

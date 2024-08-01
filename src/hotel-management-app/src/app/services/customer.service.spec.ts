@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { CustomerService } from './customer.service';
 import { Customer } from '../models/customer.model';
 
-// Mock Router
 class MockRouter {
   navigate(commands: any[]): void {}
 }
@@ -23,7 +22,6 @@ describe('CustomerService', () => {
     });
     service = TestBed.inject(CustomerService);
 
-    // Clear localStorage before each test
     localStorage.clear();
   });
 
@@ -37,7 +35,6 @@ describe('CustomerService', () => {
       password: 'password123',
       id: 1,
       name: 'John Doe'
-      // Other properties as necessary
     };
 
     service.registerCustomer(customer);
@@ -52,7 +49,6 @@ describe('CustomerService', () => {
       password: 'password123',
       id: 1,
       name: 'John Doe'
-      // Other properties as necessary
     };
     localStorage.setItem('customers', JSON.stringify([existingCustomer]));
 
@@ -61,7 +57,6 @@ describe('CustomerService', () => {
       password: 'newpassword456',
             id: 1,
       name: 'John Doe'
-      // Other properties as necessary
     };
 
     const result = service.registerCustomer(newCustomer);
@@ -74,7 +69,6 @@ describe('CustomerService', () => {
       password: 'authpassword',
             id: 1,
       name: 'John Doe'
-      // Other properties as necessary
     };
     localStorage.setItem('customers', JSON.stringify([customer]));
 
@@ -89,7 +83,6 @@ describe('CustomerService', () => {
       password: 'authpassword',
             id: 1,
       name: 'John Doe'
-      // Other properties as necessary
     };
     localStorage.setItem('customers', JSON.stringify([customer]));
 
@@ -104,7 +97,6 @@ describe('CustomerService', () => {
       password: 'currentpassword',
             id: 1,
       name: 'John Doe'
-      // Other properties as necessary
     };
     localStorage.setItem('currentCustomer', JSON.stringify(customer));
 
@@ -118,7 +110,6 @@ describe('CustomerService', () => {
       password: 'logoutpassword',
             id: 1,
       name: 'John Doe'
-      // Other properties as necessary
     };
     localStorage.setItem('currentCustomer', JSON.stringify(customer));
 
