@@ -1,8 +1,9 @@
 export interface MenuItem {
+    restaurantId: number;
     id: number;
     name: string;
     description: string;
     price: number;
-    imagePath: string;
     quantity: number;
+    imagePath: string;
   }

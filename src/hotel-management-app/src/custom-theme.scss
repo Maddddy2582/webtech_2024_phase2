@@ -28,6 +28,16 @@ $hotel-management-app-theme: mat.define-theme((
   @include mat.all-component-themes($hotel-management-app-theme);
   --blue: #214a80;
   --turquoisegreen: rgb(48, 247, 190);
+  --orange: #ffa81c;
+  --skyblue: #74ebd5;
+  --tomatored: #f44336;
+  --dullred: #d32f2f;
+  --saveBtnBlue: #2196f3;
+  --saveBtnBlueDull: #1976d2;
+  --bgColor: rgb(169, 169, 238);
+  --btnGreen: rgb(79, 255, 79);
+  --btnBlue : rgb(113, 113, 255);
+  --cardHover: rgb(169, 169, 238);
 }
 
 

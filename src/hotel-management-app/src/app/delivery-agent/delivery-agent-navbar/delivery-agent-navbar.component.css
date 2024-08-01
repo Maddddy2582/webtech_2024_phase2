@@ -1,0 +1,38 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 100px;
+    align-items: center;
+    background: var(--orange);
+  }
+  
+  .navbar-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .logo {
+    height: 80px;
+  }
+  
+  .search-container {
+    flex-grow: 1;
+    margin-right: 16px;
+    padding-top: 20px;
+  }
+  
+  .cart-button {
+    margin-left: 20px;
+  }
+
+  .white-icon{
+    color: white;
+    justify-items: right;
+  }
+  
+  .spacer {
+    flex-grow:50;
+  }
+  

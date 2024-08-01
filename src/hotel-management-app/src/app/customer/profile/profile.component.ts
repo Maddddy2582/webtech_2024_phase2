@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../../services/customer.service';
 import { Router } from '@angular/router';
 import { Customer } from '../../models/customer.model';
+import { Location } from '@angular/common';
 
 
 
@@ -13,7 +14,7 @@ import { Customer } from '../../models/customer.model';
 export class ProfileComponent implements OnInit {
   customer: Customer | null = null;
 
-  constructor(private customerService: CustomerService, private router: Router) { }
+  constructor(private customerService: CustomerService, private router: Router, private location: Location) { }
 
   ngOnInit(): void {
     this.customer = this.customerService.getCurrentCustomer();
@@ -22,7 +23,17 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  navToResRegister(){
+    this.router.navigate(['/register-restaurant'])
+  }
+
   onLogout() {
     this.customerService.logout();
   }
+
+  goBack(): void {
+    this.location.back();
+  }
+
+
 }

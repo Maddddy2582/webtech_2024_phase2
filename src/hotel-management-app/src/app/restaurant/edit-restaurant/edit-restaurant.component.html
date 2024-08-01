@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<div *ngIf="restaurant" class="edit-container">
+  <mat-card class="edit-card">
+    <mat-card-header>
+      <mat-card-title>Edit {{ restaurant.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="restaurantForm" (ngSubmit)="saveRestaurant()" class="edit-form">
+        <mat-form-field class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" required>
+          <mat-error *ngIf="restaurantForm.get('name')?.hasError('required')">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Cuisine</mat-label>
+          <input matInput formControlName="cuisine" required>
+          <mat-error *ngIf="restaurantForm.get('cuisine')?.hasError('required')">
+            Cuisine is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>Image URL</mat-label>
+            <input matInput formControlName="image" required>
+            <mat-error *ngIf="restaurantForm.get('image')?.hasError('required')">
+              Image URL is required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description" required></textarea>
+          <mat-error *ngIf="restaurantForm.get('description')?.hasError('required')">
+            Description is required
+          </mat-error>
+        </mat-form-field>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit" [disabled]="!restaurantForm.valid" class="save-btn">Save</button>
+          <button mat-raised-button color="warn" (click)="goBack()" class="back-btn">Back</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

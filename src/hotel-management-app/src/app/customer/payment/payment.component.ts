@@ -27,6 +27,8 @@ export class PaymentComponent {
 
   confirmPayment(): void {
     if (this.paymentForm.valid) {
+      this.cartService.processPayment();
+      this.cartService.placeOrder();
       const userCart = this.cartService.getUserCartKey()
       localStorage.setItem(userCart, JSON.stringify([]));
       alert("Payment Successful 🎉")
@@ -37,4 +39,5 @@ export class PaymentComponent {
   goBack(){
     this.location.back();
   }
+
 }

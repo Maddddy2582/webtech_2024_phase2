@@ -10,12 +10,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MenuComponent } from './menu/menu.component';
-import { NavBarComponent } from './navbar/navbar.component';
 import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
+import { OrderTrackingComponent } from './order-tracking/order-tracking.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -26,9 +26,9 @@ import { PaymentComponent } from './payment/payment.component';
     LoginComponent,
     DashboardComponent,
     MenuComponent,
-    NavBarComponent,
     CartComponent,
-    PaymentComponent
+    PaymentComponent,
+    OrderTrackingComponent,
   ],
   imports: [
     CommonModule,
@@ -39,8 +39,8 @@ import { PaymentComponent } from './payment/payment.component';
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
-    BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    SharedModule
 
   ],
   exports: [

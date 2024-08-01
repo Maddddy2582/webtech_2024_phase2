@@ -27,7 +27,7 @@
         <mat-error *ngIf="paymentForm.get('expiryDate')?.hasError('required')">Expiry Date is required</mat-error>
         <mat-error *ngIf="paymentForm.get('expiryDate')?.hasError('pattern')">Invalid Expiry Date</mat-error>
     </mat-form-field>
-    <button mat-raised-button color="primary" type="submit" [disabled]="paymentForm.invalid">Confirm Pay</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="paymentForm.invalid" class="cnf-payment-btn">Confirm Pay</button>
     <br>
-    <button mat-raised-button color="primary" (click)="goBack()">Go Back</button>
+    <button mat-raised-button color="primary" (click)="goBack()" class="back-btn">Back</button>
 </form>

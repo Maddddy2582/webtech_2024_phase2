@@ -59,7 +59,7 @@ export class CartComponent implements OnInit {
     this.router.navigate(['/payment']);
   }
 
-  goback(): void {
+  goBack(): void {
     this.location.back();
   }
 }

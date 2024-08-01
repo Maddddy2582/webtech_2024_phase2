@@ -2,22 +2,22 @@
 <app-navbar (search)="filterMenu($event)"></app-navbar>
 
 <mat-toolbar color="primary">
-    <span>{{ restaurant.name }} Menu</span>
+    <span>{{ restaurant?.name }} Menu</span>
 </mat-toolbar>
 
 <div class="menu-items">
-    <mat-card *ngFor="let item of filteredMenu" class="menu-item-card">
+    <mat-card *ngFor="let item of restaurant?.menu" class="menu-item-card">
         <div class="img-div" [ngStyle]="{'background-image': 'url('+item.imagePath+')'}"></div>
         <mat-card-header>
             <mat-card-title>{{ item.name }}</mat-card-title>
-            <mat-card-subtitle>₹{{item.price}}</mat-card-subtitle>
+            <mat-card-subtitle>{{ item.description }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-            <p>{{ item.description }}</p>
+            <p>₹{{ item.price}}</p>
+            <button mat-button color="primary" (click)="addToCart(item)">Add to Cart</button>
         </mat-card-content>
-        <mat-card-actions>
-            <button mat-button class="btn" (click)="addToCart(item)">Add to Cart</button>
-        </mat-card-actions>
-    </mat-card>
-    <h1 *ngIf="!filteredMenu.length">No Matching results</h1>
+    </mat-card><br><br>
 </div>
+<mat-card-actions class="button">
+    <button mat-raised-button color="primary" (click)="navTodashboard()" class="back-btn" >Back</button>
+</mat-card-actions>

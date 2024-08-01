@@ -1,6 +1,46 @@
-<!DOCTYPE html>
-<div *ngIf="customer">
-    <h2>Welcome, {{ customer.name }}</h2>
-    <p>Email: {{ customer.email }}</p>
-    <button (click)="onLogout()">Logout</button>
+
+  <div class="page">
+  <div class="container d-flex justify-content-center align-items-center " *ngIf="customer">
+             
+    <div class="card">
+
+     <div class="upper">
+
+       <img src="https://i.imgur.com/Qtrsrk5.jpg" class="img-fluid">
+       
+     </div>
+
+     <div class="user text-center">
+
+       <div class="profile">
+
+         <img src="../../../assets/account-avatar-profile-user-11.svg" class="rounded-circle" width="80">
+         
+       </div>
+
+     </div>
+
+
+     <div class="mt-5 text-center">
+
+       <h1 class="mb-0">{{ customer.name }}</h1>
+       <span class="text-muted d-block mb-2">Email: {{ customer.email }}</span>
+
+       
+
+       <button mat-raised-button class="btn btn-primary btn-sm logout-btn" (click)="onLogout()">Log Out</button><br><br>
+
+       <h4>Want to Host a Restaurant?</h4>
+       <button mat-raised-button class="btn btn-primary btn-sm regres-btn" (click)="navToResRegister()">Register Restaurant</button><br><br><br>
+
+       <button mat-raised-button class="btn btn-primary btn-sm back-btn" (click)="goBack()">Back</button>
+
+       
+
+       
+     </div>
+      
+    </div>
+
+  </div>
 </div>

@@ -19,12 +19,13 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
     background-color: white;
+
   }
   
   .restaurant-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 24px rgb(0 0 0 / 20%);
-    background-color: white;
+    background-color: var(--cardHover);
   }
   
   .mat-card-header {
@@ -60,9 +61,9 @@
     color: white;
     justify-items: right;
   }
-  
+
   .btn:hover{
-    background-color: var(--turquoisegreen);
+    background-color: white;
   }
 
   .img-div{
@@ -70,3 +71,4 @@
     width: 300px;
     background-size: cover;
   }
+
