@@ -4,63 +4,336 @@
     "name": "Pizza Palace",
     "cuisine": "Italian",
     "image": "https://img1.wsimg.com/isteam/ip/538bcd6d-a924-461e-a467-d49ed06293ca/SRO_1507-7e12095.jpg", 
-    "description": "A wonderful place to enjoy delicious pizzas." 
+    "description": "A wonderful place to enjoy delicious pizzas." ,
+    "menu": [{
+      "description": "Classic delight with 100% real mozzarella cheese",
+      "id": 1,
+      "imagePath" : "https://cdn.loveandlemons.com/wp-content/uploads/2019/09/margherita-pizza-1080x1080.jpg",
+      "name": "Margherita Pizza",
+      "price": 200
+    },        {
+      "id": 2,
+      "name": "Farmhouse Pizza",
+      "description": "Delightful combination of onion, capsicum, tomato & grilled mushroom",
+      "price": 300,
+      "imagePath" : "https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fill,g_center,w_730,h_913/k/archive/07f26b8773e0ceb0595836346d87ac50e867759b"
+    },
+    {
+      "id": 3,
+      "name": "Chicken overload",
+      "description": "Delightful combination of chicken sausage, chicken pepporoni, chicken bbq & grilled chicken",
+      "price": 450,
+      "imagePath" : "https://wallpaperaccess.com/full/2237015.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Cheese Mania",
+      "description": "Delightful combination of mozerella , cheddar and italian cheese",
+      "price":350,
+      "imagePath" : "https://images-gmi-pmc.edge-generalmills.com/e5b672bc-1c70-4ea3-b604-2206e897e98a.jpg"
+    }
+  ]
   },
   {
     "id": 2,
     "name": "Sushi World",
     "cuisine": "Japanese",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvlMNvX9ct_OpdqGKp0FSnoR-AhDv8G_mufA&s", 
-    "description": "Experience the best sushi in town." 
+    "description": "Experience the best sushi in town." ,
+    "menu":[
+      {
+        "id": 1,
+        "name": "Salmon Sushi",
+        "description": "Fresh salmon with rice and seaweed",
+        "price": 400,
+        "imagePath" : "https://recipes.net/wp-content/uploads/2023/07/easy-salmon-sushi_e1b62dc704501a791c2bd8a92e60dd54.jpeg"
+      },
+      {
+        "id": 2,
+        "name": "Tuna Sushi",
+        "description": "Fresh tuna with rice and seaweed",
+        "price":270,
+        "imagePath" : "https://takestwoeggs.com/wp-content/uploads/2023/08/Tekka-Maki-Tuna-Sushi-Roll-Takestwoeggs-sq.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Bento box",
+        "description": "Delicious bento box",
+        "price":750,
+        "imagePath": "https://live.staticflickr.com/65535/50032380032_2bbb59c3d6_b.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Veg Sushi",
+        "description": "Fresh veggies with rice and seaweed",
+        "price":300,
+        "imagePath": "https://upload.wikimedia.org/wikipedia/commons/3/38/Vegetarian_Maki_Sushi_at_Suzuran_Japan_Foods_Trading.jpg"
+      }
+
+    ]
   },
   {
     "id": 3,
     "name": "Sizzle & Spice",
     "cuisine": "Indian",
     "image": "https://th.bing.com/th/id/R.0bab238bcc532b9d408b2afcf8738c3a?rik=qmFlRzw8gQ74aQ&riu=http%3a%2f%2fspice-restaurant.hk%2fwp-content%2fuploads%2f2019%2f01%2fIMG_9491.jpg&ehk=NlBe8ld49mfJrTDrAYce%2funaMEmExYbefp1eb8%2b9lg8%3d&risl=&pid=ImgRaw&r=0",
-    "description": "Experience a fusion of flavors with our globally inspired dishes"
+    "description": "Experience a fusion of flavors with our globally inspired dishes",
+    "meun":[
+      {
+        "id": 1,
+        "name": "Thai Red Curry Chicken",
+        "description": "Chicken cooked in spicy Thai red curry sauce with coconut milk, lemongrass, and Thai basil",
+        "price":450,
+        "imagePath": "https://www.jocooks.com/wp-content/uploads/2016/06/thai-red-chicken-curry-1-7.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Moroccan Lamb Tagine",
+        "description": "Slow-cooked lamb stew with Moroccan spices, apricots, and almonds, served with couscous",
+        "price":550,
+        "imagePath": "https://i0.wp.com/www.gastrosenses.com/wp-content/uploads/2017/11/Moroccan-Lamb-Tagine-1.jpg?resize=1400%2C2097&quality=100&strip=all&ssl=1"
+      },
+      {
+        "id": 3,
+        "name": "Korean BBQ Beef Tacos",
+        "description": "Grilled beef marinated in BBQ sauce, served in soft corn tortillas with kimchi and sesame seeds",
+        "price":400,
+        "imagePath": "https://i.pinimg.com/originals/db/08/1b/db081b1f5271f9105fe24af0174fae89.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Indian Butter Chicken",
+        "description": "Chicken simmered in creamy tomato-based sauce with butter, cream, and aromatic spices",
+        "price":480,
+        "imagePath": "https://i0.wp.com/mykitchenlittle.com/wp-content/uploads/2021/02/Quick-and-Easy-Indian-Butter-Chicken-2-scaled.jpeg?resize=1360%2C2040&ssl=1"
+      }
+    ]
   },
   {
     "id": 4,
     "name": "Ocean's Catch",
     "cuisine": "Thai",
     "description": "Indulge in the freshest seafood delicacies by the shore",
-    "image": "https://cdn.boatinternational.com/convert/bi_prd/bi/library_images/487YIzvZTLG7sQVldDhA_Best-underwater-hotels-Ithaa-FB.jpg/r[width]=1920/487YIzvZTLG7sQVldDhA_Best-underwater-hotels-Ithaa-FB.jpg"
+    "image": "https://cdn.boatinternational.com/convert/bi_prd/bi/library_images/487YIzvZTLG7sQVldDhA_Best-underwater-hotels-Ithaa-FB.jpg/r[width]=1920/487YIzvZTLG7sQVldDhA_Best-underwater-hotels-Ithaa-FB.jpg",
+    "menu":[
+      {
+        "id": 1,
+        "name": "Grilled Lobster Tail",
+        "description": "Fresh lobster tail grilled and served with lemon butter sauce",
+        "price":1200,
+        "imagePath": "https://diethood.com/wp-content/uploads/2021/06/grilled-lobster-tails-9-1024x1536.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Seafood Paella",
+        "description": "Spanish rice dish cooked with seafood, saffron, and bell peppers",
+        "price":800,
+        "imagePath": "https://www.vindulge.com/wp-content/uploads/2021/02/Seafood-Paella.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Garlic Butter Shrimp Scampi",
+        "description": "Shrimp sautéed in garlic butter and white wine, served over linguine pasta",
+        "price":550,
+        "imagePath": "https://s23209.pcdn.co/wp-content/uploads/2019/02/Garlic-Butter-Shrimp-ScampiIMG_8138-600x900.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Crispy Calamari Rings",
+        "description": "Calamari rings coated in seasoned breadcrumbs and deep-fried, served with marinara sauce",
+        "price":400,
+        "imagePath": "https://2.bp.blogspot.com/-F0NK6Hle97w/Vw0zED2Yg7I/AAAAAAAAVrg/u9xtx0yq40Uim4sIuUCg44jN7LBUSVDQACLcB/s1600/crispy%2Bcalamari%2Brings%2B1.JPG"
+      }
+
+    ]
   },
   {
     "id": 5,
     "name": "Mama Mia's Pizzeria",
     "cuisine": "American",
     "description": "Authentic Italian pizzas crafted with love and tradition",
-    "image": "https://theoxfordmagazine.com/wp-content/uploads/mamma-mia-pizzeria-summertown-oxford-01-1600x900-1.jpg"
+    "image": "https://theoxfordmagazine.com/wp-content/uploads/mamma-mia-pizzeria-summertown-oxford-01-1600x900-1.jpg",
+    "menu":[
+      {
+        "id": 1,
+        "name": "Margherita Pizza",
+        "description": "Pizza topped with tomato sauce, fresh mozzarella, basil, and olive oil",
+        "price":350,
+        "imagePath": "https://cdn.loveandlemons.com/wp-content/uploads/2019/09/margherita-pizza-1080x1080.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Pepperoni Pizza",
+        "description": "Pizza topped with tomato sauce, mozzarella cheese, and slices of pepperoni",
+        "price":400,
+        "imagePath": "https://wallpaperaccess.com/full/2237015.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Four Cheese Pizza",
+        "description": "Pizza topped with a blend of four cheeses such as mozzarella, cheddar, parmesan, and gorgonzola",
+        "price":450,
+        "imagePath": "https://images-gmi-pmc.edge-generalmills.com/e5b672bc-1c70-4ea3-b604-2206e897e98a.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Prosciutto and Arugula Pizza",
+        "description": "Pizza topped with tomato sauce, mozzarella cheese, prosciutto, and fresh arugula",
+        "price":500,
+        "imagePath": "https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fill,g_center,w_730,h_913/k/archive/07f26b8773e0ceb0595836346d87ac50e867759b"
+      }
+
+    ]
   },
   {
     "id": 6,
     "name": "Spice Route Bistro",
     "cuisine": "British",
     "description": "Embark on a culinary journey through the vibrant spices of the world",
-    "image": "https://th.bing.com/th/id/OIP.7-ZqknXmHRN20k0gITQ01QHaEO?rs=1&pid=ImgDetMain"
+    "image": "https://th.bing.com/th/id/OIP.7-ZqknXmHRN20k0gITQ01QHaEO?rs=1&pid=ImgDetMain",
+    "menu":[
+      {
+        "id": 1,
+        "name": "Tandoori Chicken Skewers",
+        "description": "Chicken marinated in yogurt and spices, grilled to perfection",
+        "price":380,
+        "imagePath": "https://th.bing.com/th/id/OIP.Bm6vDKOWsyUrYW3JQjXxVgHaLH?rs=1&pid=ImgDetMain"
+      },
+      {
+        "id": 2,
+        "name": "Thai Green Curry with Rice",
+        "description": "Green curry made with coconut milk, Thai green curry paste, vegetables, and choice of protein",
+        "price":450,
+        "imagePath": "https://cdn.sunbasket.com/7610b9a9-0674-4206-b301-d39d81784c24.jpeg"
+      },
+      {
+        "id": 3,
+        "name": "Moroccan Lamb Couscous",
+        "description": "Lamb stew served with fluffy couscous, chickpeas, and Mediterranean spices",
+        "price":600,
+        "imagePath": "https://compassandfork.com/wp-content/uploads/2018/02/How-to-Make-Moroccan-Lamb-Couscous-at-Home.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Mexican Chicken Fajitas",
+        "description": "Grilled chicken served with sautéed peppers and onions, accompanied by tortillas, salsa, and guacamole",
+        "price":420,
+        "imagePath": "https://th.bing.com/th/id/OIP.rGcYJF01UpJXKQfXO6V-qAHaLH?rs=1&pid=ImgDetMain"
+      }
+
+    ]
   },
   {
     "id": 7,
     "name": "The Green Leaf Cafe",
     "cuisine": "Korean",
     "description": "Fresh, organic ingredients come together in our wholesome vegetarian dishes",
-    "image": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/0f06ca59917549.5a33e9a4de78c.jpg"
+    "image": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/0f06ca59917549.5a33e9a4de78c.jpg",
+    "menu":[
+      {
+        "id": 1,
+        "name": "Quinoa Avocado Salad",
+        "description": "Salad made with quinoa, avocado, mixed greens, cherry tomatoes, cucumber, and balsamic vinaigrette",
+        "price":350,
+        "imagePath": "https://www.chelseasmessyapron.com/wp-content/uploads/2017/05/Quinoa-Avocado-Power-Salad2.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Vegetable Stir-Fry with Tofu",
+        "description": "Stir-fried mixed vegetables and tofu tossed in a savory sauce, served over steamed rice",
+        "price":380,
+        "imagePath": "https://th.bing.com/th/id/OIP.ppqtuVzIhWssD72oyix1SAAAAA?rs=1&pid=ImgDetMain"
+      },
+      {
+        "id": 3,
+        "name": "Lentil Soup",
+        "description": "Hearty soup made with lentils, carrots, celery, onions, and aromatic spices",
+        "price":250,
+        "imagePath": "https://herdgastronomy.com/content/uploads/2020/04/Vegetarian-Lentil-Soup-LEAD-1-e1586538479996.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Caprese Sandwich with Pesto",
+        "description": "Sandwich with fresh mozzarella, tomatoes, basil pesto, and balsamic glaze on ciabatta bread",
+        "price":300,
+        "imagePath": "https://ohsweetbasil.com/wp-content/uploads/balsamic-glaze-grilled-caprese-sandwich-recipe-6-scaled.jpg"
+      }
+    ]
   },
   {
     "id": 8,
     "name": "Smoke & Fire BBQ",
     "cuisine": "American",
     "description": "Savor the rich smoky flavors of our slow-cooked barbecue specialties",
-    "image": "https://i.pinimg.com/originals/3e/71/34/3e7134e9e43577e92ab21cb72f7f73ef.jpg"
+    "image": "https://i.pinimg.com/originals/3e/71/34/3e7134e9e43577e92ab21cb72f7f73ef.jpg",
+    "menu":[
+      {
+        "id": 1,
+        "name": "Smoked Brisket Platter",
+        "description": "Slow-smoked beef brisket served with BBQ sauce, coleslaw, and cornbread",
+        "price":600,
+        "imagePath": "https://i.pinimg.com/originals/34/a1/62/34a1627f84d6080c10b3f8416ed21218.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Pulled Pork Sandwich",
+        "description": "Sandwich with tender pulled pork, BBQ sauce, and coleslaw on a bun",
+        "price":350,
+        "imagePath": "https://saltpepperskillet.com/wp-content/uploads/pulled-pork-sandwiches-on-butcher-paper-horizontal.jpg"
+      },
+      {
+        "id": 3,
+        "name": "BBQ Ribs Combo",
+        "description": "Smoked pork ribs glazed with BBQ sauce, served with fries and corn on the cob",
+        "price":550,
+        "imagePath": "https://i.pinimg.com/736x/82/31/d6/8231d6b3852516f234359092da364aa8.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Grilled BBQ Chicken Breast",
+        "description": "Grilled chicken breast marinated in BBQ sauce, served with roasted vegetables and mashed potatoes",
+        "price":400,
+        "imagePath": "https://www.cookinwithmima.com/wp-content/uploads/2021/06/Grilled-BBQ-Chicken.jpg"
+      }
+
+    ]
   },
   {
     "id": 9,
     "name": "Zen Garden Teahouse",
     "cuisine": "Chineese",
     "description": "Find tranquility in every sip of our meticulously brewed teas",
-    "image": "https://www.eatout.co.za/wp-content/uploads/2015/02/The_Brew_Monkey-561.jpg"
+    "image": "https://www.eatout.co.za/wp-content/uploads/2015/02/The_Brew_Monkey-561.jpg",
+    "menu":[
+      {
+        "id": 1,
+        "name": "Matcha Green Tea Cake",
+        "description": "Moist green tea cake made with premium matcha powder",
+        "price":250,
+        "imagePath": "https://www.thespruceeats.com/thmb/mS-y0Blcam34Zmd390ZZm0mgrh8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/green-tea-nokcha-cake-recipe-2118896-hero-04-b62adaa1e981492f911f9842768ede38.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Jasmine Pearl Milk Tea",
+        "description": "Milk tea infused with fragrant jasmine pearls and served with tapioca pearls",
+        "price":180,
+        "imagePath": "https://myveganminimalist.com/wp-content/uploads/2022/05/Jasmine-Milk-Tea-Boba-15.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Garden Salad with Green Tea",
+        "description": "Fresh salad with mixed greens, edamame, cucumber, carrots, and green tea",
+        "price":320,
+        "imagePath": "https://bolivarbiscuitry.com/wp-content/uploads/2024/04/zen-garden-salad-jpg-2.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Sesame Matcha Latte",
+        "description": "Latte made with matcha green tea and topped with a drizzle of sesame syrup",
+        "price": 200,
+        "imagePath": "https://www.jadeleafmatcha.com/cdn/shop/articles/IMG_0597.jpg?v=1632938589&width=1100"
+      }
+    ]
 
   },
   {
@@ -68,14 +341,76 @@
     "name": "Rooftop Lounge Vista",
     "cuisine": "French",
     "description": "Elevate your dining experience with skyline views and exquisite cocktails",
-    "image": "https://lipstiq.com/wp-content/uploads/2021/05/envi_skydining_rooftop_restaurant_07-1024x1024.jpg"
+    "image": "https://lipstiq.com/wp-content/uploads/2021/05/envi_skydining_rooftop_restaurant_07-1024x1024.jpg",
+    "menu":[
+      {
+        "id": 1,
+        "name": "Sunset Margarita",
+        "description": "Classic margarita with a refreshing twist, perfect for enjoying the sunset",
+        "price": 350,
+        "imagePath": "https://heybairtender.s3.amazonaws.com/recipes/spicy-sunset-margarita.png"
+      },
+      {
+        "id": 2,
+        "name": "Vista Nachos",
+        "description": "Loaded nachos with melted cheese, jalapenos, salsa, guacamole, and sour cream",
+        "price": 420,
+        "imagePath": "https://i.pinimg.com/736x/6b/73/2f/6b732fc06bba1411d9ec2fe6f622cd59.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Rooftop Burger",
+        "description": "Juicy beef patty topped with lettuce, tomato, onion, cheese, and special sauce, served with fries",
+        "price": 480,
+        "imagePath": "https://lh3.googleusercontent.com/tA4n_dn_bIEkLjdOXaym8YIKuBuo1yvjVDZBYZBTpqWTF-z-yguqhgLF172PfcQD_UmLk9nKNOW0ufPKzq8Pq-7yj09j-tUoVmCvxIVw=w300-rw"
+      },
+      {
+        "id": 4,
+        "name": "Panoramic Pizza",
+        "description": "Pizza topped with marinara sauce, mozzarella cheese, bell peppers, onions, and olives",
+        "price": 400,
+        "imagePath": "https://tb-static.uber.com/prod/image-proc/processed_images/344e1fa3b4abe2b560d891e233ce07f6/16bb0a3ab8ea98cfe8906135767f7bf4.webp"
+      }
+
+    ]
   },
   {
     "id": 11,
     "name": "Taste of Tokyo Ramen",
     "cuisine": "Japanese",
     "description": "Authentic ramen bowls that transport you to the bustling streets of Tokyo",
-    "image": "https://images.squarespace-cdn.com/content/v1/560dbc25e4b0969564758eb5/1517276939279-DVH2AKJAR6XS9C9W4ZFT/Tokyo+Ramen+Street+%2B+www.thetravelpockets.com"
+    "image": "https://images.squarespace-cdn.com/content/v1/560dbc25e4b0969564758eb5/1517276939279-DVH2AKJAR6XS9C9W4ZFT/Tokyo+Ramen+Street+%2B+www.thetravelpockets.com",
+    "menu":[
+    {
+        "id": 1,
+        "name": "Tonkotsu Ramen",
+        "description": "Rich and creamy pork bone broth served with noodles, sliced pork, onions and a seasoned soft-boiled egg",
+        "price": 350,
+        "imagePath": "https://www.foodandwine.com/thmb/0AXGLeY6dYnY8sEXFqxBa8opDrs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Tonkotsu-Ramen-FT-BLOG1122-8fe6c12d609a4fd4ab246bea3aae140e.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Miso Ramen",
+        "description": "Savory miso broth served with noodles, sliced pork, bean sprouts, corn, green onions, and a seasoned soft-boiled egg",
+        "price": 320,
+        "imagePath": "https://lindseyeatsla.com/wp-content/uploads/2019/08/Lindseyeatsla_Spicy_Miso_Ramen-3.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Shoyu Ramen",
+        "description": "Soy sauce-based broth served with noodles, sliced pork, seaweed, onions and a seasoned soft-boiled egg",
+        "price": 330,
+        "imagePath": "https://images.getrecipekit.com/20210930182508-untitled-design-33.jpg?aspect_ratio=1:1&quality=90&"
+      },
+      {
+        "id": 4,
+        "name": "Vegetarian Ramen",
+        "description": "Vegetable broth served with noodles, tofu, mushrooms, corn, spinach, bamboo shoots, and green onions",
+        "price": 300,
+        "imagePath": "https://cdn.loveandlemons.com/wp-content/uploads/2023/02/vegan-ramen.jpg"
+      }
+
+    ]
 
   },
   {
@@ -83,6 +418,36 @@
     "name": "Fiesta Mexicana Cantina",
     "cuisine": "Mexican",
     "description": "Fiery flavors and festive vibes await you in every bite at our Mexican cantina",
-    "image": "https://bestrated.co.nz/wp-content/uploads/2021/06/Mexicanos.jpg"
+    "image": "https://bestrated.co.nz/wp-content/uploads/2021/06/Mexicanos.jpg",
+    "menu":[
+      {
+        "id": 1,
+        "name": "Classic Guacamole",
+        "description": "Freshly made guacamole with ripe avocados, tomatoes, onions, cilantro, lime juice, and seasonings, served with tortilla chips",
+        "price": 200,
+        "imagePath": "https://freshapron.com/wp-content/uploads/2021/06/Classic-Guacamole-08.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Chicken Quesadilla",
+        "description": "Grilled flour tortilla filled with seasoned chicken, melted cheese, onions, and bell peppers, served with salsa and sour cream",
+        "price": 250,
+        "imagePath": "https://www.thereciperebel.com/wp-content/uploads/2022/05/chicken-quesadillasl-TRR-1200-18-of-20.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Beef Tacos",
+        "description": "Soft corn tortillas filled with seasoned ground beef, lettuce, cheese, tomatoes, and salsa",
+        "price": 280,
+        "imagePath": "https://www.twopeasandtheirpod.com/wp-content/uploads/2022/12/Beef-Tacos-55.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Shrimp Fajitas",
+        "description": "Grilled shrimp served on a sizzling platter with sautéed onions, bell peppers, and a side of tortillas, salsa, guacamole, and sour cream",
+        "price": 350,
+        "imagePath": "https://www.wholesomeyum.com/wp-content/uploads/2022/05/wholesomeyum-Shrimp-Fajitas-9.jpg"
+      }
+    ]
   }
 ]
