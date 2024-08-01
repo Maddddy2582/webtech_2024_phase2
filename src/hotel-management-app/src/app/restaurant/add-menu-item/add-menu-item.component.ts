@@ -27,7 +27,7 @@ export class AddMenuItemComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.restaurantId = +this.route.snapshot.paramMap.get('restaurantId')!;
+    this.restaurantId = +(this.route.snapshot.paramMap.get('restaurantId') as string);
   }
 
   saveMenuItem(): void {

@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { CartService } from '../../services/cart.service';
-import { OrderStatus } from '../../models/statusCode.model';
 import { Order } from '../../models/orders.model';
 
 
@@ -14,12 +13,7 @@ import { Order } from '../../models/orders.model';
 export class OrderManagementComponent implements OnInit {
   restaurantId!: number;
   orders: Order[] = [];
-  orderStatusOptions: OrderStatus = {
-    Pending: 'Pending',
-    Accepted: 'Accepted',
-    Rejected: 'Rejected',
-    Completed: 'Completed'
-  };
+  orderStatus: string = 'pending' || 'Accepted' || 'Rejected' || 'Completed'
 
   constructor(
     private route: ActivatedRoute,
@@ -28,7 +22,7 @@ export class OrderManagementComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.restaurantId = +this.route.snapshot.paramMap.get('restaurantId')!;
+    this.restaurantId = +(this.route.snapshot.paramMap.get('restaurantId') as string);
     this.orders = this.cartService.getOrdersByRestaurant(this.restaurantId);
   }
 
@@ -36,7 +30,7 @@ export class OrderManagementComponent implements OnInit {
     this.location.back();
   }
 
-  updateOrderStatus(orderId: number,status: keyof OrderStatus): void {
+  updateOrderStatus(orderId: number,status: string): void {
     const savedOrders = JSON.parse(localStorage.getItem('orders') || '[]');
     const orderIndex = savedOrders.findIndex((order: Order) => order.orderId === orderId);
     if (orderIndex !== -1) {

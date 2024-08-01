@@ -18,8 +18,8 @@ export class EditMenuComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.restaurantId = +this.route.snapshot.paramMap.get('restaurantId')!;
-    const itemId = +this.route.snapshot.paramMap.get('itemId')!;
+    this.restaurantId = +(this.route.snapshot.paramMap.get('restaurantId') as string);
+    const itemId = +(this.route.snapshot.paramMap.get('itemId') as string);
     this.menuItem = this.restaurantService.getMenuItem(this.restaurantId, itemId);
   }
 

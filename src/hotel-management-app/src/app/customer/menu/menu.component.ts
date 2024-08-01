@@ -26,12 +26,12 @@ export class MenuComponent implements OnInit {
     private restaurantService: RestaurantService) {}
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id')!;
+    const id = +(this.route.snapshot.paramMap.get('id') as string);
     this.restaurant = this.restaurantService.getRestaurantById(id);
   }
 
   addToCart(item: MenuItem): void {
-    const id = +this.route.snapshot.paramMap.get('id')!;
+    const id = +(this.route.snapshot.paramMap.get('id') as string);
     this.cartService.checkRestaurant(item,id);
   }
 
