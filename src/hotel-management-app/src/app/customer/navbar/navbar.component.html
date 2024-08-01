@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<mat-toolbar color="primary" class="navbar navbar-dark bg-dark">
+<mat-toolbar color="primary" class="navbar">
     <div class="navbar-content">
         <img src="../../../assets/logo.PNG" alt="Logo" class="logo" (click) = "navToHome()">
         <div class="spacer"></div>
@@ -18,5 +18,6 @@
         <button mat-icon-button class="white-icon" (click)="logout()">
             <mat-icon>exit_to_app</mat-icon>
         </button>
+        <a mat-button href= "owner-dashboard" style="color: white;" *ngIf="restaurants.length"> My Restaurants</a>
     </div>
 </mat-toolbar>

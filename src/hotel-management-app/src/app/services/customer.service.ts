@@ -8,19 +8,20 @@ import { Customer } from '../models/customer.model';
 export class CustomerService {
   constructor(private router: Router) { }
   
-  registerCustomer(customerData: Customer): string | void {
-    const customers = JSON.parse(localStorage.getItem('customers') || '[]');
-    const existingCustomer = customers.find((c: Customer) => c.email === customerData.email);
+  registerCustomer(customerData: Customer): string {
+    const customers: Customer[] = JSON.parse(localStorage.getItem('customers') || '[]');
+    const existingCustomer: Customer | undefined = customers.find((c: Customer) => c.email === customerData.email);
     if (existingCustomer) {
       return 'Email already exists';
     }
     customers.push(customerData);
     localStorage.setItem('customers', JSON.stringify(customers));
+    return 'New customer created'
   }
 
   authenticateCustomer(email: string, password: string): boolean {
-    const customers = JSON.parse(localStorage.getItem('customers') || '[]');
-    const customer = customers.find((c: Customer) => c.email === email && c.password === password);
+    const customers: Customer[] = JSON.parse(localStorage.getItem('customers') || '[]');
+    const customer: Customer | undefined = customers.find((c: Customer) => c.email === email && c.password === password);
     if (customer) {
       localStorage.setItem('currentCustomer', JSON.stringify(customer));
       return true;

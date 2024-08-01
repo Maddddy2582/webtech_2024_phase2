@@ -1,3 +1,81 @@
-h1{
-    color: white;
-}
+       body{
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+       }
+
+       .page{
+        background-color: var(--skyblue);
+
+       }
+
+       .container{
+        height: 100vh;
+        background-color: var(--skyblue);
+       }
+
+       .card{
+
+        width: 500px;
+        border: none;
+        border-radius: 15px;
+        padding: 8px;
+        background-color: var(--orange);
+        position: relative;
+        height: 500px;
+       }
+
+       .upper{
+        height: 100px;
+       }
+
+       .upper img{
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+       }
+
+       .user{
+        position: relative;
+       }
+
+       .profile img{
+
+        
+        height: 80px;
+        width: 80px;
+        margin-top:2px;
+
+       
+       }
+
+       .profile{
+
+        position: absolute;
+        top:-50px;
+        left: 38%;
+        height: 90px;
+        width: 90px;
+        border:3px solid var(--skyblue);
+
+        border-radius: 50%;
+
+       }
+
+       button[mat-raised-button].back-btn{
+        color: white;
+        background-color: blue;
+       }
+
+       button[mat-raised-button].logout-btn{
+        color: white;
+        background-color: red;
+       }
+
+       button[mat-raised-button].regres-btn{
+        color: white;
+        background-color: green;
+       }
+
+       .text-center{
+        font-size: 20px;
+       }

@@ -4,10 +4,13 @@
   
   .cart-item-card {
     margin-bottom: 16px;
+    border: 2px solid var(--orange);
+    width: 1300px;
+
   }
 
   .remove-btn:hover{
-    background-color: rgb(255 0 0);
+    background-color: red;
     color: white;
   }
 
@@ -27,19 +30,48 @@
     width: 80%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
     margin-top: 20px;
     font-size: 20px;
   }
 
   .img-div{
     position: absolute;
-    left: 1400px;
+    left: 1050px;
     bottom: 20px;
     height: 150px;
     width: 200px;
     background-size: cover;
   }
 
+  .inc:hover{
+    background-color: green;
+    color: white;
+  }
+
+  .dec:hover{
+    background-color: red;    
+    color: white;
+  }
+
+  button[mat-raised-button].clearcart-btn{
+    background-color: red;
+    color: white;
+  }
+
+  button[mat-raised-button].pay-btn{
+    background-color: green;
+    color: white;
+  }
+
+  button[mat-raised-button].back-btn{
+    background-color: blue;
+    color: white;
+    justify-content: center;
+  }
+
+  .back-btn-alignment{
+    justify-content: center;
+  }
   
   

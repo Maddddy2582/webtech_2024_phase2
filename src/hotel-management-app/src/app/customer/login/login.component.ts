@@ -24,7 +24,7 @@ export class LoginComponent {
   onLogin() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value as loginFormType;
-      const authenticated = this.customerService.authenticateCustomer(email, password);
+      const authenticated: boolean = this.customerService.authenticateCustomer(email, password);
       if (authenticated) {
         this.router.navigate(['/dashboard']);
       } else {

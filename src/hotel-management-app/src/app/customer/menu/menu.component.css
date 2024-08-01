@@ -28,3 +28,13 @@
   .btn:hover{
     background-color: var(--turquoisegreen);
   }
+
+
+  .button{
+    justify-content: center;
+  }
+
+  button[mat-raised-button].back-btn{
+    background-color: blue;
+    color: white;
+  }

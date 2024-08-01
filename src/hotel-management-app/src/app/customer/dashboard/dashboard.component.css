@@ -10,6 +10,8 @@
     gap: 16px;
     padding: 20px;
     background-color: white;
+
+    /* background-color: #A5DD9B; */
   }
   
   .restaurant-card {
@@ -18,7 +20,8 @@
     transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
-    background-color: white;
+    background-color: var(--skyblue);
+
   }
   
   .restaurant-card:hover {
@@ -62,11 +65,15 @@
   }
   
   .btn:hover{
-    background-color: var(--turquoisegreen);
+    background-color: var(--skyblue);
   }
 
   .img-div{
     height: 250px;
     width: 300px;
     background-size: cover;
+  }
+
+  .full-page{
+    background-color: var(--orange);
   }
